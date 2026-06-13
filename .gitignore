@@ -15,3 +15,13 @@ Thumbs.db
 Source files/
 LIMRA-Global-Gateway/
 _render/
+
+# Raw client-supplied logo/map source files — already processed into /assets
+colleges/*.png
+colleges/*.jpg
+colleges/*.jpeg
+colleges/*.webp
+colleges/*.svg
+
+# Hero prototype — kept locally as reference, not deployed
+hero-preview.html

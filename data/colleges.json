@@ -9,6 +9,7 @@
     "color": "#1565C0",
     "tagline": "Built for Future Doctors. Premium Medical Education at an Affordable Cost.",
     "description": "Lyceum Northwestern University offers a world-class medical education that is NMC aligned, English medium, and globally recognized. Designed for ambitious Indian students who want quality education without compromising on affordability.",
+    "badges": ["NMC Aligned", "English Medium", "WHO Recognized", "Affordable Tuition", "Clinical Exposure"],
     "highlights": [
       "NMC Aligned — Fully compliant with National Medical Commission guidelines",
       "English Medium — Study confidently in a fully English-speaking environment",
@@ -30,7 +31,8 @@
       "Indian food available",
       "Safe and secure campus"
     ],
-    "image": "/assets/dmsf-campus.jpg"
+    "logo": "/assets/logo-lyceum.png",
+    "image": "/assets/campus-1.jpg"
   },
   {
     "id": "dmsf",
@@ -42,6 +44,7 @@
     "color": "#2E7D32",
     "tagline": "Real Hospital Exposure That Makes You a Doctor.",
     "description": "Davao Medical School Foundation is one of the Philippines' premier medical institutions, offering exceptional clinical exposure and internationally recognized medical education. DMSF equips students with practical skills and real-world medical experience.",
+    "badges": ["Clinical Excellence", "Internationally Recognized", "Strong FMGE Results", "Modern Campus", "International Community"],
     "highlights": [
       "Exceptional clinical training and hospital exposure",
       "Internationally recognized medical degree",
@@ -62,7 +65,8 @@
       "Student hostels",
       "International student support"
     ],
-    "image": "/assets/dmsf-campus.jpg"
+    "logo": "/assets/logo-dmsf.png",
+    "image": "/assets/campus-dmsf.jpg"
   },
   {
     "id": "brokenshire",
@@ -74,6 +78,7 @@
     "color": "#6A1B9A",
     "tagline": "Excellence in Medical Education Since Decades.",
     "description": "Brokenshire College offers a comprehensive medical education program with strong emphasis on clinical training and patient care. Located in Davao, Philippines, it provides a nurturing environment for aspiring doctors.",
+    "badges": ["NMC Aligned", "Clinical Training", "Experienced Faculty", "Modern Facilities", "International Students"],
     "highlights": [
       "NMC aligned curriculum",
       "Strong clinical training program",
@@ -94,18 +99,20 @@
       "Cafeteria with Indian food options",
       "Sports and recreational facilities"
     ],
-    "image": "/assets/dmsf-campus.jpg"
+    "logo": "/assets/logo-brokenshire.png",
+    "image": "/assets/campus-brokenshire.jpg"
   },
   {
     "id": "gcm",
-    "name": "Global College of Medicine",
+    "name": "Gullas College of Medicine",
     "shortName": "GCM",
     "country": "Philippines",
-    "city": "Philippines",
+    "city": "Cebu",
     "flag": "🇵🇭",
     "color": "#E65100",
     "tagline": "Affordable Fees. Global Standards. Life-Changing Learning.",
     "description": "Global College of Medicine delivers quality medical education aligned with international standards. With no donation or capitation fees, it offers a transparent and affordable path to becoming a doctor.",
+    "badges": ["No Donation Fees", "Strong FMGE & PLE", "Internationally Recognized", "Hands-on Clinical", "Premium Accommodation"],
     "highlights": [
       "No donation or capitation fees",
       "Strong FMGE and PLE results",
@@ -127,11 +134,12 @@
       "Safe campus environment",
       "Indian student support services"
     ],
-    "image": "/assets/dmsf-campus.jpg"
+    "logo": "/assets/logo-gcm.png",
+    "image": "/assets/campus-2.jpg"
   },
   {
     "id": "ucts",
-    "name": "UCTS",
+    "name": "Universidade Católica Timorense (UCTS)",
     "shortName": "UCTS",
     "country": "Timor-Leste",
     "city": "Dili",
@@ -139,6 +147,7 @@
     "color": "#00838F",
     "tagline": "Medical Education in the Heart of Southeast Asia.",
     "description": "UCTS offers medical education in Timor-Leste, providing students with a unique international learning experience in Southeast Asia. The program is designed to produce competent and compassionate medical professionals.",
+    "badges": ["International Education", "Affordable Fees", "Clinical Training", "Small Class Sizes", "Full LIMRA Support"],
     "highlights": [
       "International medical education",
       "Affordable tuition fees",
@@ -157,7 +166,8 @@
       "Student accommodation",
       "Student support services"
     ],
-    "image": "/assets/dmsf-campus.jpg"
+    "logo": "/assets/logo-ucts.png",
+    "image": "/assets/graduation-3.jpg"
   },
   {
     "id": "university-of-peace",
@@ -169,6 +179,7 @@
     "color": "#1B5E20",
     "tagline": "Building Doctors for a Peaceful Tomorrow.",
     "description": "University of PEACE in Timor-Leste offers a unique medical education experience in one of Southeast Asia's newest nations. The program focuses on developing skilled, compassionate doctors ready for the global healthcare landscape.",
+    "badges": ["SE Asia Education", "Affordable & Quality", "Clinical Training", "Multicultural Campus", "Full LIMRA Support"],
     "highlights": [
       "International medical education in Southeast Asia",
       "Affordable and quality medical program",
@@ -187,6 +198,7 @@
       "Library and research resources",
       "Student welfare services"
     ],
-    "image": "/assets/dmsf-campus.jpg"
+    "logo": "/assets/logo-peace.png",
+    "image": "/assets/graduation-2.jpg"
   }
 ]
