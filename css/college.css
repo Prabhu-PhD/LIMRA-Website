@@ -1,0 +1,178 @@
+/* ============================================================
+   LIMRA — COLLEGE DETAIL PAGE STYLES
+   Shared by all colleges/*.html pages. Builds on pages.css.
+   ============================================================ */
+
+/* ============================================================
+   COLLEGE HERO
+   ============================================================ */
+.college-hero{background:var(--bg-dark);color:var(--text-on-dark);padding:110px 0 72px;position:relative;overflow:hidden;}
+.college-hero::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.14) 1px,transparent 1px);background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 40%,#000 20%,transparent 90%);
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 40%,#000 20%,transparent 90%);opacity:.4;}
+.college-hero::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse 65% 60% at 70% 50%,rgba(238,64,56,.18) 0%,transparent 65%);}
+.college-hero .container{position:relative;z-index:1;}
+
+.college-hero-inner{display:grid;grid-template-columns:auto 1fr;gap:var(--space-3xl);align-items:center;}
+.college-logo-wrap{width:140px;height:140px;border-radius:var(--radius-xl);background:#fff;
+  display:flex;align-items:center;justify-content:center;padding:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);flex:none;}
+.college-logo-wrap img{width:100%;height:100%;object-fit:contain;}
+
+.college-hero-meta{display:flex;align-items:center;gap:10px;margin-bottom:var(--space-md);}
+.college-country-pill{display:inline-flex;align-items:center;gap:6px;background:var(--glass);
+  border:1px solid var(--glass-border);border-radius:var(--radius-pill);
+  padding:6px 14px;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--text-on-dark-muted);}
+.college-hero h1{font-family:var(--font-display);font-weight:var(--fw-extra);
+  font-size:clamp(1.9rem,4vw,3rem);line-height:var(--lh-snug);letter-spacing:var(--ls-tight);
+  margin-bottom:var(--space-sm);}
+.college-tagline{font-size:var(--fs-lg);color:var(--text-on-dark-muted);line-height:var(--lh-relaxed);
+  max-width:60ch;margin-bottom:var(--space-xl);}
+.college-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:var(--space-2xl);}
+.cbadge{display:inline-flex;align-items:center;gap:6px;background:var(--glass);
+  border:1px solid var(--glass-border);border-radius:var(--radius-pill);
+  padding:7px 14px;font-size:.82rem;font-weight:var(--fw-semibold);color:var(--text-on-dark-muted);}
+.cbadge svg{width:14px;height:14px;color:var(--brand-orange);flex:none;}
+.college-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* ============================================================
+   WHY THIS COLLEGE — 2-COL
+   ============================================================ */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3xl);align-items:center;}
+.why-highlights{display:flex;flex-direction:column;gap:var(--space-md);margin-top:var(--space-xl);}
+.why-item{display:flex;gap:var(--space-md);align-items:flex-start;}
+.why-check{width:38px;height:38px;border-radius:50%;background:var(--accent-gradient);
+  display:flex;align-items:center;justify-content:center;flex:none;margin-top:2px;
+  box-shadow:0 4px 14px rgba(238,64,56,.3);}
+.why-check svg{width:16px;height:16px;color:#fff;}
+.why-item h4{font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:1rem;
+  color:var(--text-strong);margin-bottom:4px;}
+.why-item p{font-size:.9rem;color:var(--text-muted);line-height:var(--lh-normal);}
+
+.why-image-wrap{position:relative;border-radius:var(--radius-xl);overflow:hidden;}
+.why-image-wrap img{width:100%;height:420px;object-fit:cover;display:block;}
+.why-image-stat{position:absolute;bottom:var(--space-lg);left:var(--space-lg);right:var(--space-lg);
+  background:rgba(14,13,36,.88);backdrop-filter:blur(10px);border:1px solid var(--glass-border);
+  border-radius:var(--radius-lg);padding:var(--space-lg);display:flex;gap:var(--space-2xl);}
+.wis-item{text-align:center;}
+.wis-num{font-family:var(--font-display);font-weight:var(--fw-extra);font-size:1.6rem;
+  background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;line-height:1;}
+.wis-label{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-on-dark-muted);margin-top:4px;}
+
+/* ============================================================
+   PROGRAM STRUCTURE
+   ============================================================ */
+.program-flow{display:flex;align-items:stretch;gap:0;margin:var(--space-2xl) 0;border:1px solid var(--glass-border);border-radius:var(--radius-xl);overflow:hidden;}
+.program-phase{flex:1;padding:var(--space-2xl);position:relative;}
+.program-phase:not(:last-child)::after{content:'→';position:absolute;right:-16px;top:50%;transform:translateY(-50%);
+  font-size:1.4rem;color:var(--text-on-dark-subtle);z-index:1;}
+.program-phase.phase-pre{background:var(--surface-1);}
+.program-phase.phase-md{background:var(--surface-2);flex:2;}
+.program-phase .ph-label{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--text-on-dark-subtle);margin-bottom:var(--space-sm);}
+.program-phase .ph-dur{font-family:var(--font-display);font-weight:var(--fw-extra);font-size:2rem;
+  background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;line-height:1;margin-bottom:6px;}
+.program-phase .ph-name{font-family:var(--font-display);font-weight:var(--fw-semibold);color:#fff;
+  font-size:1rem;margin-bottom:var(--space-md);}
+.program-phase ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.program-phase ul li{font-size:.88rem;color:var(--text-on-dark-muted);display:flex;gap:8px;align-items:flex-start;}
+.program-phase ul li::before{content:'·';color:var(--brand-orange);font-weight:bold;flex:none;margin-top:1px;}
+
+.program-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);margin-top:var(--space-2xl);}
+.pstat{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-lg);
+  padding:var(--space-xl);text-align:center;}
+.pstat .n{font-family:var(--font-display);font-weight:var(--fw-extra);font-size:2rem;
+  background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;line-height:1;}
+.pstat .l{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-on-dark-muted);margin-top:6px;}
+
+/* ============================================================
+   CLINICAL TRAINING
+   ============================================================ */
+.hospital-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-lg);}
+.hospital-card{background:var(--bg-light);border:1px solid var(--border-light);border-radius:var(--radius-xl);
+  padding:var(--space-2xl);display:flex;flex-direction:column;gap:var(--space-md);
+  transition:transform var(--dur) var(--ease-out),box-shadow var(--dur),border-color var(--dur);}
+.hospital-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:transparent;}
+.hospital-num{font-family:var(--font-display);font-weight:var(--fw-extra);font-size:3rem;line-height:.9;
+  background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;opacity:.25;}
+.hospital-card h4{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:1.05rem;
+  color:var(--text-strong);line-height:var(--lh-snug);}
+.hospital-card p{font-size:.88rem;color:var(--text-muted);line-height:var(--lh-normal);}
+
+/* ============================================================
+   FACILITIES GRID
+   ============================================================ */
+.facility-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);}
+.facility-item{background:var(--surface-1);border:1px solid var(--glass-border);border-radius:var(--radius-lg);
+  padding:var(--space-xl);display:flex;gap:var(--space-md);align-items:flex-start;}
+.facility-icon{width:44px;height:44px;border-radius:var(--radius);flex:none;
+  background:linear-gradient(135deg,rgba(238,64,56,.18),rgba(247,165,60,.12));
+  display:flex;align-items:center;justify-content:center;color:var(--brand-orange);}
+.facility-icon svg{width:22px;height:22px;}
+.facility-item h4{font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:.95rem;
+  color:#fff;margin-bottom:4px;}
+.facility-item p{font-size:.82rem;color:var(--text-on-dark-muted);line-height:var(--lh-normal);}
+
+/* ============================================================
+   LIMRA ADVANTAGE
+   ============================================================ */
+.advantage-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md);margin-top:var(--space-2xl);}
+.adv-card{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-xl);
+  padding:var(--space-2xl);display:flex;gap:var(--space-lg);align-items:flex-start;}
+.adv-icon{width:52px;height:52px;border-radius:var(--radius-lg);flex:none;
+  background:var(--accent-gradient);display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--glow-red);}
+.adv-icon svg{width:24px;height:24px;color:#fff;}
+.adv-card h4{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:1rem;color:#fff;margin-bottom:4px;}
+.adv-card p{font-size:.88rem;color:var(--text-on-dark-muted);line-height:var(--lh-normal);}
+.adv-value{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;color:var(--brand-orange);
+  font-weight:var(--fw-bold);margin-top:6px;}
+
+/* ============================================================
+   APPLY CTA
+   ============================================================ */
+.apply-band{background:var(--brand-navy-deep);color:#fff;text-align:center;padding:var(--space-5xl) 0;position:relative;overflow:hidden;}
+.apply-band::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 70% at 50% 0%,rgba(238,64,56,.25),transparent 65%);}
+.apply-band .container{position:relative;z-index:1;}
+.apply-band h2{font-family:var(--font-display);font-weight:var(--fw-extra);font-size:var(--fs-h1);
+  letter-spacing:var(--ls-tight);margin-bottom:var(--space-md);}
+.apply-band p{font-size:var(--fs-lg);color:var(--text-on-dark-muted);max-width:50ch;
+  margin:0 auto var(--space-xl);line-height:var(--lh-relaxed);}
+.apply-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:1080px){
+  .hospital-cards{grid-template-columns:repeat(2,1fr);}
+  .facility-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:900px){
+  .college-hero-inner{grid-template-columns:1fr;text-align:center;}
+  .college-logo-wrap{margin:0 auto;}
+  .college-hero-meta{justify-content:center;}
+  .college-badges{justify-content:center;}
+  .college-ctas{justify-content:center;}
+  .why-grid{grid-template-columns:1fr;}
+  .program-flow{flex-direction:column;}
+  .program-phase:not(:last-child)::after{content:'↓';right:50%;top:auto;bottom:-20px;transform:none;}
+  .program-stats{grid-template-columns:1fr 1fr;}
+  .advantage-grid{grid-template-columns:1fr;}
+}
+@media(max-width:640px){
+  .hospital-cards{grid-template-columns:1fr;}
+  .facility-grid{grid-template-columns:1fr;}
+  .program-stats{grid-template-columns:1fr;}
+  .why-image-stat{flex-wrap:wrap;gap:var(--space-lg);}
+  .college-logo-wrap{width:100px;height:100px;}
+}
