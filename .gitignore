@@ -7,6 +7,9 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Claude Code: keep shared launch config, ignore machine-local settings
+.claude/settings.local.json
+
 # Local-only: full backups & large source masters (not deployed/versioned)
 *.zip
 Source files/
