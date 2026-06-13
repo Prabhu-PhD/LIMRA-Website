@@ -1,0 +1,62 @@
+[
+  {
+    "id": "t1",
+    "name": "Dr. Priya Ramesh",
+    "college": "Lyceum Northwestern University",
+    "country": "Philippines",
+    "year": "2023",
+    "quote": "LIMRA guided me through every step of my medical journey. From college selection to FMGE coaching, their support was invaluable. I am now a practicing doctor, and I owe it to LIMRA.",
+    "score": "FMGE Qualified",
+    "image": ""
+  },
+  {
+    "id": "t2",
+    "name": "Dr. Arjun Mehta",
+    "college": "Davao Medical School Foundation",
+    "country": "Philippines",
+    "year": "2022",
+    "quote": "The FMGE coaching at LIMRA is world-class. The mock tests and dedicated app helped me prepare thoroughly. I scored above 200 in my first attempt. Thank you, LIMRA!",
+    "score": "203/300 in FMGE",
+    "image": ""
+  },
+  {
+    "id": "t3",
+    "name": "Dr. Sneha Krishnan",
+    "college": "Global College of Medicine",
+    "country": "Philippines",
+    "year": "2023",
+    "quote": "I was hesitant about studying abroad, but LIMRA assured me and my family at every step. The admissions process was smooth, and the after-care support during my studies was excellent.",
+    "score": "FMGE Qualified",
+    "image": ""
+  },
+  {
+    "id": "t4",
+    "name": "Dr. Vikram Nair",
+    "college": "Lyceum Northwestern University",
+    "country": "Philippines",
+    "year": "2024",
+    "quote": "24 years of experience shows in how LIMRA handles everything. They understand what Indian medical students need and deliver it. The FMG Exam training is truly worth ₹1,00,000.",
+    "score": "210/300 in FMGE",
+    "image": ""
+  },
+  {
+    "id": "t5",
+    "name": "Dr. Anitha Subramaniam",
+    "college": "Brokenshire College",
+    "country": "Philippines",
+    "year": "2022",
+    "quote": "From day one, LIMRA treated us like family. The dedicated counselors, the study materials, the mock tests — everything was top-notch. I highly recommend LIMRA to any student aspiring to become a doctor.",
+    "score": "FMGE Qualified",
+    "image": ""
+  },
+  {
+    "id": "t6",
+    "name": "Dr. Karthik Venkatesh",
+    "college": "Davao Medical School Foundation",
+    "country": "Philippines",
+    "year": "2023",
+    "quote": "LIMRA's counseling helped me choose the right college that matched my budget and ambitions. Their end-to-end support — from visa to accommodation to FMGE — is unmatched.",
+    "score": "FMGE Qualified",
+    "image": ""
+  }
+]

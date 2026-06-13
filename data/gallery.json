@@ -1,0 +1,44 @@
+[
+  {
+    "id": "g1",
+    "title": "Graduation Ceremony 2024",
+    "caption": "LIMRA students at their graduation ceremony — a proud milestone in their medical journey.",
+    "image": "/assets/dmsf-campus.jpg",
+    "category": "Graduation"
+  },
+  {
+    "id": "g2",
+    "title": "Campus Life — Philippines",
+    "caption": "Students enjoying campus life at our partner university in the Philippines.",
+    "image": "/assets/dmsf-campus.jpg",
+    "category": "Campus"
+  },
+  {
+    "id": "g3",
+    "title": "Clinical Training Session",
+    "caption": "Hands-on clinical training at the affiliated hospital — where theory meets practice.",
+    "image": "/assets/dmsf-campus.jpg",
+    "category": "Clinical"
+  },
+  {
+    "id": "g4",
+    "title": "FMGE Success Celebration 2026",
+    "caption": "21 LIMRA students scored above 200 marks in the January 2026 FMG Exam.",
+    "image": "/assets/dmsf-campus.jpg",
+    "category": "FMGE"
+  },
+  {
+    "id": "g5",
+    "title": "Convocation 2023",
+    "caption": "Proud graduates — adding to LIMRA's legacy of 2000+ successful doctors.",
+    "image": "/assets/dmsf-campus.jpg",
+    "category": "Graduation"
+  },
+  {
+    "id": "g6",
+    "title": "Orientation Day",
+    "caption": "New batch orientation — welcoming future doctors to their international medical journey.",
+    "image": "/assets/dmsf-campus.jpg",
+    "category": "Campus"
+  }
+]

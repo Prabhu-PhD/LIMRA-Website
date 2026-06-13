@@ -1,0 +1,35 @@
+[
+  {
+    "id": "b1",
+    "title": "Why Philippines is the Top Destination for Indian Medical Students in 2026",
+    "slug": "philippines-top-destination-2026",
+    "category": "Medical Education",
+    "date": "2026-05-15",
+    "author": "LIMRA Team",
+    "excerpt": "The Philippines continues to be the number one destination for Indian students pursuing MBBS abroad. Here's why thousands of students choose Philippines every year.",
+    "image": "",
+    "published": true
+  },
+  {
+    "id": "b2",
+    "title": "FMGE 2026: How to Prepare and What to Expect",
+    "slug": "fmge-2026-preparation-guide",
+    "category": "FMGE Coaching",
+    "date": "2026-04-20",
+    "author": "LIMRA Coaching Team",
+    "excerpt": "A comprehensive guide to the Foreign Medical Graduate Examination (FMGE) 2026. Learn the pattern, preparation strategy, and how LIMRA's coaching gives you the edge.",
+    "image": "",
+    "published": true
+  },
+  {
+    "id": "b3",
+    "title": "NMC Guidelines for MBBS Abroad: Everything You Need to Know",
+    "slug": "nmc-guidelines-mbbs-abroad",
+    "category": "Medical Education",
+    "date": "2026-03-10",
+    "author": "LIMRA Team",
+    "excerpt": "The National Medical Commission has set clear guidelines for Indian students pursuing MBBS abroad. This guide breaks down everything you need to know before you apply.",
+    "image": "",
+    "published": true
+  }
+]

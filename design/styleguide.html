@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LIMRA — Design System v1</title>
+<link rel="stylesheet" href="../css/tokens.css" />
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--font-body);color:var(--text-body);background:var(--bg-light);
+    -webkit-font-smoothing:antialiased;line-height:var(--lh-normal);}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 var(--gutter);}
+  section{padding:var(--space-4xl) 0;}
+  .sec-dark{background:var(--bg-dark);}
+  h1,h2,h3,h4{font-family:var(--font-display);color:var(--text-strong);line-height:var(--lh-tight);}
+  .eyebrow{font-family:var(--font-mono);font-size:var(--fs-label);letter-spacing:var(--ls-label);
+    text-transform:uppercase;color:var(--brand-red);margin-bottom:var(--space-sm);display:block;}
+  .sec-title{font-size:var(--fs-h2);font-weight:var(--fw-bold);margin-bottom:var(--space-xl);letter-spacing:var(--ls-tight);}
+  .sec-dark .sec-title{color:var(--text-on-dark);}
+  .grid{display:grid;gap:var(--space-md);}
+
+  /* swatches */
+  .swatches{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+  .sw{border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border-light);background:#fff;box-shadow:var(--shadow-sm);}
+  .sw .chip{height:90px;}
+  .sw .meta{padding:var(--space-sm) var(--space-md);}
+  .sw .name{font-weight:var(--fw-semibold);color:var(--text-strong);font-size:var(--fs-sm);}
+  .sw .hex{font-family:var(--font-mono);font-size:.78rem;color:var(--text-muted);}
+
+  /* type scale */
+  .type-row{display:flex;align-items:baseline;gap:var(--space-lg);padding:var(--space-sm) 0;border-bottom:1px solid var(--border-light);flex-wrap:wrap;}
+  .type-row .tag{font-family:var(--font-mono);font-size:.72rem;color:var(--text-muted);width:120px;flex-shrink:0;}
+  .d-display{font-family:var(--font-display);font-size:var(--fs-display);font-weight:var(--fw-extra);color:var(--text-strong);line-height:1;letter-spacing:var(--ls-tight);}
+  .d-h1{font-family:var(--font-display);font-size:var(--fs-h1);font-weight:var(--fw-bold);color:var(--text-strong);}
+  .d-h2{font-family:var(--font-display);font-size:var(--fs-h2);font-weight:var(--fw-bold);color:var(--text-strong);}
+  .d-h3{font-family:var(--font-display);font-size:var(--fs-h3);font-weight:var(--fw-semibold);color:var(--text-strong);}
+  .d-body{font-family:var(--font-body);font-size:var(--fs-body);color:var(--text-body);max-width:60ch;}
+  .d-mono{font-family:var(--font-mono);font-size:var(--fs-label);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--brand-red);}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-weight:var(--fw-semibold);
+    font-size:var(--fs-sm);padding:13px 24px;border-radius:var(--radius);cursor:pointer;border:1.5px solid transparent;
+    transition:transform var(--dur-fast) var(--ease-out),box-shadow var(--dur) var(--ease-out);text-decoration:none;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--accent-gradient);color:#fff;box-shadow:var(--glow-red);}
+  .btn-navy{background:var(--brand-navy);color:#fff;}
+  .btn-outline-light{background:transparent;border-color:var(--border-light);color:var(--text-strong);}
+  .btn-outline-dark{background:transparent;border-color:var(--glass-border);color:var(--text-on-dark);}
+  .btn-ghost-dark{background:var(--glass);border-color:var(--glass-border);color:var(--text-on-dark);}
+  .btnrow{display:flex;gap:var(--space-md);flex-wrap:wrap;align-items:center;}
+
+  /* cards */
+  .cards{grid-template-columns:repeat(auto-fit,minmax(240px,1fr));}
+  .card-glass{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-lg);
+    padding:var(--space-xl);color:var(--text-on-dark);box-shadow:var(--shadow-glass);}
+  .card-glass .ic{width:46px;height:46px;border-radius:var(--radius);background:var(--accent-gradient);
+    display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:var(--space-md);box-shadow:var(--glow-red);}
+  .card-glass h4{color:var(--text-on-dark);margin-bottom:8px;}
+  .card-glass p{color:var(--text-on-dark-muted);font-size:var(--fs-sm);}
+  .card-light{background:#fff;border:1px solid var(--border-light);border-radius:var(--radius-lg);
+    padding:var(--space-xl);box-shadow:var(--shadow-md);}
+  .card-light .ic{width:46px;height:46px;border-radius:var(--radius);background:var(--surface-light-2);color:var(--brand-navy);
+    display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-md);}
+  .card-light h4{color:var(--text-strong);margin-bottom:8px;}
+  .card-light p{color:var(--text-muted);font-size:var(--fs-sm);}
+
+  /* stat (mono/analytical) */
+  .stats{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
+  .stat{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-lg);padding:var(--space-lg);}
+  .stat .num{font-family:var(--font-display);font-weight:var(--fw-extra);font-size:2.2rem;
+    background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;}
+  .stat .lbl{font-family:var(--font-mono);font-size:.68rem;letter-spacing:var(--ls-label);text-transform:uppercase;
+    color:var(--text-on-dark-muted);margin-top:8px;}
+
+  /* form */
+  .field{margin-bottom:var(--space-md);max-width:360px;}
+  .field label{display:block;font-size:var(--fs-sm);font-weight:var(--fw-medium);color:var(--text-strong);margin-bottom:6px;}
+  .field input,.field select{width:100%;padding:12px 14px;border:1.5px solid var(--border-light);border-radius:var(--radius);
+    font-family:var(--font-body);font-size:var(--fs-sm);color:var(--text-strong);background:#fff;transition:border-color var(--dur-fast);}
+  .field input:focus{outline:none;border-color:var(--brand-red);box-shadow:0 0 0 4px rgba(238,64,56,0.1);}
+
+  /* badges */
+  .badges{display:flex;gap:var(--space-sm);flex-wrap:wrap;align-items:center;}
+  .badge{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
+    padding:6px 12px;border-radius:var(--radius-pill);font-weight:var(--fw-bold);}
+  .badge-red{background:rgba(238,64,56,.12);color:var(--brand-red);}
+  .badge-navy{background:rgba(37,36,93,.1);color:var(--brand-navy);}
+  .badge-sky{background:rgba(41,194,245,.14);color:#0E86B8;}
+  .badge-orange{background:rgba(247,165,60,.16);color:#B5740E;}
+
+  /* radii + shadow demo */
+  .demo-row{display:flex;gap:var(--space-lg);flex-wrap:wrap;}
+  .demo-box{width:120px;height:80px;background:#fff;border:1px solid var(--border-light);
+    display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);text-align:center;}
+  .note{font-family:var(--font-mono);font-size:.72rem;color:var(--text-muted);margin-top:var(--space-lg);}
+  .sec-dark .note{color:var(--text-on-dark-subtle);}
+</style>
+</head>
+<body>
+
+  <!-- ===== HEADER (dark) ===== -->
+  <section class="sec-dark" style="padding-top:var(--space-3xl);padding-bottom:var(--space-3xl);">
+    <div class="wrap">
+      <span class="eyebrow">LIMRA · Design System v1</span>
+      <h1 style="color:var(--text-on-dark);font-size:var(--fs-h1);font-weight:var(--fw-extra);letter-spacing:var(--ls-tight);">
+        The complete visual language</h1>
+      <p style="color:var(--text-on-dark-muted);max-width:60ch;margin-top:var(--space-md);">
+        Every color, font, button and card on this page is driven by one file — <span style="font-family:var(--font-mono);color:var(--brand-orange);">tokens.css</span>.
+        Change a value there and it updates everywhere. Review it and tell me what to tweak.</p>
+    </div>
+  </section>
+
+  <!-- ===== COLORS ===== -->
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">01 · Color</span>
+      <h2 class="sec-title">Brand palette</h2>
+      <div class="grid swatches">
+        <div class="sw"><div class="chip" style="background:var(--brand-navy)"></div><div class="meta"><div class="name">Navy · primary</div><div class="hex">#25245D</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--brand-red)"></div><div class="meta"><div class="name">Red · accent</div><div class="hex">#EE4038</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--brand-orange)"></div><div class="meta"><div class="name">Orange · support</div><div class="hex">#F7A53C</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--brand-sky)"></div><div class="meta"><div class="name">Sky · support</div><div class="hex">#29C2F5</div></div></div>
+      </div>
+
+      <h3 style="margin:var(--space-2xl) 0 var(--space-md);">Accent gradient & glow</h3>
+      <div style="height:120px;border-radius:var(--radius-lg);background:var(--accent-gradient);box-shadow:var(--glow-red);
+        display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);color:#fff;font-size:.8rem;letter-spacing:.1em;">
+        RED → ORANGE → GOLD</div>
+
+      <h3 style="margin:var(--space-2xl) 0 var(--space-md);">Surfaces</h3>
+      <div class="grid swatches">
+        <div class="sw"><div class="chip" style="background:var(--bg-dark)"></div><div class="meta"><div class="name">Dark bg</div><div class="hex">#0E0D24</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--surface-1)"></div><div class="meta"><div class="name">Dark surface</div><div class="hex">#16153A</div></div></div>
+        <div class="sw"><div class="chip" style="background:var(--surface-light);border-bottom:1px solid var(--border-light)"></div><div class="meta"><div class="name">Light surface</div><div class="hex">#F7F8FA</div></div></div>
+        <div class="sw"><div class="chip" style="background:#fff;border-bottom:1px solid var(--border-light)"></div><div class="meta"><div class="name">White</div><div class="hex">#FFFFFF</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TYPOGRAPHY ===== -->
+  <section style="background:var(--surface-light);">
+    <div class="wrap">
+      <span class="eyebrow">02 · Typography</span>
+      <h2 class="sec-title">Type scale</h2>
+      <div class="type-row"><span class="tag">Sora · display</span><span class="d-display">Doctor</span></div>
+      <div class="type-row"><span class="tag">Sora · h1</span><span class="d-h1">Your dream starts here</span></div>
+      <div class="type-row"><span class="tag">Sora · h2</span><span class="d-h2">Premier medical universities</span></div>
+      <div class="type-row"><span class="tag">Sora · h3</span><span class="d-h3">No.1 FMGE coaching in South India</span></div>
+      <div class="type-row"><span class="tag">Space Mono · label</span><span class="d-mono">24+ years · 2000+ doctors · 92% pass rate</span></div>
+      <div class="type-row" style="border-bottom:none;"><span class="tag">Manrope · body</span><span class="d-body">For over 24 years, LIMRA has guided students to premier medical colleges in the Philippines and Timor-Leste — from college selection to FMGE qualification, supporting every step of the journey to becoming a doctor.</span></div>
+    </div>
+  </section>
+
+  <!-- ===== BUTTONS + FORM (light) ===== -->
+  <section>
+    <div class="wrap">
+      <span class="eyebrow">03 · Components — light</span>
+      <h2 class="sec-title">Buttons, badges & forms</h2>
+      <div class="btnrow" style="margin-bottom:var(--space-xl);">
+        <a class="btn btn-primary">Enquire now →</a>
+        <a class="btn btn-navy">Explore colleges</a>
+        <a class="btn btn-outline-light">View details</a>
+      </div>
+      <div class="badges" style="margin-bottom:var(--space-2xl);">
+        <span class="badge badge-red">FMGE Coaching</span>
+        <span class="badge badge-navy">MBBS Abroad</span>
+        <span class="badge badge-sky">Global</span>
+        <span class="badge badge-orange">New</span>
+      </div>
+      <div class="field"><label>Full name</label><input type="text" placeholder="Your full name" /></div>
+      <div class="field"><label>Course interest</label><select><option>MBBS — Philippines</option><option>FMGE Coaching</option><option>Medical Tourism</option></select></div>
+    </div>
+  </section>
+
+  <!-- ===== CARDS + STATS (dark) ===== -->
+  <section class="sec-dark">
+    <div class="wrap">
+      <span class="eyebrow">04 · Components — dark</span>
+      <h2 class="sec-title">Cards & stat tiles</h2>
+      <div class="grid cards" style="margin-bottom:var(--space-2xl);">
+        <div class="card-glass"><div class="ic">🎓</div><h4>Medical education abroad</h4><p>Premier NMC-aligned colleges in the Philippines and Timor-Leste. (Icon is placeholder — final uses line icons.)</p></div>
+        <div class="card-glass"><div class="ic">📚</div><h4>FMGE coaching</h4><p>92% pass rate over the decade. 50 mock tests, 19 subjects, dedicated app.</p></div>
+        <div class="card-glass"><div class="ic">🏥</div><h4>Medical tourism</h4><p>World-class treatment, coordinated end to end at a fraction of the cost.</p></div>
+      </div>
+      <div class="grid stats">
+        <div class="stat"><div class="num">2000+</div><div class="lbl">Successful doctors</div></div>
+        <div class="stat"><div class="num">24+</div><div class="lbl">Years experience</div></div>
+        <div class="stat"><div class="num">92%</div><div class="lbl">FMGE pass rate</div></div>
+        <div class="stat"><div class="num">50+</div><div class="lbl">Mock tests</div></div>
+      </div>
+      <div class="btnrow" style="margin-top:var(--space-2xl);">
+        <a class="btn btn-primary">Get free counselling →</a>
+        <a class="btn btn-ghost-dark">Chat on WhatsApp</a>
+        <a class="btn btn-outline-dark">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RADII + SHADOWS (light) ===== -->
+  <section style="background:var(--surface-light);">
+    <div class="wrap">
+      <span class="eyebrow">05 · Shape & depth</span>
+      <h2 class="sec-title">Corners & shadows</h2>
+      <div class="demo-row" style="margin-bottom:var(--space-2xl);">
+        <div class="demo-box" style="border-radius:var(--radius-sm)">6px</div>
+        <div class="demo-box" style="border-radius:var(--radius)">10px<br>buttons</div>
+        <div class="demo-box" style="border-radius:var(--radius-lg)">14px<br>cards</div>
+        <div class="demo-box" style="border-radius:var(--radius-xl)">20px<br>panels</div>
+        <div class="demo-box" style="border-radius:var(--radius-pill);width:80px">pill</div>
+      </div>
+      <div class="demo-row">
+        <div class="demo-box" style="border:none;box-shadow:var(--shadow-sm);border-radius:var(--radius-lg)">sm</div>
+        <div class="demo-box" style="border:none;box-shadow:var(--shadow-md);border-radius:var(--radius-lg)">md</div>
+        <div class="demo-box" style="border:none;box-shadow:var(--shadow-lg);border-radius:var(--radius-lg)">lg</div>
+        <div class="demo-box" style="border:none;box-shadow:var(--shadow-xl);border-radius:var(--radius-lg)">xl</div>
+      </div>
+      <p class="note">// This entire page renders from design-prototypes/tokens.css — your global source of truth.</p>
+    </div>
+  </section>
+
+</body>
+</html>

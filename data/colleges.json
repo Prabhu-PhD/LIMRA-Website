@@ -1,0 +1,192 @@
+[
+  {
+    "id": "lyceum",
+    "name": "Lyceum Northwestern University",
+    "shortName": "LNU",
+    "country": "Philippines",
+    "city": "Dagupan",
+    "flag": "🇵🇭",
+    "color": "#1565C0",
+    "tagline": "Built for Future Doctors. Premium Medical Education at an Affordable Cost.",
+    "description": "Lyceum Northwestern University offers a world-class medical education that is NMC aligned, English medium, and globally recognized. Designed for ambitious Indian students who want quality education without compromising on affordability.",
+    "highlights": [
+      "NMC Aligned — Fully compliant with National Medical Commission guidelines",
+      "English Medium — Study confidently in a fully English-speaking environment",
+      "WHO Recognized — Internationally accredited medical program",
+      "Affordable Tuition — Quality education without heavy financial burden",
+      "Real Clinical Exposure — Hands-on hospital training from early stages"
+    ],
+    "program": "4.5 years MD Program (1 year pre-medicine + 4.5 years medical studies)",
+    "hospitals": [
+      "Dagupan Doctors Villaflor Memorial Hospital",
+      "Pangasinan Medical Center",
+      "Rural Health Units & Barangay Clinics"
+    ],
+    "facilities": [
+      "Simulation labs",
+      "Digital classrooms",
+      "E-learning support",
+      "Hostel facilities",
+      "Indian food available",
+      "Safe and secure campus"
+    ],
+    "image": "/assets/dmsf-campus.jpg"
+  },
+  {
+    "id": "dmsf",
+    "name": "Davao Medical School Foundation",
+    "shortName": "DMSF",
+    "country": "Philippines",
+    "city": "Davao",
+    "flag": "🇵🇭",
+    "color": "#2E7D32",
+    "tagline": "Real Hospital Exposure That Makes You a Doctor.",
+    "description": "Davao Medical School Foundation is one of the Philippines' premier medical institutions, offering exceptional clinical exposure and internationally recognized medical education. DMSF equips students with practical skills and real-world medical experience.",
+    "highlights": [
+      "Exceptional clinical training and hospital exposure",
+      "Internationally recognized medical degree",
+      "Strong FMGE and PLE pass rates",
+      "Modern campus with advanced medical facilities",
+      "Diverse international student community"
+    ],
+    "program": "MD Program — Internationally recognized medical degree",
+    "hospitals": [
+      "Davao Doctors Hospital",
+      "Southern Philippines Medical Center",
+      "Davao Regional Medical Center"
+    ],
+    "facilities": [
+      "Advanced anatomy labs",
+      "Modern lecture halls",
+      "Hospital training facilities",
+      "Student hostels",
+      "International student support"
+    ],
+    "image": "/assets/dmsf-campus.jpg"
+  },
+  {
+    "id": "brokenshire",
+    "name": "Brokenshire College",
+    "shortName": "BC",
+    "country": "Philippines",
+    "city": "Davao",
+    "flag": "🇵🇭",
+    "color": "#6A1B9A",
+    "tagline": "Excellence in Medical Education Since Decades.",
+    "description": "Brokenshire College offers a comprehensive medical education program with strong emphasis on clinical training and patient care. Located in Davao, Philippines, it provides a nurturing environment for aspiring doctors.",
+    "highlights": [
+      "NMC aligned curriculum",
+      "Strong clinical training program",
+      "Experienced and qualified faculty",
+      "Modern medical facilities",
+      "Supportive international student environment"
+    ],
+    "program": "MD Program — Aligned with international medical standards",
+    "hospitals": [
+      "Brokenshire Hospital",
+      "Local government hospitals",
+      "Community health centers"
+    ],
+    "facilities": [
+      "Medical simulation labs",
+      "Library and research center",
+      "Student accommodation",
+      "Cafeteria with Indian food options",
+      "Sports and recreational facilities"
+    ],
+    "image": "/assets/dmsf-campus.jpg"
+  },
+  {
+    "id": "gcm",
+    "name": "Global College of Medicine",
+    "shortName": "GCM",
+    "country": "Philippines",
+    "city": "Philippines",
+    "flag": "🇵🇭",
+    "color": "#E65100",
+    "tagline": "Affordable Fees. Global Standards. Life-Changing Learning.",
+    "description": "Global College of Medicine delivers quality medical education aligned with international standards. With no donation or capitation fees, it offers a transparent and affordable path to becoming a doctor.",
+    "highlights": [
+      "No donation or capitation fees",
+      "Strong FMGE and PLE results",
+      "Internationally recognized medical program",
+      "Extensive clinical training and hands-on exposure",
+      "Premium accommodation and facilities",
+      "Strong focus on student safety"
+    ],
+    "program": "4.5 years MD Program — 1 year pre-medicine + 4.5 years medical studies. Aligned with NMC guidelines.",
+    "hospitals": [
+      "Affiliated government hospitals",
+      "Private medical centers",
+      "Rural health units"
+    ],
+    "facilities": [
+      "Modern medical labs",
+      "Digital learning environment",
+      "Student-focused curriculum",
+      "Safe campus environment",
+      "Indian student support services"
+    ],
+    "image": "/assets/dmsf-campus.jpg"
+  },
+  {
+    "id": "ucts",
+    "name": "UCTS",
+    "shortName": "UCTS",
+    "country": "Timor-Leste",
+    "city": "Dili",
+    "flag": "🇹🇱",
+    "color": "#00838F",
+    "tagline": "Medical Education in the Heart of Southeast Asia.",
+    "description": "UCTS offers medical education in Timor-Leste, providing students with a unique international learning experience in Southeast Asia. The program is designed to produce competent and compassionate medical professionals.",
+    "highlights": [
+      "International medical education",
+      "Affordable tuition fees",
+      "Clinical training opportunities",
+      "Small class sizes for personalized learning",
+      "LIMRA support throughout the journey"
+    ],
+    "program": "MD Program — International medical degree",
+    "hospitals": [
+      "National Hospital Guido Valadares",
+      "Affiliated regional hospitals"
+    ],
+    "facilities": [
+      "Modern classrooms",
+      "Medical labs",
+      "Student accommodation",
+      "Student support services"
+    ],
+    "image": "/assets/dmsf-campus.jpg"
+  },
+  {
+    "id": "university-of-peace",
+    "name": "University of PEACE",
+    "shortName": "UPACE",
+    "country": "Timor-Leste",
+    "city": "Dili",
+    "flag": "🇹🇱",
+    "color": "#1B5E20",
+    "tagline": "Building Doctors for a Peaceful Tomorrow.",
+    "description": "University of PEACE in Timor-Leste offers a unique medical education experience in one of Southeast Asia's newest nations. The program focuses on developing skilled, compassionate doctors ready for the global healthcare landscape.",
+    "highlights": [
+      "International medical education in Southeast Asia",
+      "Affordable and quality medical program",
+      "Practical clinical training",
+      "Multicultural learning environment",
+      "Full LIMRA support and guidance"
+    ],
+    "program": "MD Program — Internationally oriented medical degree",
+    "hospitals": [
+      "University hospital",
+      "Affiliated regional medical centers"
+    ],
+    "facilities": [
+      "Medical education facilities",
+      "Student residential facilities",
+      "Library and research resources",
+      "Student welfare services"
+    ],
+    "image": "/assets/dmsf-campus.jpg"
+  }
+]

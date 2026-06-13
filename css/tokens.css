@@ -1,0 +1,119 @@
+/* ============================================================
+   LIMRA OVERSEAS EDUCATION — DESIGN TOKENS (v1)
+   Single source of truth. Change a value here → whole site updates.
+   Fonts: Sora (display), Manrope (body), Space Mono (labels/numbers)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  /* ---------- BRAND COLORS (official) ---------- */
+  --brand-navy:        #25245D;   /* primary — trust, stability */
+  --brand-navy-deep:   #1A1940;   /* darker navy */
+  --brand-navy-soft:   #2E2D72;   /* lighter navy */
+  --brand-red:         #EE4038;   /* accent — drive, ambition */
+  --brand-red-hover:   #D63028;
+  --brand-orange:      #F7A53C;   /* supporting — energy */
+  --brand-sky:         #29C2F5;   /* supporting — global outlook */
+  --brand-ink:         #231F20;   /* near-black */
+
+  /* ---------- DARK THEME (hero + feature sections) ---------- */
+  --bg-dark:        #0E0D24;      /* near-black, navy-tinted */
+  --surface-1:      #16153A;      /* raised panel */
+  --surface-2:      #1E1D47;      /* more raised */
+  --glass:          rgba(255,255,255,0.05);
+  --glass-strong:   rgba(255,255,255,0.08);
+  --glass-border:   rgba(255,255,255,0.12);
+
+  /* ---------- LIGHT THEME (content sections) ---------- */
+  --bg-light:       #FFFFFF;
+  --surface-light:  #F7F8FA;
+  --surface-light-2:#EEF0F4;
+  --border-light:   #E4E7EC;
+
+  /* ---------- TEXT ---------- */
+  --text-on-dark:        #FFFFFF;
+  --text-on-dark-muted:  rgba(255,255,255,0.64);
+  --text-on-dark-subtle: rgba(255,255,255,0.40);
+  --text-strong:         #1A1830;   /* headings on light */
+  --text-body:           #3F4254;   /* body on light */
+  --text-muted:          #6B7280;   /* muted on light */
+
+  /* ---------- ACCENT GRADIENT + GLOWS ---------- */
+  --accent-gradient: linear-gradient(135deg, #EE4038 0%, #FF7A2F 55%, #F7A53C 100%);
+  --sky-gradient:    linear-gradient(135deg, #29C2F5 0%, #2E8FE0 100%);
+  --glow-red:        0 0 40px rgba(238,64,56,0.45);
+  --glow-sky:        0 0 36px rgba(41,194,245,0.35);
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --font-display: 'Sora', sans-serif;
+  --font-body:    'Manrope', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  /* fluid type scale */
+  --fs-display: clamp(2.8rem, 6vw, 5rem);     /* hero headline */
+  --fs-h1:      clamp(2.2rem, 5vw, 3.4rem);
+  --fs-h2:      clamp(1.7rem, 3.5vw, 2.5rem);
+  --fs-h3:      clamp(1.25rem, 2.5vw, 1.6rem);
+  --fs-h4:      1.15rem;
+  --fs-lg:      1.15rem;
+  --fs-body:    1rem;
+  --fs-sm:      0.9rem;
+  --fs-label:   0.75rem;                      /* uppercase mono label */
+
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-semibold:600;
+  --fw-bold:    700;
+  --fw-extra:   800;
+
+  --lh-tight:   1.1;
+  --lh-snug:    1.3;
+  --lh-normal:  1.6;
+  --lh-relaxed: 1.75;
+
+  --ls-label:   0.16em;
+  --ls-tight:   -0.02em;
+
+  /* ---------- SPACING (4px base) ---------- */
+  --space-2xs:  4px;
+  --space-xs:   8px;
+  --space-sm:   12px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   32px;
+  --space-2xl:  48px;
+  --space-3xl:  64px;
+  --space-4xl:  80px;
+  --space-5xl:  120px;
+
+  /* ---------- RADII (subtle round) ---------- */
+  --radius-sm:   6px;
+  --radius:      10px;   /* buttons, inputs */
+  --radius-lg:   14px;   /* cards */
+  --radius-xl:   20px;   /* large panels */
+  --radius-pill: 999px;
+
+  /* ---------- SHADOWS ---------- */
+  --shadow-sm:   0 1px 3px rgba(16,13,40,0.06), 0 1px 2px rgba(16,13,40,0.04);
+  --shadow-md:   0 4px 12px rgba(16,13,40,0.08);
+  --shadow-lg:   0 14px 40px rgba(16,13,40,0.12);
+  --shadow-xl:   0 24px 60px rgba(16,13,40,0.16);
+  --shadow-glass:0 12px 48px rgba(0,0,0,0.40);
+
+  /* ---------- MOTION ---------- */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:    0.2s;
+  --dur:         0.4s;
+  --dur-slow:    0.7s;
+  --dur-slower:  1.1s;
+
+  /* ---------- LAYOUT ---------- */
+  --container:        1200px;
+  --container-narrow: 820px;
+  --gutter:           24px;
+  --bp-sm:            640px;
+  --bp-md:            900px;
+  --bp-lg:            1200px;
+}

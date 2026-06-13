@@ -1,0 +1,16 @@
+{
+  "successfulDoctors": 2000,
+  "successfulDoctorsSuffix": "+",
+  "yearsExperience": 24,
+  "yearsExperienceSuffix": "+",
+  "fmgePassRate": 92,
+  "fmgePassRateSuffix": "%",
+  "mockTests": 50,
+  "mockTestsSuffix": "+",
+  "hoursOfTraining": 800,
+  "hoursOfTrainingSuffix": "",
+  "countriesServed": 10,
+  "countriesServedSuffix": "",
+  "studentsAbove200": 21,
+  "studentsAbove200Suffix": ""
+}
