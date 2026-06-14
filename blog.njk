@@ -1,0 +1,168 @@
+---
+permalink: /blog.html
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News &amp; Insights — MBBS Abroad, FMGE &amp; Updates | LIMRA</title>
+  <meta name="description" content="Latest news, guides and updates on studying MBBS abroad, FMGE preparation, NMC guidelines and student life in the Philippines and Timor-Leste — from LIMRA's 24+ years of experience." />
+  <meta name="keywords" content="MBBS abroad, FMGE coaching, study medicine Philippines, NMC guidelines, FMGE 2026, medical education news" />
+  <link rel="canonical" href="https://www.limraedu.com/blog.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LIMRA Overseas Education" />
+  <meta property="og:title" content="News &amp; Insights — MBBS Abroad, FMGE &amp; Updates | LIMRA" />
+  <meta property="og:description" content="Latest news, guides and updates on studying MBBS abroad, FMGE preparation and NMC guidelines." />
+  <meta property="og:url" content="https://www.limraedu.com/blog.html" />
+  <meta property="og:image" content="https://www.limraedu.com/assets/graduation-wide.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="News &amp; Insights — MBBS Abroad, FMGE &amp; Updates | LIMRA" />
+  <meta name="twitter:image" content="https://www.limraedu.com/assets/graduation-wide.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/pages.css" />
+  <link rel="stylesheet" href="/css/blog.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "LIMRA News & Insights",
+    "description": "News, guides and updates on studying MBBS abroad, FMGE preparation and NMC guidelines.",
+    "url": "https://www.limraedu.com/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "LIMRA Overseas Education",
+      "logo": { "@type": "ImageObject", "url": "https://www.limraedu.com/assets/logo.svg" }
+    },
+    "blogPost": [
+      {%- for post in collections.posts %}
+      {
+        "@type": "BlogPosting",
+        "headline": {{ post.data.title | dump | safe }},
+        "datePublished": "{{ post.data.date | isoDate }}",
+        "author": { "@type": "Organization", "name": {{ post.data.author | default("LIMRA Team") | dump | safe }} },
+        "url": "https://www.limraedu.com{% if post.data.link %}{{ post.data.link }}{% else %}{{ post.url }}{% endif %}",
+        "image": "https://www.limraedu.com{{ post.data.image }}",
+        "description": {{ post.data.description | dump | safe }}
+      }{% if not loop.last %},{% endif %}
+      {%- endfor %}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.limraedu.com/" },
+      { "@type": "ListItem", "position": 2, "name": "News & Insights", "item": "https://www.limraedu.com/blog.html" }
+    ]
+  }
+  </script>
+</head>
+<body data-page="blog">
+
+  {% include "partials/nav.njk" %}
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span><span>News &amp; Insights</span>
+      </div>
+      <h1>News &amp; <span class="grad">Insights</span></h1>
+      <p class="lead">Guides, updates and announcements on studying MBBS abroad, FMGE preparation and NMC norms — straight from LIMRA's 24+ years of experience.</p>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="section section--light">
+    <div class="container">
+
+      <div class="blog-toolbar" id="blogFilters">
+        <button class="bfilter active" data-filter="all">All</button>
+        <button class="bfilter" data-filter="medical-education">Medical Education</button>
+        <button class="bfilter" data-filter="fmge">FMGE Coaching</button>
+        <button class="bfilter" data-filter="news">News &amp; Updates</button>
+      </div>
+
+      {% set featured = collections.posts[0] %}
+      {% if featured %}
+      <a class="blog-featured" href="{% if featured.data.link %}{{ featured.data.link }}{% else %}{{ featured.url }}{% endif %}" data-cat="{{ featured.data.filter }}">
+        <div class="blog-featured-img">
+          <img src="{{ featured.data.image }}" alt="{{ featured.data.imageAlt | default(featured.data.title) }}" loading="lazy" />
+        </div>
+        <div class="blog-featured-body">
+          <span class="featured-flag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg> Featured</span>
+          <h2>{{ featured.data.title }}</h2>
+          <p>{{ featured.data.description }}</p>
+          <div class="post-meta">
+            <span class="post-cat">{{ featured.data.category }}</span>
+            <time class="post-date" datetime="{{ featured.data.date | isoDate }}">{{ featured.data.date | readableDate }}</time>
+            <span class="post-dot">·</span>
+            <span class="post-readtime">{{ featured.data.readtime | default("5 min read") }}</span>
+          </div>
+        </div>
+      </a>
+      {% endif %}
+
+      <div class="blog-grid" id="blogGrid">
+        {%- for post in collections.posts %}
+        {%- if not loop.first %}
+        <a class="post-card" href="{% if post.data.link %}{{ post.data.link }}{% else %}{{ post.url }}{% endif %}" data-cat="{{ post.data.filter }}">
+          <img class="post-card-img" src="{{ post.data.image }}" alt="{{ post.data.imageAlt | default(post.data.title) }}" loading="lazy" />
+          <div class="post-card-body">
+            <div class="post-meta">
+              <span class="post-cat">{{ post.data.category }}</span>
+              <time class="post-date" datetime="{{ post.data.date | isoDate }}">{{ post.data.date | readableDate }}</time>
+            </div>
+            <h3>{{ post.data.title }}</h3>
+            <p>{{ post.data.description }}</p>
+            <span class="post-card-foot">{{ post.data.cardCta | default("Read more") }} <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+          </div>
+        </a>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--tight cta-band">
+    <div class="container text-center">
+      <span class="eyebrow eyebrow--accent">Still Have Questions?</span>
+      <h2 class="section-title">Talk to a counsellor — free</h2>
+      <p class="section-sub">Our counsellors have answered these questions for 24 years. Get personalised guidance at no charge.</p>
+      <div class="cta-actions">
+        <a href="/contact.html" class="btn btn-primary btn-lg">Get Free Counselling</a>
+        <a href="/coaching.html" class="btn btn-ghost btn-lg">FMGE Coaching</a>
+      </div>
+    </div>
+  </section>
+
+  {% include "partials/footer.njk" %}
+
+  <script src="/js/main.js"></script>
+  <script>
+    (function () {
+      var filters = document.getElementById('blogFilters');
+      var featured = document.querySelector('.blog-featured');
+      var cards = Array.prototype.slice.call(document.querySelectorAll('#blogGrid .post-card'));
+      filters.addEventListener('click', function (e) {
+        var btn = e.target.closest('.bfilter');
+        if (!btn) return;
+        filters.querySelectorAll('.bfilter').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var f = btn.dataset.filter;
+        cards.forEach(function (c) { c.classList.toggle('is-hidden', f !== 'all' && c.dataset.cat !== f); });
+        if (featured) featured.style.display = (f === 'all' || featured.dataset.cat === f) ? '' : 'none';
+      });
+    })();
+  </script>
+</body>
+</html>

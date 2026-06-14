@@ -1,6 +1,10 @@
 # LIMRA Overseas Education — Netlify config
-# Static site, no build step. Publish the repo root as-is.
+# Eleventy builds the blog/news into static HTML; everything else is copied
+# through unchanged. Publish the generated _site/ directory.
 
 [build]
-  publish = "."
-  command = ""
+  publish = "_site"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"

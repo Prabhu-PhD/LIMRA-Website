@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} | LIMRA</title>
+  <meta name="description" content="{{ description }}" />
+  {% if keywords %}<meta name="keywords" content="{{ keywords }}" />{% endif %}
+  <link rel="canonical" href="https://www.limraedu.com{{ page.url }}" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="{{ date | isoDate }}" />
+  <meta property="og:site_name" content="LIMRA Overseas Education" />
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:url" content="https://www.limraedu.com{{ page.url }}" />
+  <meta property="og:image" content="https://www.limraedu.com{{ image }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ title }}" />
+  <meta name="twitter:image" content="https://www.limraedu.com{{ image }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/pages.css" />
+  <link rel="stylesheet" href="/css/blog.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ title | dump | safe }},
+    "description": {{ description | dump | safe }},
+    "image": "https://www.limraedu.com{{ image }}",
+    "datePublished": "{{ date | isoDate }}",
+    "dateModified": "{{ date | isoDate }}",
+    "author": { "@type": "Organization", "name": {{ author | default("LIMRA Team") | dump | safe }} },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LIMRA Overseas Education",
+      "logo": { "@type": "ImageObject", "url": "https://www.limraedu.com/assets/logo.svg" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.limraedu.com{{ page.url }}" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.limraedu.com/" },
+      { "@type": "ListItem", "position": 2, "name": "News & Insights", "item": "https://www.limraedu.com/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": {{ title | dump | safe }}, "item": "https://www.limraedu.com{{ page.url }}" }
+    ]
+  }
+  </script>
+</head>
+<body data-page="blog-article">
+
+  {% include "partials/nav.njk" %}
+
+  <article class="section section--light" style="padding-top:var(--space-4xl);">
+    <div class="container">
+      <div class="article-wrap">
+
+        <a href="/blog.html" class="article-back"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4L3 8l4 4"/></svg> Back to News &amp; Insights</a>
+
+        <header class="article-head">
+          <div class="post-meta">
+            <span class="post-cat">{{ category }}</span>
+            <time class="post-date" datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
+            <span class="post-dot">·</span>
+            <span class="post-readtime">{{ readtime | default("5 min read") }}</span>
+          </div>
+          <h1>{{ title }}</h1>
+          <div class="article-byline">
+            <span class="article-author">
+              <span class="article-author-avatar">L</span>
+              <span class="article-author-name">{{ author | default("LIMRA Team") }}</span>
+            </span>
+          </div>
+        </header>
+
+        {% if image %}
+        <div class="article-hero-img">
+          <img src="{{ image }}" alt="{{ imageAlt | default(title) }}" />
+        </div>
+        {% endif %}
+
+        <div class="prose">
+          {{ content | safe }}
+        </div>
+
+        <div class="article-cta">
+          <h3>{{ ctaTitle | default("Thinking about MBBS abroad?") }}</h3>
+          <p>{{ ctaText | default("Talk to a LIMRA counsellor about the right path for you — free, no pressure.") }}</p>
+          <a href="{{ ctaHref | default('/contact.html') }}" class="btn btn-primary btn-lg">{{ ctaLabel | default("Get Free Counselling") }}</a>
+        </div>
+
+      </div>
+    </div>
+  </article>
+
+  {% include "partials/footer.njk" %}
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

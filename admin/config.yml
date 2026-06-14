@@ -1,0 +1,62 @@
+# Decap CMS configuration for LIMRA News & Insights
+# Requires Netlify Identity + Git Gateway to be enabled on the Netlify site.
+
+backend:
+  name: git-gateway
+  branch: main
+
+# Uncomment the next line to test the CMS locally with `npx decap-server`:
+# local_backend: true
+
+media_folder: "assets"
+public_folder: "/assets"
+
+site_url: https://www.limraedu.com
+display_url: https://www.limraedu.com
+logo_url: https://www.limraedu.com/assets/logo.svg
+
+collections:
+  - name: "posts"
+    label: "News & Insights"
+    label_singular: "Post"
+    folder: "blog/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "yaml-frontmatter"
+    summary: "{{date | date('YYYY-MM-DD')}} — {{title}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - label: "Category (badge text)"
+        name: "category"
+        widget: "select"
+        options: ["Medical Education", "FMGE Coaching", "News"]
+        default: "News"
+      - label: "Filter group"
+        name: "filter"
+        widget: "select"
+        hint: "Controls which filter tab the card appears under."
+        options:
+          - { label: "Medical Education", value: "medical-education" }
+          - { label: "FMGE Coaching", value: "fmge" }
+          - { label: "News & Updates", value: "news" }
+        default: "news"
+      - { label: "Card / hero image", name: "image", widget: "image", hint: "Shown on the blog card and at the top of the article." }
+      - { label: "Image alt text", name: "imageAlt", widget: "string", required: false }
+      - { label: "Short summary", name: "description", widget: "text", hint: "1–2 sentences. Shown on the card and used for SEO." }
+      - { label: "Read time", name: "readtime", widget: "string", required: false, default: "5 min read" }
+      - { label: "Author", name: "author", widget: "string", required: false, default: "LIMRA Team" }
+      - { label: "SEO keywords", name: "keywords", widget: "string", required: false }
+      - label: "Quick-news link (optional)"
+        name: "link"
+        widget: "string"
+        required: false
+        hint: "For a SHORT news item that just links to an existing page (e.g. /coaching.html), put the path here and leave the body empty. Leave blank to publish a full article page."
+      - { label: "Card button text", name: "cardCta", widget: "string", required: false, default: "Read more" }
+      - { label: "End CTA — heading", name: "ctaTitle", widget: "string", required: false }
+      - { label: "End CTA — text", name: "ctaText", widget: "text", required: false }
+      - { label: "End CTA — button label", name: "ctaLabel", widget: "string", required: false, default: "Get Free Counselling" }
+      - { label: "End CTA — button link", name: "ctaHref", widget: "string", required: false, default: "/contact.html" }
+      - { label: "Article body", name: "body", widget: "markdown", required: false, hint: "The full article. Leave empty for a quick-news link item." }

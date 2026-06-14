@@ -1,0 +1,14 @@
+{
+  "name": "limra-website",
+  "version": "1.0.0",
+  "description": "LIMRA Overseas Education — static site (Eleventy + Decap CMS for the blog/news).",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
