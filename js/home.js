@@ -117,20 +117,7 @@
   document.querySelectorAll(".reveal, [data-count-section]").forEach(function (el) { io.observe(el); });
 
   /* ---------- ENQUIRY FORM ---------- */
-  var form = document.getElementById("enquiryForm");
-  var msg = document.getElementById("enquiryMsg");
-  if (form && msg) {
-    form.addEventListener("submit", function (e) {
-      var onNetlify = /netlify\.app$|limraedu\.com$/.test(location.hostname);
-      if (!onNetlify) {
-        e.preventDefault();
-        var name = (form.querySelector('[name="name"]') || {}).value || "there";
-        form.querySelectorAll("input,select,button").forEach(function (el) { el.disabled = true; });
-        msg.textContent = "Thanks, " + name + "! Our team will call you back shortly. (Demo — live delivery goes on once the site is deployed.)";
-        msg.classList.add("show");
-      }
-    });
-  }
+  /* Submission is handled host-agnostically by /js/forms.js (Web3Forms). */
 
   /* ---------- TESTIMONIALS CAROUSEL ---------- */
   (function () {

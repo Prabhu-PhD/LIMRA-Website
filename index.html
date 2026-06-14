@@ -103,9 +103,9 @@
   <!-- ====================== QUICK ENQUIRY STRIP ====================== -->
   <div class="enquiry-wrap" id="enquiry">
     <div class="container">
-      <form class="enquiry-strip" id="enquiryForm" name="enquiry" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="enquiry" />
-        <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <form class="enquiry-strip js-web3form" id="enquiryForm" name="enquiry" method="POST" action="https://api.web3forms.com/submit" data-redirect="/thank-you.html">
+        <input type="hidden" name="subject" value="New website enquiry (home page)" />
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important" />
         <div class="enquiry-lead"><div class="t">Get free counselling</div><div class="s">Our experts call you back.</div></div>
         <div class="field"><label for="eq-name">Full name</label><input id="eq-name" type="text" name="name" placeholder="Your name" required /></div>
         <div class="field"><label for="eq-phone">Phone</label><input id="eq-phone" type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required /></div>
@@ -526,6 +526,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="js/home.js"></script>
+  <script src="/js/forms.js"></script>
 
   <!-- News ticker: pulls the latest items from the CMS-generated /news.json -->
   <script>
