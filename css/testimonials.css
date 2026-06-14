@@ -1,0 +1,78 @@
+/* ============================================================
+   testimonials.css — Success Stories page
+   Builds on tokens.css + pages.css
+   ============================================================ */
+
+/* ---------- hero stat bar ---------- */
+.t-hero-stats { display: flex; align-items: stretch; gap: var(--space-2xl); margin-top: var(--space-2xl); flex-wrap: wrap; }
+.ths-item { display: flex; flex-direction: column; gap: 6px; }
+.ths-val {
+  font-family: var(--font-display); font-weight: var(--fw-extra);
+  font-size: 2.1rem; line-height: 1;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.ths-label { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-on-dark-subtle); }
+.ths-divider { width: 1px; background: var(--glass-border); }
+
+/* ---------- testimonials grid ---------- */
+.tgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-lg); }
+.tcard {
+  position: relative;
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  display: flex; flex-direction: column;
+  transition: box-shadow var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+}
+.tcard:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.tquote-mark {
+  font-family: var(--font-display); font-weight: var(--fw-extra);
+  font-size: 3rem; line-height: .8; height: 28px;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.tquote { font-size: .92rem; color: var(--text-body); line-height: var(--lh-relaxed); margin: var(--space-md) 0 var(--space-lg); flex: 1; }
+.tscore {
+  display: inline-flex; align-self: flex-start; align-items: center; gap: 6px;
+  font-family: var(--font-mono); font-size: .66rem; letter-spacing: .04em;
+  padding: 5px 12px; border-radius: var(--radius-pill);
+  background: rgba(238,64,56,.07); border: 1px solid rgba(238,64,56,.2); color: var(--brand-red);
+  margin-bottom: var(--space-lg);
+}
+.tscore svg { width: 12px; height: 12px; }
+.tcard-foot { display: flex; align-items: center; gap: var(--space-md); padding-top: var(--space-lg); border-top: 1px solid var(--border-light); }
+.tavatar {
+  width: 46px; height: 46px; border-radius: 50%; flex: none;
+  background: var(--accent-gradient);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 1rem; color: #fff;
+}
+.tname { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: .92rem; color: var(--text-strong); }
+.tmeta { font-family: var(--font-mono); font-size: .64rem; letter-spacing: .03em; color: var(--text-muted); margin-top: 3px; }
+
+/* ---------- stats band (dark) ---------- */
+.t-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-md); text-align: center; }
+.t-stat-val {
+  font-family: var(--font-display); font-weight: var(--fw-extra);
+  font-size: 2.4rem; line-height: 1;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.t-stat-label { font-family: var(--font-mono); font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-on-dark-muted); margin-top: 8px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 960px) {
+  .tgrid { grid-template-columns: repeat(2, 1fr); }
+  .t-stats { grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+}
+@media (max-width: 600px) {
+  .tgrid { grid-template-columns: 1fr; }
+  .t-hero-stats { gap: var(--space-lg); }
+  .ths-divider { display: none; }
+}
