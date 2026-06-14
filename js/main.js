@@ -54,19 +54,31 @@ function initActiveNavLink() {
 }
 
 function initScrollAnimations() {
-  const els = document.querySelectorAll('.fade-in');
-  if (!els.length) return;
+  const fadeEls = document.querySelectorAll('.fade-in');
+  if (fadeEls.length) {
+    const fadeObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => fadeObs.observe(el));
+  }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-
-  els.forEach(el => observer.observe(el));
+  const revealEls = document.querySelectorAll('.reveal');
+  if (revealEls.length) {
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => revealObs.observe(el));
+  }
 }
 
 function initStatCounters() {
