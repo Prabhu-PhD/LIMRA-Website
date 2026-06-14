@@ -11,7 +11,7 @@
    Until a real key is set, forms will show an error instead of sending.
    ============================================================ */
 (function () {
-  var ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+  var ACCESS_KEY = "e2ada0b6-6b85-4459-a825-800d4c1762cb";
 
   function handle(form) {
     var msg = form.querySelector(".enquiry-msg, .form-msg, [data-form-msg]");
