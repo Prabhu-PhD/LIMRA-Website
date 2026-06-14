@@ -1,64 +1,278 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery — LIMRA Students, Graduations & Campus Life</title>
-  <meta name="description" content="See photos from LIMRA student life, graduation ceremonies, campus activities and partner colleges in Philippines and Timor-Leste.">
-  <link rel="canonical" href="https://www.limraedu.com/gallery.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="LIMRA Overseas Education">
-  <meta property="og:title" content="Gallery — LIMRA Students, Graduations &amp; Campus Life">
-  <meta property="og:description" content="See photos from LIMRA student life, graduation ceremonies, campus activities and partner colleges in Philippines and Timor-Leste.">
-  <meta property="og:url" content="https://www.limraedu.com/gallery.html">
-  <meta property="og:image" content="https://www.limraedu.com/assets/logo.svg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Gallery — LIMRA Students, Graduations & Campus Life">
-  <meta name="twitter:description" content="See photos from LIMRA student life, graduation ceremonies, campus activities and partner colleges in Philippines and Timor-Leste.">
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/config.js"></script>
-  <script defer src="/js/seo.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — LIMRA Students, Graduations &amp; Campus Life</title>
+  <meta name="description" content="Graduation ceremonies, campus life and clinical training — captured moments from the journeys of 2,000+ LIMRA doctors across the Philippines and Timor-Leste." />
+  <link rel="canonical" href="https://www.limraedu.com/gallery.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LIMRA Overseas Education" />
+  <meta property="og:title" content="Gallery — LIMRA Students, Graduations &amp; Campus Life" />
+  <meta property="og:description" content="Captured moments from the journeys of 2,000+ LIMRA doctors." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/pages.css" />
+  <link rel="stylesheet" href="/css/gallery.css" />
 </head>
 <body data-page="gallery">
-<nav class="navbar" id="navbar">
-  <div class="container navbar-inner">
-    <a href="/" class="navbar-brand"><img src="/assets/logo-white.svg" alt="LIMRA" class="navbar-logo"></a>
-    <button class="navbar-toggle" id="navToggle"><span></span><span></span><span></span></button>
-    <ul class="navbar-menu" id="navMenu">
-      <li><a href="/" class="nav-link">Home</a></li><li><a href="/about.html" class="nav-link">About</a></li>
-      <li class="nav-dropdown"><a href="/colleges.html" class="nav-link">Colleges <span class="dropdown-arrow">▾</span></a><ul class="dropdown-menu"><li><a href="/colleges/lyceum.html">Lyceum Northwestern University</a></li><li><a href="/colleges/dmsf.html">Davao Medical School Foundation</a></li><li><a href="/colleges/brokenshire.html">Brokenshire College</a></li><li><a href="/colleges/gcm.html">Gullas College of Medicine</a></li><li><a href="/colleges/ucts.html">UCTS</a></li><li><a href="/colleges/university-of-peace.html">University of PEACE</a></li></ul></li>
-      <li><a href="/coaching.html" class="nav-link">FMGE Coaching</a></li><li><a href="/medical-tourism.html" class="nav-link">Medical Tourism</a></li><li><a href="/gallery.html" class="nav-link active">Gallery</a></li><li><a href="/contact.html" class="nav-link nav-cta">Enquire Now</a></li>
-    </ul>
-  </div>
-</nav>
-<section class="page-hero">
-  <div class="container page-hero-content">
-    <div class="breadcrumb"><a href="/">Home</a><span>›</span><span>Gallery</span></div>
-    <h1>Our Legacy in Pictures</h1>
-    <p>Graduation ceremonies, campus life, clinical training sessions, and FMGE success celebrations — captured moments from the journeys of 2000+ LIMRA doctors.</p>
-  </div>
-</section>
-<section class="section-pad">
-  <div class="container">
-    <div class="gallery-grid" id="galleryGrid" style="grid-template-columns:repeat(auto-fill,minmax(300px,1fr));"></div>
-    <div id="galleryEmpty" style="display:none;text-align:center;padding:80px 20px;">
-      <div style="font-size:4rem;margin-bottom:16px;">📸</div>
-      <h3 style="color:var(--navy);margin-bottom:8px;">Gallery Coming Soon</h3>
-      <p style="color:var(--gray-600);">We are curating our best photos. Check back soon!</p>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" aria-label="LIMRA home"><img class="nav-logo" src="/assets/logo-white.svg" alt="LIMRA Overseas Education" /></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li class="nav-dropdown">
+          <a href="/colleges.html">Colleges <span class="nav-caret">▾</span></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/colleges/lyceum.html">Lyceum Northwestern University</a></li>
+            <li><a href="/colleges/dmsf.html">Davao Medical School Foundation</a></li>
+            <li><a href="/colleges/brokenshire.html">Brokenshire College</a></li>
+            <li><a href="/colleges/gcm.html">Gullas College of Medicine</a></li>
+            <li><a href="/colleges/ucts.html">Universidade Católica Timorense</a></li>
+            <li><a href="/colleges/university-of-peace.html">University of PEACE</a></li>
+          </ul>
+        </li>
+        <li><a href="/coaching.html">FMGE Coaching</a></li>
+        <li><a href="/medical-tourism.html">Medical Tourism</a></li>
+        <li><a href="/gallery.html" class="active">Gallery</a></li>
+        <li><a href="/contact.html" class="nav-cta">Enquire Now</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-</section>
-<section class="cta-section">
-  <div class="container">
-    <h2>Be Part of Our Story</h2>
-    <p>Join thousands of LIMRA students and start your journey to becoming a doctor today.</p>
-    <div class="cta-actions">
-      <a href="/contact.html" class="btn btn-primary btn-lg">Enquire Now</a>
-      <a href="/colleges.html" class="btn btn-outline btn-lg">Explore Colleges</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span><span>Gallery</span>
+      </div>
+      <h1>Our Legacy<br /><span class="grad">in Pictures</span></h1>
+      <p class="lead">Graduation ceremonies, campus life and clinical training — captured moments from the journeys of 2,000+ LIMRA doctors.</p>
+      <div class="g-hero-stats">
+        <div class="ghs-item">
+          <span class="ghs-val">2,000+</span>
+          <span class="ghs-label">Doctors Placed</span>
+        </div>
+        <div class="ghs-divider"></div>
+        <div class="ghs-item">
+          <span class="ghs-val">6</span>
+          <span class="ghs-label">Partner Campuses</span>
+        </div>
+        <div class="ghs-divider"></div>
+        <div class="ghs-item">
+          <span class="ghs-val">24 yrs</span>
+          <span class="ghs-label">Of Memories</span>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="gallery-filters" id="galleryFilters">
+        <button class="gfilter active" data-filter="all">All</button>
+        <button class="gfilter" data-filter="graduation">Graduations</button>
+        <button class="gfilter" data-filter="campus">Campus</button>
+        <button class="gfilter" data-filter="student-life">Student Life</button>
+      </div>
+
+      <div class="gallery-masonry" id="galleryGrid">
+        <figure class="gallery-item" data-cat="graduation" data-caption="Graduation day — a new doctor is made">
+          <img src="/assets/graduation-wide.jpg" alt="LIMRA graduates at their graduation ceremony" loading="lazy" />
+          <figcaption class="gallery-cap"><div class="gc-title">Graduation Day</div><div class="gc-tag">Graduations</div></figcaption>
+        </figure>
+        <figure class="gallery-item" data-cat="campus" data-caption="Lyceum Northwestern University campus, Dagupan">
+          <img src="/assets/campus-1.jpg" alt="Lyceum Northwestern University campus" loading="lazy" />
+          <figcaption class="gallery-cap"><div class="gc-title">Lyceum Northwestern</div><div class="gc-tag">Campus</div></figcaption>
+        </figure>
+        <figure class="gallery-item" data-cat="student-life" data-caption="Study sessions in the campus library">
+          <img src="/assets/students-library.jpg" alt="LIMRA students studying in the library" loading="lazy" />
+          <figcaption class="gallery-cap"><div class="gc-title">In the Library</div><div class="gc-tag">Student Life</div></figcaption>
+        </figure>
+        <figure class="gallery-item" data-cat="graduation" data-caption="Celebrating FMGE success together">
+          <img src="/assets/graduation-1.jpg" alt="LIMRA graduates celebrating" loading="lazy" />
+          <figcaption class="gallery-cap"><div class="gc-title">Celebration</div><div class="gc-tag">Graduations</div></figcaption>
+        </figure>
+        <figure class="gallery-item" data-cat="campus" data-caption="Gullas College of Medicine campus, Cebu">
+          <img src="/assets/campus-2.jpg" alt="Gullas College of Medicine campus" loading="lazy" />
+          <figcaption class="gallery-cap"><div class="gc-title">Gullas College of Medicine</div><div class="gc-tag">Campus</div></figcaption>
+        </figure>
+        <figure class="gallery-item" data-cat="student-life" data-caption="Hands-on training in the laboratory">
+          <img src="/assets/facility-lab.jpg" alt="Students in a medical laboratory" loading="lazy" />
+          <figcaption class="gallery-cap"><div class="gc-title">Lab Training</div><div class="gc-tag">Student Life</div></figcaption>
+        </figure>
+        <figure class="gallery-item" data-cat="graduation" data-caption="Proud moment at the ceremony">
+          <img src="/assets/graduation-2.jpg" alt="LIMRA graduate at ceremony" loading="lazy" />
+          <figcaption class="gallery-cap"><div class="gc-title">Proud Moment</div><div class="gc-tag">Graduations</div></figcaption>
+        </figure>
+        <figure class="gallery-item" data-cat="campus" data-caption="Davao Medical School Foundation campus">
+          <img src="/assets/campus-dmsf.jpg" alt="Davao Medical School Foundation campus" loading="lazy" />
+          <figcaption class="gallery-cap"><div class="gc-title">DMSF, Davao</div><div class="gc-tag">Campus</div></figcaption>
+        </figure>
+        <figure class="gallery-item" data-cat="graduation" data-caption="The whole batch, together at last">
+          <img src="/assets/graduation-3.jpg" alt="LIMRA graduating batch" loading="lazy" />
+          <figcaption class="gallery-cap"><div class="gc-title">The Whole Batch</div><div class="gc-tag">Graduations</div></figcaption>
+        </figure>
+        <figure class="gallery-item" data-cat="campus" data-caption="Brokenshire College campus, Davao">
+          <img src="/assets/campus-brokenshire.jpg" alt="Brokenshire College campus" loading="lazy" />
+          <figcaption class="gallery-cap"><div class="gc-title">Brokenshire College</div><div class="gc-tag">Campus</div></figcaption>
+        </figure>
+        <figure class="gallery-item" data-cat="campus" data-caption="DMSF teaching hospital and campus grounds">
+          <img src="/assets/dmsf-campus.jpg" alt="DMSF campus grounds" loading="lazy" />
+          <figcaption class="gallery-cap"><div class="gc-title">Campus Grounds</div><div class="gc-tag">Campus</div></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--tight cta-band">
+    <div class="container text-center">
+      <span class="eyebrow eyebrow--accent">Your Story Next</span>
+      <h2 class="section-title">Be part of our story</h2>
+      <p class="section-sub">Join thousands of LIMRA students and start your journey to becoming a doctor today.</p>
+      <div class="cta-actions">
+        <a href="/contact.html" class="btn btn-primary btn-lg">Enquire Now</a>
+        <a href="/colleges.html" class="btn btn-ghost btn-lg">Explore Colleges</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/"><img src="/assets/logo-white.svg" alt="LIMRA Overseas Education" class="footer-logo" /></a>
+          <p class="footer-desc">Guiding aspiring doctors to premier medical universities in the Philippines and Timor-Leste for over 24 years. No.1 FMGE coaching institute in South India.</p>
+          <div class="footer-social">
+            <a href="https://wa.me/919445783333" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="/about.html">About LIMRA</a></li>
+            <li><a href="/colleges.html">Partner colleges</a></li>
+            <li><a href="/coaching.html">FMGE coaching</a></li>
+            <li><a href="/medical-tourism.html">Medical tourism</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/testimonials.html">Success stories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Colleges</h4>
+          <ul>
+            <li><a href="/colleges/lyceum.html">Lyceum Northwestern</a></li>
+            <li><a href="/colleges/dmsf.html">DMSF — Davao</a></li>
+            <li><a href="/colleges/brokenshire.html">Brokenshire</a></li>
+            <li><a href="/colleges/gcm.html">Gullas College of Medicine</a></li>
+            <li><a href="/colleges/ucts.html">Universidade Católica Timorense</a></li>
+            <li><a href="/colleges/university-of-peace.html">University of PEACE</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>New No.177, Royapettah High Road, 1st Floor, SMS Centre, Mylapore, Chennai - 600 004</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div><a href="tel:+919444375000">+91-94443 75000</a><br /><a href="tel:+919445783333">+91-94457 83333</a></div>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:info@limraedu.com">info@limraedu.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LIMRA Overseas Education. All rights reserved.</p>
+        <p>Director: Mohammed Ghani</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+    <img id="lbImg" src="" alt="" />
+    <div class="lightbox-cap" id="lbCap"></div>
+    <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next">&#8250;</button>
   </div>
-</section>
-<footer class="footer"><div class="container"><div class="footer-grid"><div><img src="/assets/logo-white.svg" alt="LIMRA" class="footer-logo"><p class="footer-desc">Guiding aspiring doctors for over 24 years.</p></div><div class="footer-col"><h4>Quick Links</h4><ul><li><a href="/about.html">About</a></li><li><a href="/colleges.html">Colleges</a></li><li><a href="/coaching.html">FMGE Coaching</a></li><li><a href="/contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Colleges</h4><ul><li><a href="/colleges/lyceum.html">Lyceum Northwestern</a></li><li><a href="/colleges/dmsf.html">DMSF</a></li><li><a href="/colleges/brokenshire.html">Brokenshire</a></li><li><a href="/colleges/gcm.html">GCM</a></li></ul></div><div class="footer-col"><h4>Contact</h4><div class="footer-contact-item"><span class="footer-contact-icon">📞</span><div class="footer-contact-text"><a href="tel:+919444375000">+91-944437 5000</a></div></div></div></div><div class="footer-bottom"><p>&copy; 2026 LIMRA Overseas Education. All rights reserved.</p></div></div></footer>
-<a href="https://wa.me/919445783333" target="_blank" class="whatsapp-fab"><svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-<script src="/js/main.js"></script><script src="/js/content.js"></script><script>loadGallery('galleryGrid');</script>
-</body></html>
+
+  <a href="https://wa.me/919445783333" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="/js/main.js"></script>
+  <script>
+    (function () {
+      var grid = document.getElementById('galleryGrid');
+      var items = Array.prototype.slice.call(grid.querySelectorAll('.gallery-item'));
+      var filters = document.getElementById('galleryFilters');
+
+      // ----- filtering -----
+      filters.addEventListener('click', function (e) {
+        var btn = e.target.closest('.gfilter');
+        if (!btn) return;
+        filters.querySelectorAll('.gfilter').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var f = btn.dataset.filter;
+        items.forEach(function (it) {
+          it.classList.toggle('is-hidden', f !== 'all' && it.dataset.cat !== f);
+        });
+      });
+
+      // ----- lightbox -----
+      var lb = document.getElementById('lightbox');
+      var lbImg = document.getElementById('lbImg');
+      var lbCap = document.getElementById('lbCap');
+      var current = 0;
+
+      function visibleItems() { return items.filter(function (it) { return !it.classList.contains('is-hidden'); }); }
+      function show(i) {
+        var vis = visibleItems();
+        if (!vis.length) return;
+        current = (i + vis.length) % vis.length;
+        var it = vis[current];
+        lbImg.src = it.querySelector('img').src;
+        lbImg.alt = it.querySelector('img').alt;
+        lbCap.textContent = it.dataset.caption || '';
+      }
+      function open(it) {
+        current = visibleItems().indexOf(it);
+        show(current);
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden', 'false');
+      }
+      function close() { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); }
+
+      items.forEach(function (it) { it.addEventListener('click', function () { open(it); }); });
+      document.getElementById('lbClose').addEventListener('click', close);
+      document.getElementById('lbPrev').addEventListener('click', function () { show(current - 1); });
+      document.getElementById('lbNext').addEventListener('click', function () { show(current + 1); });
+      lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') show(current - 1);
+        else if (e.key === 'ArrowRight') show(current + 1);
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* ============================================================
+   gallery.css — Gallery page
+   Builds on tokens.css + pages.css
+   ============================================================ */
+
+/* ---------- hero stat bar ---------- */
+.g-hero-stats { display: flex; align-items: stretch; gap: var(--space-2xl); margin-top: var(--space-2xl); flex-wrap: wrap; }
+.ghs-item { display: flex; flex-direction: column; gap: 6px; }
+.ghs-val {
+  font-family: var(--font-display); font-weight: var(--fw-extra);
+  font-size: 2.1rem; line-height: 1;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.ghs-label { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-on-dark-subtle); }
+.ghs-divider { width: 1px; background: var(--glass-border); }
+
+/* ---------- filter chips ---------- */
+.gallery-filters { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: var(--space-2xl); }
+.gfilter {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .04em;
+  padding: 9px 18px; border-radius: var(--radius-pill);
+  background: var(--bg-light); color: var(--text-body);
+  border: 1px solid var(--border-light); cursor: pointer;
+  transition: background var(--dur-fast), color var(--dur-fast), border-color var(--dur-fast);
+}
+.gfilter:hover { border-color: var(--brand-red); color: var(--brand-red); }
+.gfilter.active { background: var(--accent-gradient); color: #fff; border-color: transparent; }
+
+/* ---------- masonry grid ---------- */
+.gallery-masonry { columns: 3; column-gap: var(--space-md); }
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: var(--space-md);
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  background: var(--surface-light);
+}
+.gallery-item img { width: 100%; display: block; transition: transform var(--dur) var(--ease-out); }
+.gallery-item:hover img { transform: scale(1.06); }
+.gallery-cap {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: var(--space-lg) var(--space-md) var(--space-md);
+  background: linear-gradient(to top, rgba(11,10,36,.88), transparent);
+  color: #fff;
+  opacity: 0; transform: translateY(8px);
+  transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+}
+.gallery-item:hover .gallery-cap { opacity: 1; transform: translateY(0); }
+.gallery-cap .gc-title { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: .95rem; }
+.gallery-cap .gc-tag { font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; color: var(--brand-orange); margin-top: 3px; }
+.gallery-item.is-hidden { display: none; }
+
+/* ---------- lightbox ---------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  background: rgba(8,7,22,.94);
+  display: none; align-items: center; justify-content: center;
+  padding: var(--space-2xl);
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 92vw; max-height: 84vh; border-radius: var(--radius-lg); box-shadow: var(--shadow-glass); }
+.lightbox-cap { position: absolute; bottom: var(--space-xl); left: 0; right: 0; text-align: center; color: #fff; font-family: var(--font-display); font-size: 1rem; }
+.lightbox-close {
+  position: absolute; top: var(--space-xl); right: var(--space-xl);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--glass); border: 1px solid var(--glass-border);
+  color: #fff; font-size: 1.4rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--dur-fast);
+}
+.lightbox-close:hover { background: var(--glass-strong); }
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--glass); border: 1px solid var(--glass-border);
+  color: #fff; font-size: 1.5rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background var(--dur-fast);
+}
+.lightbox-nav:hover { background: var(--glass-strong); }
+.lightbox-prev { left: var(--space-xl); }
+.lightbox-next { right: var(--space-xl); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .gallery-masonry { columns: 2; }
+}
+@media (max-width: 560px) {
+  .gallery-masonry { columns: 1; }
+  .g-hero-stats { gap: var(--space-lg); }
+  .ghs-divider { display: none; }
+  .lightbox-prev { left: var(--space-sm); }
+  .lightbox-next { right: var(--space-sm); }
+}
