@@ -173,17 +173,7 @@
   margin: 0;
 }
 
-/* ---------- CTA band ---------- */
-.cta-band { background: linear-gradient(135deg, #0b0a24 0%, #161430 100%); }
-.cta-band .section-title { color: #fff; }
-.cta-band .section-sub { color: var(--text-on-dark-muted); max-width: 52ch; margin: var(--space-md) auto 0; }
-.cta-actions {
-  display: flex;
-  gap: var(--space-md);
-  justify-content: center;
-  margin-top: var(--space-xl);
-  flex-wrap: wrap;
-}
+/* ---------- CTA band + .cta-actions now live in pages.css (shared) ---------- */
 
 /* ---------- responsive ---------- */
 @media (max-width: 1024px) {
