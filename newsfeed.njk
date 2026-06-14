@@ -1,0 +1,14 @@
+---
+permalink: /news.json
+eleventyExcludeFromCollections: true
+---
+[
+{%- for post in collections.posts %}
+  {
+    "title": {{ post.data.title | dump | safe }},
+    "url": "{% if post.data.link %}{{ post.data.link }}{% else %}{{ post.url }}{% endif %}",
+    "category": {{ post.data.category | dump | safe }},
+    "date": "{{ post.data.date | isoDate }}"
+  }{% if not loop.last %},{% endif %}
+{%- endfor %}
+]

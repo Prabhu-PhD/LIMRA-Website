@@ -43,6 +43,7 @@
         <li><a href="/coaching.html">FMGE Coaching</a></li>
         <li><a href="/medical-tourism.html">Medical Tourism</a></li>
         <li><a href="/gallery.html">Gallery</a></li>
+        <li><a href="/blog.html">News</a></li>
         <li><a href="/contact.html" class="nav-cta">Enquire Now</a></li>
       </ul>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -122,6 +123,14 @@
         <button type="submit" class="btn btn-primary">Request call →</button>
         <div class="enquiry-msg" id="enquiryMsg" role="status"></div>
       </form>
+    </div>
+  </div>
+
+  <!-- ====================== NEWS TICKER ====================== -->
+  <div class="news-ticker" id="newsTicker" aria-label="Latest news" hidden>
+    <div class="news-ticker-label"><span class="dot"></span> Latest</div>
+    <div class="news-ticker-viewport">
+      <div class="news-ticker-track" id="newsTickerTrack"></div>
     </div>
   </div>
 
@@ -517,5 +526,53 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="js/home.js"></script>
+
+  <!-- News ticker: pulls the latest items from the CMS-generated /news.json -->
+  <script>
+    (function () {
+      var ticker = document.getElementById('newsTicker');
+      var track = document.getElementById('newsTickerTrack');
+      if (!ticker || !track) return;
+      fetch('/news.json').then(function (r) { return r.ok ? r.json() : []; }).then(function (items) {
+        if (!items || !items.length) return;
+        function build() {
+          return items.map(function (it) {
+            var a = document.createElement('a');
+            a.className = 'news-ticker-item';
+            a.href = it.url;
+            var cat = document.createElement('span');
+            cat.className = 'nt-cat';
+            cat.textContent = it.category || 'News';
+            a.appendChild(cat);
+            a.appendChild(document.createTextNode(it.title));
+            var sep = document.createElement('span');
+            sep.className = 'news-ticker-sep';
+            sep.textContent = '•';
+            var frag = document.createDocumentFragment();
+            frag.appendChild(a);
+            frag.appendChild(sep);
+            return frag;
+          });
+        }
+        // duplicate the set so the -50% loop is seamless
+        build().forEach(function (f) { track.appendChild(f); });
+        build().forEach(function (f) { track.appendChild(f); });
+        ticker.hidden = false;
+      }).catch(function () {});
+    })();
+  </script>
+
+  <!-- Netlify Identity: lets invited users accept the invite & set a password,
+       and routes logged-in users to the /admin CMS. -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function (user) {
+        if (!user) {
+          window.netlifyIdentity.on('login', function () { document.location.href = '/admin/'; });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
