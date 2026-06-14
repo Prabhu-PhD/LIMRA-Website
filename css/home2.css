@@ -77,6 +77,32 @@
 
 .hero2 + .enquiry-wrap{margin-top:-90px;}
 
+/* ============================================================
+   MEDIUM-ELECTRIC BLUE — dark sections (Home 2 test only)
+   This file only loads on home2.html, so these overrides are
+   automatically scoped to Home 2 and never touch other pages.
+   ============================================================ */
+.enquiry-wrap{
+  background:
+    radial-gradient(90% 130% at 82% 0%, rgba(41,140,255,.22) 0%, transparent 55%),
+    linear-gradient(180deg, #0a1450 0%, #0a1147 100%);
+}
+.section--dark{
+  background:
+    radial-gradient(110% 150% at 78% 0%, rgba(41,140,255,.26) 0%, transparent 56%),
+    linear-gradient(160deg, #0a1450 0%, #0c1a64 52%, #0a1450 100%);
+}
+.cta-band{
+  background:
+    radial-gradient(120% 170% at 50% -25%, rgba(41,150,255,.32) 0%, transparent 60%),
+    linear-gradient(160deg, #0c1660 0%, #0a1250 100%);
+}
+.footer{
+  background:
+    radial-gradient(80% 130% at 86% 0%, rgba(41,120,245,.16) 0%, transparent 55%),
+    #08103a;
+}
+
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:900px){
   .hero2{padding:120px 0 90px;min-height:92vh;align-items:flex-end;}
