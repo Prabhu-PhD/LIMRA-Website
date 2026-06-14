@@ -21,7 +21,7 @@
 (function () {
   var FRAME_COUNT = 71;                 // number of frames in /assets/hero-seq/
   var DIR = "/assets/hero-seq/";
-  var PREFIX = "frame-", EXT = ".jpg", PAD = 4;
+  var PREFIX = "frame-", EXT = ".webp", PAD = 4;
 
   var img  = document.getElementById("heroSeqImg");
   var hero = document.querySelector(".hero2");
