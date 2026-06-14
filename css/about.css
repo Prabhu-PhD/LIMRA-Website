@@ -1,0 +1,176 @@
+/* ============================================================
+   about.css — About LIMRA page
+   Builds on tokens.css + pages.css
+   ============================================================ */
+
+/* ---------- hero stat bar ---------- */
+.about-hero-stats {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-2xl);
+  margin-top: var(--space-2xl);
+  flex-wrap: wrap;
+}
+.ahs-item { display: flex; flex-direction: column; gap: 6px; }
+.ahs-val {
+  font-family: var(--font-display);
+  font-weight: var(--fw-extra);
+  font-size: 2.1rem;
+  line-height: 1;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.ahs-label {
+  font-family: var(--font-mono);
+  font-size: .66rem; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--text-on-dark-subtle);
+}
+.ahs-divider { width: 1px; background: var(--glass-border); }
+
+/* ---------- our story ---------- */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+.story-media {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+.story-media img { width: 100%; height: 480px; object-fit: cover; display: block; }
+.story-media-badge {
+  position: absolute;
+  left: var(--space-lg); bottom: var(--space-lg);
+  background: rgba(14,13,36,.7);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 14px 20px; color: #fff;
+}
+.smb-val { font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 1.5rem; line-height: 1; }
+.smb-label {
+  font-family: var(--font-mono); font-size: .6rem; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--text-on-dark-muted); margin-top: 5px;
+}
+.story-lead {
+  font-size: var(--fs-lg); color: var(--text-strong);
+  font-weight: var(--fw-medium); line-height: var(--lh-normal);
+  margin: var(--space-md) 0 var(--space-md);
+}
+.story-body p { color: var(--text-muted); line-height: var(--lh-relaxed); margin-bottom: var(--space-md); }
+.story-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--space-lg); }
+.story-tag {
+  font-family: var(--font-mono); font-size: .66rem; letter-spacing: .03em;
+  padding: 7px 13px; border-radius: var(--radius-pill);
+  background: var(--surface-light-2); color: var(--text-body);
+}
+
+/* ---------- journey timeline (dark) ---------- */
+.timeline { position: relative; max-width: 740px; margin: var(--space-3xl) auto 0; }
+.tl-item { position: relative; padding: 0 0 var(--space-2xl) 52px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before {
+  content: ''; position: absolute; left: 14px; top: 10px; bottom: -10px; width: 2px;
+  background: linear-gradient(to bottom, var(--brand-red), rgba(255,255,255,.08));
+}
+.tl-item:last-child::before { display: none; }
+.tl-dot {
+  position: absolute; left: 5px; top: 4px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--accent-gradient); box-shadow: var(--glow-red);
+  border: 3px solid var(--bg-dark);
+}
+.tl-year {
+  font-family: var(--font-mono); font-weight: 700; font-size: .82rem; letter-spacing: .06em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.tl-title { font-family: var(--font-display); font-weight: var(--fw-semibold); font-size: 1.15rem; color: #fff; margin: 4px 0 6px; }
+.tl-desc { font-size: .94rem; color: var(--text-on-dark-muted); line-height: var(--lh-normal); max-width: 54ch; }
+
+/* ---------- principles (mission/vision/values/commitment) ---------- */
+.principles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+}
+.principle {
+  position: relative;
+  background: var(--bg-light);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-xl) var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: box-shadow var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
+}
+.principle:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+.principle-index {
+  position: absolute; top: 14px; right: var(--space-lg);
+  font-family: var(--font-display); font-weight: var(--fw-extra);
+  font-size: 3.4rem; line-height: 1; color: var(--surface-light-2);
+  user-select: none;
+}
+.principle-icon {
+  width: 48px; height: 48px; border-radius: var(--radius);
+  background: var(--accent-gradient);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--space-md);
+}
+.principle-icon svg { width: 24px; height: 24px; color: #fff; }
+.principle h3 { font-family: var(--font-display); font-weight: var(--fw-bold); font-size: 1.12rem; color: var(--text-strong); margin-bottom: 8px; }
+.principle p { font-size: .92rem; color: var(--text-muted); line-height: var(--lh-normal); }
+
+/* ---------- director pull-quote (dark card on gray) ---------- */
+.director {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+  max-width: 900px;
+  margin: var(--space-2xl) auto 0;
+  background: var(--surface-1);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-xl);
+}
+.director-portrait {
+  width: 132px; height: 132px; border-radius: 50%;
+  background: var(--accent-gradient);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-weight: var(--fw-extra);
+  font-size: 2.8rem; color: #fff; box-shadow: var(--glow-red); flex: none;
+}
+.director-quote {
+  font-family: var(--font-display); font-weight: var(--fw-medium);
+  font-size: 1.3rem; line-height: var(--lh-snug); color: #fff;
+  margin-bottom: var(--space-lg);
+}
+.director-quote .grad {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.director-name { font-family: var(--font-display); font-weight: var(--fw-bold); color: #fff; font-size: 1.05rem; }
+.director-role { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; color: var(--brand-orange); margin-top: 5px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .story-grid { grid-template-columns: 1fr; gap: var(--space-2xl); }
+  .story-media img { height: 340px; }
+  .principles { grid-template-columns: 1fr; }
+  .director { grid-template-columns: 1fr; text-align: center; justify-items: center; padding: var(--space-xl); }
+  .about-hero-stats { gap: var(--space-lg); }
+  .ahs-divider { display: none; }
+}
+@media (max-width: 480px) {
+  .about-hero-stats { gap: var(--space-md) var(--space-xl); }
+  .ahs-val { font-size: 1.7rem; }
+}
