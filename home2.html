@@ -45,9 +45,15 @@
     </div>
   </nav>
 
-  <!-- ============================ HERO (BLUE / FIGURE) ============================ -->
-  <header class="hero2">
-    <div class="container hero2-grid">
+  <!-- ============================ HERO (FULL-BLEED FRAME SEQUENCE) ============================ -->
+  <header class="hero2" id="hero2">
+    <div class="hero2-media">
+      <img class="hero2-frame" id="heroSeqImg" src="assets/hero-seq/frame-0001.jpg" alt="LIMRA medical student" />
+    </div>
+    <div class="hero2-scrim left"></div>
+    <div class="hero2-scrim bottom"></div>
+
+    <div class="container hero2-inner">
       <div class="hero2-copy">
         <h1>Your dream of becoming a <span class="grad">doctor</span> starts here</h1>
         <p class="lead">Premier medical colleges in the Philippines &amp; Timor-Leste, backed by South India's No.1 FMGE coaching — guiding students to become doctors for over two decades.</p>
@@ -65,19 +71,11 @@
           <div class="hstat"><div class="n"><span data-count="92" data-suffix="%">0</span></div><div class="l">FMGE pass rate</div></div>
         </div>
       </div>
+    </div>
 
-      <div class="hero2-figure" id="heroFigure">
-        <img src="assets/hero-student.png" alt="LIMRA medical student"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
-        <div class="figure-placeholder" style="display:none">
-          <strong>Add the hero image</strong>
-          Save the girl photo as<br /><strong>assets/hero-student.png</strong><br />(ideally a cut-out with transparent background)
-        </div>
-        <div class="scrub-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/><polyline points="9 6 15 12 9 18" transform="translate(6 0)"/></svg>
-          Move cursor to animate
-        </div>
-      </div>
+    <div class="scrub-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 18 7 12 13 6"/><polyline points="17 6 23 12 17 18"/></svg>
+      Move cursor to animate
     </div>
     <div class="wordmark">LIMRA</div>
   </header>
