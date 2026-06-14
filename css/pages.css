@@ -32,6 +32,7 @@ ul{list-style:none;}
 .eyebrow--accent{background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
 .eyebrow--sky{color:var(--brand-sky);}
 .section-head{max-width:680px;margin:0 auto var(--space-3xl);text-align:center;}
+.text-center{text-align:center;}
 .section-head .section-title{margin:var(--space-md) 0 var(--space-sm);}
 .section-title{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-h2);
   line-height:var(--lh-snug);letter-spacing:var(--ls-tight);color:var(--text-strong);}
