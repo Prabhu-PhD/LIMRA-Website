@@ -43,9 +43,9 @@ C:\Users\prabh\source\repos\LIMRA\        ← git root = Netlify publish root
 ```
 
 **Assets in `/assets/`:**
-- Campus photos: `campus-1.jpg`, `campus-2.jpg`, `campus-brokenshire.jpg`, `campus-dmsf.jpg`
-- Facilities: `facility-lab.jpg`, `students-library.jpg`
-- Graduation: `graduation-1.jpg`, `graduation-2.jpg`, `graduation-3.jpg`, `graduation-wide.jpg`
+- Campus photos: `campus-1.webp`, `campus-2.webp`, `campus-brokenshire.webp`, `campus-dmsf.webp`
+- Facilities: `facility-lab.webp`, `students-library.webp`
+- Graduation: `graduation-1.webp`, `graduation-2.webp`, `graduation-3.webp`, `graduation-wide.webp`
 - Logos (Pillow-processed PNGs, 420px square): `logo-lyceum.png`, `logo-dmsf.png`, `logo-brokenshire.png`, `logo-gcm.png`, `logo-ucts.png`, `logo-peace.png`
 - SVG world map: `world-dots.svg` (transparent gray dots, viewBox 3606.62×1768.98, ~2.04:1 ratio)
 - LIMRA logos: `logo.svg`, `logo-white.svg`
