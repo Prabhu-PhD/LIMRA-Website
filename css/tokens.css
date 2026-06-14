@@ -40,7 +40,7 @@
   --text-muted:          #6B7280;   /* muted on light */
 
   /* ---------- ACCENT GRADIENT + GLOWS ---------- */
-  --accent-gradient: linear-gradient(135deg, #EE4038 0%, #FF7A2F 55%, #F7A53C 100%);
+  --accent-gradient: linear-gradient(135deg, #C0241D 0%, #EE4038 55%, #FF5A4E 100%);
   --sky-gradient:    linear-gradient(135deg, #29C2F5 0%, #2E8FE0 100%);
   --glow-red:        0 0 40px rgba(238,64,56,0.45);
   --glow-sky:        0 0 36px rgba(41,194,245,0.35);
