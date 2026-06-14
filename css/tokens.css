@@ -1,10 +1,10 @@
 /* ============================================================
    LIMRA OVERSEAS EDUCATION — DESIGN TOKENS (v1)
    Single source of truth. Change a value here → whole site updates.
-   Fonts: Sora (display), Manrope (body), Space Mono (labels/numbers)
+   Fonts: Sora (display), Manrope (body), DM Mono (labels/numbers)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap');
 
 :root {
   /* ---------- BRAND COLORS (official) ---------- */
@@ -48,7 +48,7 @@
   /* ---------- TYPOGRAPHY ---------- */
   --font-display: 'Sora', sans-serif;
   --font-body:    'Manrope', sans-serif;
-  --font-mono:    'Space Mono', monospace;
+  --font-mono:    'DM Mono', monospace;
 
   /* fluid type scale */
   --fs-display: clamp(2.8rem, 6vw, 5rem);     /* hero headline */
