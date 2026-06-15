@@ -25,7 +25,36 @@ const I = {
   activity: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
   bed: '<path d="M3 7v11"/><path d="M3 13h16a2 2 0 0 1 2 2v3"/><path d="M3 18h18"/><path d="M7 13V9.5A1.5 1.5 0 0 1 8.5 8H12"/>',
   cpu: '<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>',
+  building: '<rect x="4" y="3" width="16" height="18" rx="2"/><line x1="12" y1="8" x2="12" y2="14"/><line x1="9" y1="11" x2="15" y2="11"/>',
+  award: '<circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/>',
 };
+
+// Shared content that repeats across the LIMRA college brochures.
+const STD_TECH_ITEMS = [
+  { icon: "monitor", title: "Virtual Reality Anatomy", text: "Explore the human body in immersive 3D — visualising structures impossible to see in textbooks." },
+  { icon: "cube", title: "Plastinated Models", text: "Real preserved anatomical specimens for detailed, hands-on structural study." },
+  { icon: "user", title: "Simulation Mannequins", text: "Lifelike patient simulators to practise clinical procedures safely before the wards." },
+  { icon: "layers", title: "3D Anatomage & Cadavers", text: "Digital dissection tables alongside cadaveric study for complete anatomical understanding." },
+];
+const STD_LEARNING = [
+  { icon: "users", title: "Team Learning Centre", text: "Collaborative spaces designed for small-group, case-based study." },
+  { icon: "book", title: "Modern Knowledge Centre", text: "An extensive medical library with digital journals and resources." },
+  { icon: "monitor", title: "Smart Classrooms", text: "AV-equipped rooms with e-learning access and recorded lectures." },
+  { icon: "flask", title: "Fully Equipped Labs", text: "Advanced laboratories for anatomy, physiology and clinical skills." },
+  { icon: "clipboard", title: "Ergonomic Exam Halls", text: "Purpose-built halls for a focused, exam-ready environment." },
+];
+const STD_DEPARTMENTS = [
+  { icon: "heart", title: "Cardiology", text: "Observe intricate cardiac procedures and master cardiovascular disease management." },
+  { icon: "activity", title: "Neurology", text: "Diagnose and treat neurological conditions with hands-on clinical experience." },
+  { icon: "shield", title: "Oncology", text: "Witness cancer-treatment advances and build a holistic understanding of patient care." },
+  { icon: "pulse", title: "Orthopedics", text: "Engage in surgical interventions and musculoskeletal management." },
+  { icon: "droplet", title: "Nephrology", text: "Diagnose and manage renal disease, including dialysis and related procedures." },
+  { icon: "activity", title: "Gastroenterology", text: "Participate in endoscopic procedures and digestive-ailment management." },
+  { icon: "wind", title: "Pulmonology", text: "Explore respiratory conditions and master pulmonary function testing." },
+  { icon: "pulse", title: "Endocrinology", text: "Manage hormonal imbalances and diabetes with comprehensive, interpretive care." },
+];
+const STD_DEPT_SUB = "Hands-on clinical exposure across eight core specialties — building real diagnostic and treatment confidence.";
+const STD_TECH_SUB = "Modern technology blended with medical education to create future-ready doctors.";
 const svg = (n, w = 1.8) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${I[n] || I.pulse}</svg>`;
 
 function head(cls, eyebrow, title, sub) {
@@ -61,12 +90,12 @@ ${cards}
 
 function tech(d) {
   if (!d.tech) return null;
-  const cards = d.tech.items.map((t) =>
+  const cards = (d.tech.items || STD_TECH_ITEMS).map((t) =>
     `        <div class="tech-card"><div class="tech-media">${svg(t.icon)}</div><div class="tech-body"><h4>${t.title}</h4><p>${t.text}</p></div></div>`).join("\n");
   return `<!-- TECH-ENABLED TEACHING -->
   <section class="section section--dark">
     <div class="container">
-${head("eyebrow--sky", "Tech-Enabled Teaching", d.tech.title, d.tech.sub)}
+${head("eyebrow--sky", "Tech-Enabled Teaching", d.tech.title, d.tech.sub || STD_TECH_SUB)}
       <div class="tech-grid reveal">
 ${cards}
       </div>
@@ -75,7 +104,7 @@ ${cards}
 }
 
 function learning(d) {
-  const cards = d.learning.map((l) =>
+  const cards = (d.learning || STD_LEARNING).map((l) =>
     `        <div class="lf-card"><div class="lf-icon">${svg(l.icon)}</div><h4>${l.title}</h4><p>${l.text}</p></div>`).join("\n");
   return `<!-- LEARNING FACILITIES -->
   <section class="section section--light">
@@ -108,12 +137,12 @@ ${items}
 }
 
 function departments(d) {
-  const cards = d.departments.map((x) =>
+  const cards = (d.departments || STD_DEPARTMENTS).map((x) =>
     `        <div class="dept-card"><div class="dept-media">${svg(x.icon)}</div><div class="dept-body"><h4>${x.title}</h4><p>${x.text}</p></div></div>`).join("\n");
   return `<!-- MAJOR DEPARTMENTS -->
   <section class="section section--light">
     <div class="container">
-${head("eyebrow--accent", "Major Departments", "Hands-On Practice Across Major Departments", d.deptSub)}
+${head("eyebrow--accent", "Major Departments", "Hands-On Practice Across Major Departments", d.deptSub || STD_DEPT_SUB)}
       <div class="dept-grid reveal">
 ${cards}
       </div>
@@ -134,36 +163,30 @@ const DATA = {
       { name: "San Pedro Hospital", type: "Affiliated Teaching Hospital", note: "A long-established hospital rounding out training across community and specialty care." },
     ],
     clinStats: [{ n: "4500+", l: "Bed-capacity exposure", icon: "bed" }, { n: "Early", l: "Patient interaction", icon: "users" }, { n: "Advanced", l: "Medical-technology training", icon: "cpu" }],
-    tech: {
-      title: "Innovative Education for Exceptional Healthcare",
-      sub: "DMSF integrates modern technology with medical education to create future-ready doctors.",
-      items: [
-        { icon: "monitor", title: "Virtual Reality Anatomy", text: "Explore the human body in immersive 3D — visualising structures impossible to see in textbooks." },
-        { icon: "cube", title: "Plastinated Models", text: "Real preserved anatomical specimens for detailed, hands-on structural study." },
-        { icon: "user", title: "Simulation Mannequins", text: "Lifelike patient simulators to practise clinical procedures safely before the wards." },
-        { icon: "layers", title: "3D Anatomage & Cadavers", text: "Digital dissection tables alongside cadaveric study for complete anatomical understanding." },
-      ],
-    },
-    learning: [
-      { icon: "users", title: "Team Learning Centre", text: "Collaborative spaces designed for small-group, case-based study." },
-      { icon: "book", title: "Modern Knowledge Centre", text: "An extensive medical library with digital journals and resources." },
-      { icon: "monitor", title: "Smart Classrooms", text: "AV-equipped rooms with e-learning access and recorded lectures." },
-      { icon: "flask", title: "Fully Equipped Labs", text: "Advanced laboratories for anatomy, physiology and clinical skills." },
-      { icon: "clipboard", title: "Ergonomic Exam Halls", text: "Purpose-built halls for a focused, exam-ready environment." },
-    ],
+    tech: { title: "Innovative Education for Exceptional Healthcare", sub: "DMSF integrates modern technology with medical education to create future-ready doctors." },
     hostel: ["Separate hostels for boys &amp; girls", "Safe &amp; secure environment", "South &amp; North Indian food available"],
     hostelImg: "/assets/students-library.webp",
-    deptSub: "Hands-on clinical exposure across eight core specialties — building real diagnostic and treatment confidence.",
-    departments: [
-      { icon: "heart", title: "Cardiology", text: "Observe intricate cardiac procedures and master cardiovascular disease management." },
-      { icon: "activity", title: "Neurology", text: "Diagnose and treat neurological conditions with hands-on clinical experience." },
-      { icon: "shield", title: "Oncology", text: "Witness cancer-treatment advances and build a holistic understanding of patient care." },
-      { icon: "pulse", title: "Orthopedics", text: "Engage in surgical interventions and musculoskeletal management." },
-      { icon: "droplet", title: "Nephrology", text: "Diagnose and manage renal disease, including dialysis and related procedures." },
-      { icon: "activity", title: "Gastroenterology", text: "Participate in endoscopic procedures and digestive-ailment management." },
-      { icon: "wind", title: "Pulmonology", text: "Explore respiratory conditions and master pulmonary function testing." },
-      { icon: "pulse", title: "Endocrinology", text: "Manage hormonal imbalances and diabetes with comprehensive, interpretive care." },
+  },
+
+  brokenshire: {
+    name: "Brokenshire",
+    clinTitle: "Real Clinical Exposure Across Five Hospitals",
+    clinSub: "Brokenshire students train across five accredited hospitals with a combined 4,500+ beds — immense, hands-on clinical practice that shapes confident doctors.",
+    hospitals: [
+      { name: "Brokenshire Hospital", type: "Primary Teaching Hospital", note: "Brokenshire's own multispecialty hospital — core rotations across all major departments with hands-on patient care." },
+      { name: "Davao Doctors Hospital", type: "Private Teaching Hospital", note: "A leading private medical facility in Davao with broad clinical exposure." },
+      { name: "DMS Foundation Hospital", type: "Affiliated Teaching Hospital", note: "A respected teaching hospital offering rotations across core specialties." },
+      { name: "Southern Philippines Medical Centre", type: "Tertiary Referral Centre", note: "One of Mindanao's largest hospitals — advanced procedures and complex cases." },
+      { name: "San Pedro Hospital", type: "Affiliated Teaching Hospital", note: "A long-established hospital rounding out community and specialty training." },
     ],
+    clinStats: [
+      { n: "4500+", l: "Combined bed strength", icon: "bed" },
+      { n: "5", l: "Multispecialty hospitals", icon: "building" },
+      { n: "Since 1954", l: "Clinical heritage", icon: "award" },
+    ],
+    tech: { title: "Innovative Education for Exceptional Healthcare", sub: "Brokenshire blends modern technology with traditional anatomy learning to create future-ready doctors." },
+    hostel: ["Separate hostels for boys &amp; girls", "Safe &amp; secure environment", "Comfortable, supportive student living"],
+    hostelImg: "/assets/campus-brokenshire.webp",
   },
 };
 
