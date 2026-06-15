@@ -226,3 +226,71 @@
   .hosp-feat-accent{flex-direction:row;padding:var(--space-lg);justify-content:flex-start;gap:var(--space-lg);}
   .hosp-feat-n{font-size:2rem;}
 }
+
+/* ============================================================
+   NEW SECTIONS (team review): clinical 5-card, tech teaching,
+   learning facilities, hostel split, major departments
+   ============================================================ */
+.hosp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:var(--space-lg);}
+.hosp-card{background:var(--bg-light);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:var(--space-xl);
+  transition:transform var(--dur) var(--ease-out),box-shadow var(--dur) var(--ease-out);}
+.hosp-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.hosp-num{font-family:var(--font-mono);font-size:.78rem;font-weight:700;color:var(--brand-red);margin-bottom:8px;}
+.hosp-card h3{font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:1.02rem;color:var(--text-strong);margin-bottom:8px;line-height:1.3;}
+.hosp-card p{font-size:.88rem;color:var(--text-muted);line-height:1.6;}
+.clin-stats{display:flex;justify-content:center;gap:var(--space-3xl);flex-wrap:wrap;margin-top:var(--space-2xl);}
+.clin-stat{text-align:center;}
+.cs-n{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:1.9rem;color:var(--brand-navy);}
+.cs-l{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-top:5px;}
+
+.tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-lg);}
+.tech-card{background:var(--surface-1);border:1px solid var(--glass-border);border-radius:var(--radius-lg);overflow:hidden;
+  transition:transform var(--dur) var(--ease-out);}
+.tech-card:hover{transform:translateY(-4px);}
+.tech-media{aspect-ratio:16/10;background:linear-gradient(135deg,var(--brand-navy-soft),var(--bg-dark));
+  display:flex;align-items:center;justify-content:center;color:var(--brand-sky);}
+.tech-media svg{width:42px;height:42px;}
+.tech-body{padding:var(--space-lg);}
+.tech-body h4{font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:1rem;color:#fff;margin-bottom:6px;}
+.tech-body p{font-size:.85rem;color:var(--text-on-dark-muted);line-height:1.6;}
+
+.lf-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--space-md);}
+.lf-card{background:var(--bg-light);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:var(--space-lg);text-align:center;
+  transition:transform var(--dur) var(--ease-out),box-shadow var(--dur) var(--ease-out);}
+.lf-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.lf-icon{width:50px;height:50px;border-radius:14px;background:var(--surface-light);display:flex;align-items:center;justify-content:center;
+  margin:0 auto var(--space-sm);color:var(--brand-red);}
+.lf-icon svg{width:24px;height:24px;}
+.lf-card h4{font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:.95rem;color:var(--text-strong);margin-bottom:6px;line-height:1.3;}
+.lf-card p{font-size:.8rem;color:var(--text-muted);line-height:1.55;}
+
+.hostel-split{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3xl);align-items:center;}
+.hostel-media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-xl);border:1px solid var(--glass-border);}
+.hostel-text .section-title{margin:var(--space-sm) 0 0;}
+.hostel-list{margin-top:var(--space-lg);display:flex;flex-direction:column;gap:var(--space-sm);}
+.hostel-list li{display:flex;align-items:center;gap:11px;color:var(--text-on-dark-muted);font-size:1.02rem;}
+.hostel-list li::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--brand-sky);flex:none;}
+
+.dept-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-lg);}
+.dept-card{background:var(--bg-light);border:1px solid var(--border-light);border-radius:var(--radius-lg);overflow:hidden;
+  transition:transform var(--dur) var(--ease-out),box-shadow var(--dur) var(--ease-out);}
+.dept-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.dept-media{aspect-ratio:16/9;background:linear-gradient(135deg,var(--brand-navy),var(--brand-navy-deep));
+  display:flex;align-items:center;justify-content:center;color:#fff;}
+.dept-media svg{width:34px;height:34px;}
+.dept-body{padding:var(--space-md) var(--space-lg) var(--space-lg);}
+.dept-body h4{font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:1rem;color:var(--text-strong);margin-bottom:5px;}
+.dept-body p{font-size:.85rem;color:var(--text-muted);line-height:1.55;}
+
+@media(max-width:1024px){
+  .tech-grid,.dept-grid{grid-template-columns:repeat(2,1fr);}
+  .lf-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:760px){
+  .hostel-split{grid-template-columns:1fr;gap:var(--space-xl);}
+  .lf-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:520px){
+  .tech-grid,.dept-grid,.lf-grid,.hosp-grid{grid-template-columns:1fr;}
+  .clin-stats{gap:var(--space-xl);}
+}
