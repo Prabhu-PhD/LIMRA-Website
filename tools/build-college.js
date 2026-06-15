@@ -225,6 +225,84 @@ const DATA = {
     hostel: ["Safe &amp; well-equipped hostel facilities", "Premium, comfortable accommodation", "Strong focus on student safety"],
     hostelImg: "/assets/campus-2.webp",
   },
+
+  lyceum: {
+    name: "Lyceum (LNU)",
+    clinTitle: "Confidence Begins With Clinical Exposure",
+    clinSub: "Early hospital exposure and hands-on clinical training from the very start of the journey — building real-world medical understanding and decision-making confidence.",
+    hospitals: [
+      { name: "Dagupan Doctors Villaflor Memorial Hospital", type: "Clinical Rotations", note: "Core clinical rotations with hands-on patient interaction from the early years." },
+      { name: "Pangasinan Medical Center", type: "Specialty Exposure", note: "Specialty department exposure across a busy regional hospital." },
+      { name: "Rural Health Units &amp; Barangay Clinics", type: "Community Health", note: "Community health training in rural and primary-care settings." },
+    ],
+    clinStats: [
+      { n: "Early", l: "Hospital exposure", icon: "pulse" },
+      { n: "Hands-on", l: "Patient interaction", icon: "users" },
+      { n: "Community", l: "&amp; specialty rotations", icon: "shield" },
+    ],
+    learning: [
+      { icon: "user", title: "Simulation Labs", text: "Dedicated simulation labs to practise clinical skills before the wards." },
+      { icon: "monitor", title: "Digital Classrooms", text: "Modern, technology-enabled classrooms for interactive learning." },
+      { icon: "book", title: "E-Learning Support", text: "E-learning resources and digital materials for study anytime, anywhere." },
+      { icon: "flask", title: "Advanced Laboratories", text: "Well-equipped science and clinical-skills laboratories." },
+      { icon: "clipboard", title: "Student-Focused Campus", text: "A modern campus built around student comfort and success." },
+    ],
+    hostel: ["On-campus hostel facilities", "Indian food available", "Safe, student-friendly environment"],
+    hostelImg: "/assets/campus-1.webp",
+  },
+
+  ucts: {
+    name: "UCTS",
+    clinTitle: "Real-World Clinical Training",
+    clinSub: "Real-time clinical exposure through hospital partnerships, with early patient interaction and supportive Indian faculty throughout.",
+    hospitals: [
+      { name: "Hospital Partnerships", type: "Clinical Exposure", note: "Real-time clinical exposure through UCT's network of hospital partnerships." },
+      { name: "Early Clinical Training", type: "Hands-On Learning", note: "Patient interaction and hands-on training from the early stages of the program." },
+      { name: "Simulation Centers", type: "Skills Training", note: "Practise clinical procedures in modern simulation centers before the wards." },
+      { name: "Mentored Rotations", type: "Faculty Support", note: "Supportive Indian faculty and mentoring through every clinical rotation." },
+    ],
+    clinStats: [
+      { n: "Real-time", l: "Hospital exposure", icon: "pulse" },
+      { n: "English", l: "Medium instruction", icon: "book" },
+      { n: "Indian", l: "Faculty &amp; mentors", icon: "users" },
+    ],
+    learning: [
+      { icon: "flask", title: "Advanced Laboratories", text: "Well-equipped labs for the medical sciences and clinical skills." },
+      { icon: "user", title: "Simulation Centers", text: "Modern simulation centers to practise clinical procedures safely." },
+      { icon: "book", title: "Full-Fledged Library", text: "A comprehensive medical library with digital resources." },
+      { icon: "clipboard", title: "Research Facilities", text: "Hands-on student research encouraged across the program." },
+      { icon: "monitor", title: "Digital Learning", text: "Technology-enabled, English-medium classrooms for international students." },
+    ],
+    hostel: ["Comfortable student accommodation", "Safe &amp; secure environment", "Friendly, diverse student community"],
+    hostelImg: "/assets/graduation-3.webp",
+  },
+
+  "university-of-peace": {
+    name: "University of PEACE",
+    clinTitle: "Hands-On Training That Builds Confidence",
+    clinSub: "A 12-month rotational internship at UNPAZ's affiliated Guido Valadares National Hospital — hands-on rotations across emergency, critical care, wards, theatres, and rural health.",
+    hospitals: [
+      { name: "Guido Valadares National Hospital", type: "Primary Teaching Hospital", note: "UNPAZ's affiliated national hospital in Dili — a 12-month rotational internship across departments." },
+      { name: "Emergency &amp; Critical Care", type: "Clinical Rotation", note: "Rotations through emergency and critical care units." },
+      { name: "Wards &amp; Operation Theatres", type: "Clinical Rotation", note: "Ward postings and operation-theatre exposure with direct patient care." },
+      { name: "HDU &amp; ICU Settings", type: "Clinical Rotation", note: "Exposure to high-dependency and intensive care settings." },
+      { name: "Rural Health Centers", type: "Community Health", note: "Community and rural health rotations for well-rounded training." },
+    ],
+    clinStats: [
+      { n: "12-month", l: "Rotational internship", icon: "pulse" },
+      { n: "Hands-on", l: "Patient care", icon: "users" },
+      { n: "All depts", l: "Clinical rotations", icon: "shield" },
+    ],
+    learning: [
+      { icon: "monitor", title: "Immersive Learning Space", text: "The ILS offers immersive technologies for anatomical structures and clinical scenarios." },
+      { icon: "user", title: "Simulated Patients", text: "Practise clinical scenarios with simulated patients in a safe, intuitive setting." },
+      { icon: "flask", title: "Modern Laboratories", text: "Well-equipped laboratories for the medical sciences." },
+      { icon: "book", title: "Digital Library &amp; Resources", text: "Comprehensive learning resources and digital materials." },
+      { icon: "clipboard", title: "Practical Skill Labs", text: "Hands-on skill development alongside clinical training." },
+    ],
+    hostel: ["Comfortable student accommodation", "Safe &amp; secure environment", "Indian food available"],
+    hostelImg: "/assets/graduation-2.webp",
+  },
 };
 
 const slug = process.argv[2];
