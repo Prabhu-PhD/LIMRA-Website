@@ -188,6 +188,43 @@ const DATA = {
     hostel: ["Separate hostels for boys &amp; girls", "Safe &amp; secure environment", "Comfortable, supportive student living"],
     hostelImg: "/assets/campus-brokenshire.webp",
   },
+
+  gcm: {
+    name: "Gullas (GCM)",
+    clinTitle: "Where Theory Meets Practice — 8 Hospitals, One Strong Future",
+    clinSub: "GCM offers strong clinical exposure through eight reputed hospitals — hands-on training and real-time patient care that build skills and confidence for medical careers.",
+    hospitals: [
+      { name: "Vicente Sotto Memorial Medical Center", type: "Tertiary Government Hospital", note: "One of Cebu's largest referral hospitals — high case volume and advanced procedures." },
+      { name: "The Hospital at Maayo (GCGMH)", type: "Primary Teaching Hospital", note: "Gullas's own modern teaching hospital for core, hands-on rotations." },
+      { name: "Mandaue Medical Center", type: "Affiliated Hospital", note: "Broad clinical exposure across the major departments." },
+      { name: "Cebu City Medical Center", type: "Government Hospital", note: "Community and specialty rotations in a busy city hospital." },
+      { name: "Eversley Childs Sanitarium &amp; General Hospital", type: "Specialty Hospital", note: "Specialised care exposure that rounds out clinical training." },
+    ],
+    clinStats: [
+      { n: "8", l: "Affiliated hospitals", icon: "building" },
+      { n: "Real-time", l: "Patient care", icon: "users" },
+      { n: "Hands-on", l: "Clinical training", icon: "pulse" },
+    ],
+    tech: {
+      title: "More Than a Campus — A Complete Learning Experience",
+      sub: "GCM blends advanced technology with theater-style teaching to make learning immersive.",
+      items: [
+        { icon: "layers", title: "Anatomage Tables", text: "Life-sized digital dissection tables for precise, interactive anatomical study." },
+        { icon: "monitor", title: "Smart-TV Laboratories", text: "Four advanced labs, each with six 100-inch Smart TVs for immersive learning." },
+        { icon: "cpu", title: "Interactive Classrooms", text: "26 air-conditioned classrooms with theater seating and multi-screen interactive technology." },
+        { icon: "book", title: "Digital Library & Resources", text: "A well-equipped library with reading room, digital resources and a book bank." },
+      ],
+    },
+    learning: [
+      { icon: "users", title: "400-Seat Auditorium", text: "A state-of-the-art auditorium with seating capacity for 400." },
+      { icon: "clipboard", title: "Computerized Exam Halls", text: "Two fully computerized examination halls for up to 700 students." },
+      { icon: "user", title: "Lounges & Discussion Rooms", text: "Indoor lounges, group discussion spaces and recreational areas." },
+      { icon: "book", title: "Mentorship & Counselling", text: "Dedicated mentorship and counselling rooms for student support." },
+      { icon: "flask", title: "Library & Cafeterias", text: "Extensive library plus indoor and outdoor cafeterias for staff and students." },
+    ],
+    hostel: ["Safe &amp; well-equipped hostel facilities", "Premium, comfortable accommodation", "Strong focus on student safety"],
+    hostelImg: "/assets/campus-2.webp",
+  },
 };
 
 const slug = process.argv[2];
