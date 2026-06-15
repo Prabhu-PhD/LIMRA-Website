@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initNavbar() {
-  const navbar = document.getElementById('navbar');
+  const navbar = document.getElementById('nav');
   const toggle = document.getElementById('navToggle');
   const menu = document.getElementById('navMenu');
 
