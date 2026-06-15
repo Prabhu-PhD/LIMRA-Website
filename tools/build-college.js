@@ -23,6 +23,8 @@ const I = {
   shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
   wind: '<path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/>',
   activity: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>',
+  bed: '<path d="M3 7v11"/><path d="M3 13h16a2 2 0 0 1 2 2v3"/><path d="M3 18h18"/><path d="M7 13V9.5A1.5 1.5 0 0 1 8.5 8H12"/>',
+  cpu: '<rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>',
 };
 const svg = (n, w = 1.8) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round">${I[n] || I.pulse}</svg>`;
 
@@ -35,19 +37,23 @@ function head(cls, eyebrow, title, sub) {
 }
 
 function clinical(d) {
-  const cards = d.hospitals.map((h, i) =>
-    `        <div class="hosp-card"><div class="hosp-num">${String(i + 1).padStart(2, "0")}</div><h3>${h.name}</h3><p>${h.note}</p></div>`).join("\n");
   const stats = d.clinStats.map((s) =>
-    `        <div class="clin-stat"><div class="cs-n">${s.n}</div><div class="cs-l">${s.l}</div></div>`).join("\n");
+    `        <div class="clin-hl-item"><div class="clin-hl-icon">${svg(s.icon)}</div><div><div class="clin-hl-n">${s.n}</div><div class="clin-hl-l">${s.l}</div></div></div>`).join("\n");
+  const cards = d.hospitals.map((h, i) =>
+    `        <div class="clin-card">
+          <div class="clin-card-top"><span class="clin-num">${String(i + 1).padStart(2, "0")}</span><span class="clin-type">${h.type}</span></div>
+          <h3>${h.name}</h3>
+          <p>${h.note}</p>
+        </div>`).join("\n");
   return `<!-- CLINICAL TRAINING -->
   <section class="section section--light">
     <div class="container">
 ${head("eyebrow--accent", "Clinical Training", d.clinTitle, d.clinSub)}
-      <div class="hosp-grid reveal">
-${cards}
-      </div>
-      <div class="clin-stats reveal">
+      <div class="clin-highlight reveal">
 ${stats}
+      </div>
+      <div class="clin-grid reveal">
+${cards}
       </div>
     </div>
   </section>`;
@@ -121,13 +127,13 @@ const DATA = {
     clinTitle: "Real Hospital Exposure That Makes You a Doctor",
     clinSub: "DMSF students train across five affiliated hospitals with 4,500+ beds — gaining early patient interaction and advanced medical-technology training from the first years.",
     hospitals: [
-      { name: "DMS Foundation Hospital", note: "The Foundation's own teaching hospital — core rotations across all major departments with hands-on patient care." },
-      { name: "Davao Medical Center", note: "A major government referral hospital offering exposure to a high volume and diversity of cases." },
-      { name: "Brokenshire Hospital", note: "A trusted private teaching hospital with rotations across key clinical specialties." },
-      { name: "Southern Philippines Medical Center", note: "One of Mindanao's largest hospitals — advanced procedures and complex case exposure." },
-      { name: "San Pedro Hospital", note: "A long-established hospital rounding out training across community and specialty care." },
+      { name: "DMS Foundation Hospital", type: "Primary Teaching Hospital", note: "The Foundation's own teaching hospital — core rotations across all major departments with hands-on patient care." },
+      { name: "Davao Medical Center", type: "Government Referral Hospital", note: "A major government referral hospital offering exposure to a high volume and diversity of cases." },
+      { name: "Brokenshire Hospital", type: "Private Teaching Hospital", note: "A trusted private teaching hospital with rotations across key clinical specialties." },
+      { name: "Southern Philippines Medical Center", type: "Tertiary Referral Centre", note: "One of Mindanao's largest hospitals — advanced procedures and complex case exposure." },
+      { name: "San Pedro Hospital", type: "Affiliated Teaching Hospital", note: "A long-established hospital rounding out training across community and specialty care." },
     ],
-    clinStats: [{ n: "4500+", l: "Bed-capacity exposure" }, { n: "Early", l: "Patient interaction" }, { n: "Advanced", l: "Medical-technology training" }],
+    clinStats: [{ n: "4500+", l: "Bed-capacity exposure", icon: "bed" }, { n: "Early", l: "Patient interaction", icon: "users" }, { n: "Advanced", l: "Medical-technology training", icon: "cpu" }],
     tech: {
       title: "Innovative Education for Exceptional Healthcare",
       sub: "DMSF integrates modern technology with medical education to create future-ready doctors.",

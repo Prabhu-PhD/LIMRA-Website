@@ -231,17 +231,27 @@
    NEW SECTIONS (team review): clinical 5-card, tech teaching,
    learning facilities, hostel split, major departments
    ============================================================ */
-.hosp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:var(--space-lg);}
-.hosp-card{background:var(--bg-light);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:var(--space-xl);
+.clin-highlight{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-light);border:1px solid var(--border-light);
+  border-radius:var(--radius-lg);overflow:hidden;margin-bottom:var(--space-2xl);}
+.clin-hl-item{background:var(--bg-light);padding:var(--space-lg) var(--space-xl);display:flex;align-items:center;gap:var(--space-md);}
+.clin-hl-icon{width:48px;height:48px;border-radius:13px;background:var(--surface-light);color:var(--brand-red);
+  display:flex;align-items:center;justify-content:center;flex:none;}
+.clin-hl-icon svg{width:24px;height:24px;}
+.clin-hl-n{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:1.55rem;color:var(--brand-navy);line-height:1;}
+.clin-hl-l{font-size:.82rem;color:var(--text-muted);margin-top:4px;}
+
+.clin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:var(--space-lg);}
+.clin-card{position:relative;background:var(--bg-light);border:1px solid var(--border-light);border-radius:var(--radius-lg);
+  padding:var(--space-xl);padding-left:calc(var(--space-xl) + 6px);overflow:hidden;
   transition:transform var(--dur) var(--ease-out),box-shadow var(--dur) var(--ease-out);}
-.hosp-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
-.hosp-num{font-family:var(--font-mono);font-size:.78rem;font-weight:700;color:var(--brand-red);margin-bottom:8px;}
-.hosp-card h3{font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:1.02rem;color:var(--text-strong);margin-bottom:8px;line-height:1.3;}
-.hosp-card p{font-size:.88rem;color:var(--text-muted);line-height:1.6;}
-.clin-stats{display:flex;justify-content:center;gap:var(--space-3xl);flex-wrap:wrap;margin-top:var(--space-2xl);}
-.clin-stat{text-align:center;}
-.cs-n{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:1.9rem;color:var(--brand-navy);}
-.cs-l{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);margin-top:5px;}
+.clin-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent-gradient);}
+.clin-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.clin-card-top{display:flex;align-items:center;gap:10px;margin-bottom:var(--space-sm);}
+.clin-num{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:1.05rem;color:var(--brand-red);}
+.clin-type{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);
+  background:var(--surface-light);padding:4px 10px;border-radius:var(--radius-pill);}
+.clin-card h3{font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:1.05rem;color:var(--text-strong);margin-bottom:8px;line-height:1.3;}
+.clin-card p{font-size:.88rem;color:var(--text-muted);line-height:1.6;}
 
 .tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-lg);}
 .tech-card{background:var(--surface-1);border:1px solid var(--glass-border);border-radius:var(--radius-lg);overflow:hidden;
@@ -289,8 +299,8 @@
 @media(max-width:760px){
   .hostel-split{grid-template-columns:1fr;gap:var(--space-xl);}
   .lf-grid{grid-template-columns:repeat(2,1fr);}
+  .clin-highlight{grid-template-columns:1fr;}
 }
 @media(max-width:520px){
-  .tech-grid,.dept-grid,.lf-grid,.hosp-grid{grid-template-columns:1fr;}
-  .clin-stats{gap:var(--space-xl);}
+  .tech-grid,.dept-grid,.lf-grid,.clin-grid{grid-template-columns:1fr;}
 }
