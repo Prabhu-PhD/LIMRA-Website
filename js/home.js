@@ -74,7 +74,7 @@
       el.className = "node";
       el.style.width = n.s + "px"; el.style.height = n.s + "px";
       el.style.left = (x / SIZE) * 100 + "%"; el.style.top = (y / SIZE) * 100 + "%";
-      el.innerHTML = '<div class="face"><img loading="lazy" alt="LIMRA student" src="https://i.pravatar.cc/160?img=' + n.img + '"></div>';
+      el.innerHTML = '<div class="face"><img loading="lazy" width="160" height="160" alt="LIMRA student" src="/assets/default-avatar.svg"></div>';
       orbitField.appendChild(el);
     });
   }

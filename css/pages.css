@@ -120,8 +120,8 @@ ul{list-style:none;}
 .form-fields{display:flex;flex-direction:column;gap:var(--space-md);}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-md);}
 .form-field{display:flex;flex-direction:column;gap:6px;}
-.form-field label{font-family:var(--font-mono);font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--text-muted);font-weight:var(--fw-bold);}
+.form-field label{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(0,0,0,0.64);font-weight:var(--fw-bold);}
 .form-field input,.form-field select,.form-field textarea{font-family:var(--font-body);font-size:.95rem;
   color:var(--text-strong);background:var(--surface-light);border:1.5px solid var(--border-light);
   border-radius:var(--radius);padding:12px 14px;transition:border-color var(--dur-fast),box-shadow var(--dur-fast);width:100%;}

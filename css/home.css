@@ -144,7 +144,7 @@ ul{list-style:none;}
 .enquiry-lead .t{font-family:var(--font-display);font-weight:var(--fw-bold);color:#fff;font-size:1.05rem;line-height:1.2;}
 .enquiry-lead .s{font-size:.8rem;color:var(--text-on-dark-muted);margin-top:2px;}
 .field{display:flex;flex-direction:column;gap:6px;}
-.field label{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-on-dark-subtle);}
+.field label{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.64);}
 .field input,.field select{font-family:var(--font-body);font-size:.92rem;color:#fff;background:rgba(255,255,255,.04);border:1px solid var(--glass-border);
   border-radius:var(--radius);padding:11px 13px;transition:border-color var(--dur-fast),background var(--dur-fast);}
 .field input::placeholder{color:var(--text-on-dark-subtle);}

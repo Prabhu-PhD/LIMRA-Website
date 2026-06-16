@@ -4,8 +4,6 @@
    Fonts: Sora (display), Manrope (body), DM Mono (labels/numbers)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap');
-
 :root {
   /* ---------- BRAND COLORS (official) ---------- */
   --brand-navy:        #25245D;   /* primary — trust, stability */

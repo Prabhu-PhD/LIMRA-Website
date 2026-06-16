@@ -33,6 +33,8 @@
 
       var label = btn ? btn.textContent : "";
       if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      form.style.opacity = "0.7";
+      form.style.pointerEvents = "none";
       showMsg("", false);
 
       fetch("https://api.web3forms.com/submit", {
@@ -54,7 +56,11 @@
           restore();
         });
 
-      function restore() { if (btn) { btn.disabled = false; btn.textContent = label; } }
+      function restore() { 
+        if (btn) { btn.disabled = false; btn.textContent = label; } 
+        form.style.opacity = "";
+        form.style.pointerEvents = "";
+      }
     });
 
     function showMsg(text, isError) {
