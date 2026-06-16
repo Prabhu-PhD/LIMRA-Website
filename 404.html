@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -8,71 +8,74 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/pages.css" />
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;
-      background:radial-gradient(110% 130% at 70% 0%,rgba(41,140,255,.22) 0%,transparent 56%),linear-gradient(160deg,#0a1450,#0a1147);
-      color:#fff;font-family:var(--font-body);padding:24px}
-    .wrap{max-width:520px}
-    .code{font-family:var(--font-display);font-weight:var(--fw-extra);font-size:clamp(5rem,18vw,9rem);line-height:1;
-      background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
-    h1{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:clamp(1.4rem,4vw,2rem);margin:8px 0 14px}
-    p{color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:28px}
-    .btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
-    .btn{display:inline-flex;align-items:center;gap:8px;font-weight:var(--fw-semibold);font-size:.95rem;
-      padding:14px 26px;border-radius:var(--radius);border:1.5px solid transparent;text-decoration:none;transition:transform .2s}
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:var(--accent-gradient);color:#fff;box-shadow:var(--glow-red)}
-    .btn-ghost{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#fff}
-    .links{margin-top:26px;font-size:.85rem;color:rgba(255,255,255,.55)}
-    .links a{color:var(--brand-sky);text-decoration:none;margin:0 8px}
+    .ty-page{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+      background:var(--bg-dark);color:var(--text-on-dark);text-align:center;padding:var(--space-5xl) var(--gutter);
+      position:relative;overflow:hidden;}
+    .ty-page::before{content:'';position:absolute;inset:0;pointer-events:none;
+      background-image:radial-gradient(circle,rgba(255,255,255,.16) 1px,transparent 1px);background-size:26px 26px;
+      -webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 20%,transparent 90%);
+      mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000 20%,transparent 90%);opacity:.4;}
+    .ty-page::after{content:'';position:absolute;inset:0;pointer-events:none;
+      background:radial-gradient(ellipse 60% 55% at 50% 48%,rgba(41,194,245,.2) 0%,transparent 70%);}
+    .ty-inner{position:relative;z-index:1;max-width:560px;}
+    .ty-check{width:80px;height:80px;border-radius:50%;background:var(--sky-gradient);display:flex;align-items:center;
+      justify-content:center;margin:0 auto var(--space-xl);box-shadow:var(--glow-sky);}
+    .ty-check svg{width:40px;height:40px;color:#fff;}
+    .ty-tag{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--brand-sky);margin-bottom:var(--space-md);}
+    .ty-title{font-family:var(--font-display);font-weight:var(--fw-extra);font-size:clamp(2rem,5vw,3rem);
+      line-height:var(--lh-snug);letter-spacing:var(--ls-tight);margin-bottom:var(--space-md);}
+    .ty-body{font-size:var(--fs-lg);color:var(--text-on-dark-muted);line-height:var(--lh-relaxed);margin-bottom:var(--space-3xl);}
+    .ty-actions{display:flex;gap:var(--space-md);justify-content:center;flex-wrap:wrap;}
+    .ty-next{margin-top:var(--space-3xl);padding-top:var(--space-3xl);border-top:1px solid var(--glass-border);
+      display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);text-align:left;}
+    .ty-next-item{background:var(--glass);border:1px solid var(--glass-border);border-radius:var(--radius-lg);padding:var(--space-lg);text-decoration:none;transition:background var(--dur-fast), transform var(--dur-fast);}
+    .ty-next-item:hover{background:var(--glass-strong);transform:translateY(-2px);}
+    .ty-next-item h4{font-family:var(--font-display);font-weight:var(--fw-semibold);color:#fff;font-size:.95rem;}
+    .ty-next-item p{font-size:.88rem;color:var(--text-on-dark-muted);line-height:var(--lh-normal);margin-top:4px;}
+    @media(max-width:640px){.ty-next{grid-template-columns:1fr;}.ty-actions{flex-direction:column;align-items:center;}}
   </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
-  <!-- Structured Data (Schema.org) -->
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
-  "name": "LIMRA Overseas Education",
-  "url": "https://www.limraedu.com",
-  "logo": "https://www.limraedu.com/assets/logo-dmsf.webp",
-  "description": "South India's No.1 FMGE coaching institute and premier overseas medical education consultancy. 24+ years of experience placing students in Philippines and Timor-Leste.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "New No.177, Royapettah High Road, 1st Floor, SMS Centre",
-    "addressLocality": "Mylapore, Chennai",
-    "postalCode": "600004",
-    "addressCountry": "IN"
-  },
-  "telephone": "+91-9444375000"
-}
-  </script>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to main content</a>
-  <div class="wrap">
-    <div class="code">404</div>
-    <h1>This page took a different path</h1>
-    <p>The page you're looking for doesn't exist or has moved. Let's get you back on track to your medical career.</p>
-    <div class="btns">
-      <a class="btn btn-primary" href="/">Back to home</a>
-      <a class="btn btn-ghost" href="/contact.html">Contact us</a>
-    </div>
-    <div class="links">
-      <a href="/colleges.html">Universities</a>·<a href="/coaching.html">FMGE Coaching</a>·<a href="/about.html">About</a>·<a href="/gallery.html">Gallery</a>
+
+  <div class="ty-page">
+    <div class="ty-inner">
+      <div class="ty-check">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+        </svg>
+      </div>
+      <div class="ty-tag">Error 404</div>
+      <h1 class="ty-title">This page took a<br/>different path</h1>
+      <p class="ty-body">The page you're looking for doesn't exist or has moved. Let's get you back on track to your medical career.</p>
+
+      <div class="ty-actions">
+        <a href="/" class="btn btn-ghost">← Back to Home</a>
+        <a href="/contact.html" class="btn btn-primary">Contact Us</a>
+      </div>
+
+      <div class="ty-next">
+        <a href="/colleges.html" class="ty-next-item">
+          <h4>Universities</h4>
+          <p>Explore our partner medical colleges.</p>
+        </a>
+        <a href="/coaching.html" class="ty-next-item">
+          <h4>FMGE Coaching</h4>
+          <p>No.1 FMGE coaching in South India.</p>
+        </a>
+        <a href="/gallery.html" class="ty-next-item">
+          <h4>Gallery</h4>
+          <p>See our students campus life.</p>
+        </a>
+      </div>
+
     </div>
   </div>
+
 </body>
 </html>
