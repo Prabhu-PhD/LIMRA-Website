@@ -73,6 +73,7 @@
   </script>
 </head>
 <body data-page="contact">
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- NAV -->
   <nav class="nav" id="nav">
@@ -206,7 +207,7 @@
                   </div>
                   <div class="form-field">
                     <label for="cf-phone">Phone Number *</label>
-                    <input type="tel" id="cf-phone" name="phone" placeholder="Include your country code" pattern="[+]?[0-9\s\-]{7,15}" title="Enter a valid phone number (e.g. +91 9876543210)" required />
+                    <input type="tel" id="cf-phone" name="phone" placeholder="Include your country code" pattern="[+]?[0-9\s\-]{7,15}" title="Enter a valid phone number (e.g. +91 9876543210)" required / pattern="[0-9]{10}">
                   </div>
                 </div>
                 <div class="form-field">
@@ -234,7 +235,7 @@
                   <label for="cf-consent" style="font-size:0.8rem;opacity:0.8;text-transform:none;margin-bottom:0;">I agree to the <a href="/privacy.html" target="_blank" style="color:var(--brand-red);text-decoration:underline;">Privacy Policy</a></label>
                 </div>
                   <button type="submit" class="btn btn-primary btn-lg">Send Enquiry →</button>
-                  <div class="form-msg" role="status"></div>
+                  <div class="form-msg" role="status" aria-live="polite"></div>
                 </div>
               </div>
             </form>

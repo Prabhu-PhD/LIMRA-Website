@@ -59,6 +59,7 @@
   </script>
 </head>
 <body data-page="home">
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- ============================ NAV ============================ -->
   <nav class="nav" id="nav">
@@ -148,7 +149,7 @@
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important" />
         <div class="enquiry-lead"><div class="t">Get free counselling</div><div class="s">Our experts call you back.</div></div>
         <div class="field"><label for="eq-name">Full name</label><input id="eq-name" type="text" name="name" placeholder="Your name" required /></div>
-        <div class="field"><label for="eq-phone">Phone</label><input id="eq-phone" type="tel" name="phone" placeholder="Include your country code" pattern="[+]?[0-9\s\-]{7,15}" title="Enter a valid phone number (e.g. +91 9876543210)" required /></div>
+        <div class="field"><label for="eq-phone">Phone</label><input id="eq-phone" type="tel" name="phone" placeholder="Include your country code" pattern="[+]?[0-9\s\-]{7,15}" title="Enter a valid phone number (e.g. +91 9876543210)" required / pattern="[0-9]{10}"></div>
         <div class="field"><label for="eq-course">Interest</label>
           <select id="eq-course" name="course" required>
             <option value="" disabled selected>Select your interest</option>

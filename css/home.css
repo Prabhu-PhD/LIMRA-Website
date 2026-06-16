@@ -51,8 +51,8 @@ ul{list-style:none;}
 .btn-lg{padding:16px 30px;font-size:1rem;}
 .btn-primary{background:var(--accent-gradient);color:#fff;box-shadow:var(--glow-red);}
 .btn-primary:hover{box-shadow:0 0 56px rgba(238,64,56,.55);}
-.btn-ghost{background:var(--glass);border-color:var(--glass-border);color:#fff;}
-.btn-ghost:hover{background:var(--glass-strong);}
+.btn-ghost{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.2);color:#fff;}
+.btn-ghost:hover{background:rgba(255,255,255,0.18);}
 .btn-outline{background:transparent;border-color:var(--brand-navy);color:var(--brand-navy);}
 .btn-outline:hover{background:var(--brand-navy);color:#fff;}
 .section--dark .btn-outline{border-color:var(--glass-border);color:#fff;}
@@ -146,7 +146,7 @@ ul{list-style:none;}
 .field{display:flex;flex-direction:column;gap:6px;}
 .field label{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,0.64);}
 .field input,.field select{font-family:var(--font-body);font-size:.92rem;color:#fff;background:rgba(255,255,255,.04);border:1px solid var(--glass-border);
-  border-radius:var(--radius);padding:11px 13px;transition:border-color var(--dur-fast),background var(--dur-fast);}
+  border-radius:var(--radius);padding:14px 13px;transition:border-color var(--dur-fast),background var(--dur-fast);}
 .field input::placeholder{color:var(--text-on-dark-subtle);}
 .field input:focus,.field select:focus{outline:none;border-color:var(--brand-orange);background:rgba(255,255,255,.07);}
 .field select option{background:var(--surface-2);color:#fff;}
