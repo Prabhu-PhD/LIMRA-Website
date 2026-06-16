@@ -31,10 +31,10 @@ const I = {
 
 // Shared content that repeats across the LIMRA college brochures.
 const STD_TECH_ITEMS = [
-  { icon: "monitor", title: "Virtual Reality Anatomy", text: "Explore the human body in immersive 3D — visualising structures impossible to see in textbooks." },
-  { icon: "cube", title: "Plastinated Models", text: "Real preserved anatomical specimens for detailed, hands-on structural study." },
-  { icon: "user", title: "Simulation Mannequins", text: "Lifelike patient simulators to practise clinical procedures safely before the wards." },
-  { icon: "layers", title: "3D Anatomage & Cadavers", text: "Digital dissection tables alongside cadaveric study for complete anatomical understanding." },
+  { icon: "monitor", img: "tech-vr", title: "Virtual Reality Anatomy", text: "Explore the human body in immersive 3D — visualising structures impossible to see in textbooks." },
+  { icon: "cube", img: "tech-plastinated", title: "Plastinated Models", text: "Real preserved anatomical specimens for detailed, hands-on structural study." },
+  { icon: "user", img: "tech-simulation", title: "Simulation Mannequins", text: "Lifelike patient simulators to practise clinical procedures safely before the wards." },
+  { icon: "layers", img: "tech-anatomage", title: "3D Anatomage & Cadavers", text: "Digital dissection tables alongside cadaveric study for complete anatomical understanding." },
 ];
 const STD_LEARNING = [
   { icon: "users", title: "Team Learning Centre", text: "Collaborative spaces designed for small-group, case-based study." },
@@ -44,14 +44,14 @@ const STD_LEARNING = [
   { icon: "clipboard", title: "Ergonomic Exam Halls", text: "Purpose-built halls for a focused, exam-ready environment." },
 ];
 const STD_DEPARTMENTS = [
-  { icon: "heart", title: "Cardiology", text: "Observe intricate cardiac procedures and master cardiovascular disease management." },
-  { icon: "activity", title: "Neurology", text: "Diagnose and treat neurological conditions with hands-on clinical experience." },
-  { icon: "shield", title: "Oncology", text: "Witness cancer-treatment advances and build a holistic understanding of patient care." },
-  { icon: "pulse", title: "Orthopedics", text: "Engage in surgical interventions and musculoskeletal management." },
-  { icon: "droplet", title: "Nephrology", text: "Diagnose and manage renal disease, including dialysis and related procedures." },
-  { icon: "activity", title: "Gastroenterology", text: "Participate in endoscopic procedures and digestive-ailment management." },
-  { icon: "wind", title: "Pulmonology", text: "Explore respiratory conditions and master pulmonary function testing." },
-  { icon: "pulse", title: "Endocrinology", text: "Manage hormonal imbalances and diabetes with comprehensive, interpretive care." },
+  { icon: "heart", img: "dept-cardiology", title: "Cardiology", text: "Observe intricate cardiac procedures and master cardiovascular disease management." },
+  { icon: "activity", img: "dept-neurology", title: "Neurology", text: "Diagnose and treat neurological conditions with hands-on clinical experience." },
+  { icon: "shield", img: "dept-oncology", title: "Oncology", text: "Witness cancer-treatment advances and build a holistic understanding of patient care." },
+  { icon: "pulse", img: "dept-orthopedics", title: "Orthopedics", text: "Engage in surgical interventions and musculoskeletal management." },
+  { icon: "droplet", img: "dept-nephrology", title: "Nephrology", text: "Diagnose and manage renal disease, including dialysis and related procedures." },
+  { icon: "activity", img: "dept-gastroenterology", title: "Gastroenterology", text: "Participate in endoscopic procedures and digestive-ailment management." },
+  { icon: "wind", img: "dept-pulmonology", title: "Pulmonology", text: "Explore respiratory conditions and master pulmonary function testing." },
+  { icon: "pulse", img: "dept-endocrinology", title: "Endocrinology", text: "Manage hormonal imbalances and diabetes with comprehensive, interpretive care." },
 ];
 const STD_DEPT_SUB = "Hands-on clinical exposure across eight core specialties — building real diagnostic and treatment confidence.";
 const STD_TECH_SUB = "Modern technology blended with medical education to create future-ready doctors.";
@@ -91,7 +91,7 @@ ${cards}
 function tech(d) {
   if (!d.tech) return null;
   const cards = (d.tech.items || STD_TECH_ITEMS).map((t) =>
-    `        <div class="tech-card"><div class="tech-media">${svg(t.icon)}</div><div class="tech-body"><h4>${t.title}</h4><p>${t.text}</p></div></div>`).join("\n");
+    `        <div class="tech-card"><div class="tech-media">${t.img ? `<img src="/assets/${t.img}.webp" alt="${t.title}" loading="lazy" />` : svg(t.icon)}</div><div class="tech-body"><h4>${t.title}</h4><p>${t.text}</p></div></div>`).join("\n");
   return `<!-- TECH-ENABLED TEACHING -->
   <section class="section section--dark">
     <div class="container">
@@ -138,7 +138,7 @@ ${items}
 
 function departments(d) {
   const cards = (d.departments || STD_DEPARTMENTS).map((x) =>
-    `        <div class="dept-card"><div class="dept-media">${svg(x.icon)}</div><div class="dept-body"><h4>${x.title}</h4><p>${x.text}</p></div></div>`).join("\n");
+    `        <div class="dept-card"><div class="dept-media">${x.img ? `<img src="/assets/${x.img}.webp" alt="${x.title} department" loading="lazy" />` : svg(x.icon)}</div><div class="dept-body"><h4>${x.title}</h4><p>${x.text}</p></div></div>`).join("\n");
   return `<!-- MAJOR DEPARTMENTS -->
   <section class="section section--light">
     <div class="container">
@@ -209,10 +209,10 @@ const DATA = {
       title: "More Than a Campus — A Complete Learning Experience",
       sub: "GCM blends advanced technology with theater-style teaching to make learning immersive.",
       items: [
-        { icon: "layers", title: "Anatomage Tables", text: "Life-sized digital dissection tables for precise, interactive anatomical study." },
-        { icon: "monitor", title: "Smart-TV Laboratories", text: "Four advanced labs, each with six 100-inch Smart TVs for immersive learning." },
-        { icon: "cpu", title: "Interactive Classrooms", text: "26 air-conditioned classrooms with theater seating and multi-screen interactive technology." },
-        { icon: "book", title: "Digital Library & Resources", text: "A well-equipped library with reading room, digital resources and a book bank." },
+        { icon: "layers", img: "gcm-anatomage", title: "Anatomage Tables", text: "Life-sized digital dissection tables for precise, interactive anatomical study." },
+        { icon: "monitor", img: "gcm-smarttv", title: "Smart-TV Laboratories", text: "Four advanced labs, each with six 100-inch Smart TVs for immersive learning." },
+        { icon: "cpu", img: "gcm-classroom", title: "Interactive Classrooms", text: "26 air-conditioned classrooms with theater seating and multi-screen interactive technology." },
+        { icon: "book", img: "gcm-library", title: "Digital Library & Resources", text: "A well-equipped library with reading room, digital resources and a book bank." },
       ],
     },
     learning: [

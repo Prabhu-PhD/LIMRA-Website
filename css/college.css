@@ -260,6 +260,7 @@
 .tech-media{aspect-ratio:16/10;background:linear-gradient(135deg,var(--brand-navy-soft),var(--bg-dark));
   display:flex;align-items:center;justify-content:center;color:var(--brand-sky);}
 .tech-media svg{width:42px;height:42px;}
+.tech-media img{width:100%;height:100%;object-fit:cover;display:block;}
 .tech-body{padding:var(--space-lg);}
 .tech-body h4{font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:1rem;color:#fff;margin-bottom:6px;}
 .tech-body p{font-size:.85rem;color:var(--text-on-dark-muted);line-height:1.6;}
@@ -288,6 +289,7 @@
 .dept-media{aspect-ratio:16/9;background:linear-gradient(135deg,var(--brand-navy),var(--brand-navy-deep));
   display:flex;align-items:center;justify-content:center;color:#fff;}
 .dept-media svg{width:34px;height:34px;}
+.dept-media img{width:100%;height:100%;object-fit:cover;display:block;}
 .dept-body{padding:var(--space-md) var(--space-lg) var(--space-lg);}
 .dept-body h4{font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:1rem;color:var(--text-strong);margin-bottom:5px;}
 .dept-body p{font-size:.85rem;color:var(--text-muted);line-height:1.55;}
