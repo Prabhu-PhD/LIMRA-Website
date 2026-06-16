@@ -45,6 +45,13 @@
         .then(function (r) { return r.json(); })
         .then(function (res) {
           if (res && res.success) {
+            // Track successful lead generation in Google Analytics 4
+            if (typeof gtag === 'function') {
+              gtag('event', 'generate_lead', {
+                'event_category': 'form',
+                'event_label': window.location.pathname
+              });
+            }
             window.location.href = redirect;
           } else {
             showMsg("Sorry, something went wrong. Please try again or call us at +91-94443 75000.", true);

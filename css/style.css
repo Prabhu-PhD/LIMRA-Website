@@ -1611,3 +1611,15 @@ p { line-height: 1.75; }
   .cta-actions { flex-direction: column; align-items: center; }
   .contact-form-card { padding: 24px 20px; }
 }
+
+.whatsapp-tooltip { position: absolute; right: 70px; top: 50%; transform: translateY(-50%); background: #fff; color: #111; padding: 6px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; white-space: nowrap; box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.whatsapp-fab:hover .whatsapp-tooltip { opacity: 1; }
+
+@media print {
+  body { background: #fff !important; color: #000 !important; }
+  .navbar, footer, .footer, .whatsapp-fab, .enquiry-wrap, .reveal { display: none !important; }
+  .college-card, .testimonial-card, .blog-card { break-inside: avoid; border: 1px solid #ccc !important; box-shadow: none !important; }
+  h1, h2, h3, h4, p, span, div { color: #000 !important; }
+  * { background: transparent !important; box-shadow: none !important; text-shadow: none !important; }
+}
+

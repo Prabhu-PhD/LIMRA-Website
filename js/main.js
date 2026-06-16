@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initStatCounters();
   initActiveNavLink();
+  initClickTracking();
 });
 
 function initNavbar() {
@@ -115,33 +116,15 @@ function animateCounter(el) {
   requestAnimationFrame(update);
 }
 
-async function submitEnquiryForm(formId, msgId) {
-  const form = document.getElementById(formId);
-  const msg = document.getElementById(msgId);
-  if (!form || !msg) return;
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    const originalText = btn?.textContent;
-    if (btn) { btn.textContent = 'Sending...'; btn.disabled = true; }
-
-    const data = Object.fromEntries(new FormData(form));
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-      const json = await res.json();
-      msg.className = 'form-msg ' + (res.ok ? 'success' : 'error');
-      msg.textContent = res.ok ? json.message : (json.error || 'Something went wrong.');
-      if (res.ok) form.reset();
-    } catch {
-      msg.className = 'form-msg error';
-      msg.textContent = 'Network error. Please try again.';
-    } finally {
-      if (btn) { btn.textContent = originalText; btn.disabled = false; }
-    }
+function initClickTracking() {
+  document.querySelectorAll('a[href^="tel:"], a[href^="https://wa.me"]').forEach(link => {
+    link.addEventListener('click', () => {
+      if (typeof gtag === 'function') {
+        gtag('event', 'contact_click', {
+          'event_category': 'engagement',
+          'event_label': link.getAttribute('href')
+        });
+      }
+    });
   });
 }
