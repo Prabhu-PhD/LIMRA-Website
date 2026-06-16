@@ -21,6 +21,7 @@ module.exports = function (eleventyConfig) {
   // hand-written root pages (everything except the generated blog.html)
   eleventyConfig.addPassthroughCopy("index.html");
   eleventyConfig.addPassthroughCopy("privacy.html");
+  eleventyConfig.addPassthroughCopy("home2.html");
   eleventyConfig.addPassthroughCopy("about.html");
   eleventyConfig.addPassthroughCopy("colleges.html");
   eleventyConfig.addPassthroughCopy("coaching.html");
