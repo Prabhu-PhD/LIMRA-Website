@@ -437,7 +437,7 @@ ul{list-style:none;}
    because there are 8 top-level items */
 @media(max-width:1024px){
   .nav-menu{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);flex-direction:column;align-items:flex-start;justify-content:center;gap:var(--space-lg);
-    background:rgba(14,13,36,.97);backdrop-filter:blur(16px);padding:0 var(--space-2xl);transform:translateX(100%);transition:transform var(--dur) var(--ease-out);}
+    background:rgba(14,13,36,.97);backdrop-filter:blur(16px);padding:0 var(--space-2xl);transform:translateX(100%);transition:transform var(--dur) var(--ease-out);z-index:55;}
   .nav-menu.open{transform:translateX(0);}
   .nav-toggle{display:flex;}
   .nav-dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;background:none;border:none;box-shadow:none;padding:8px 0 0 12px;min-width:0;display:none;}
