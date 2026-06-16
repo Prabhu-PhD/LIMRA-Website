@@ -19,14 +19,16 @@ function initNavbar() {
 
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
-      toggle.classList.toggle('open');
-      menu.classList.toggle('open');
+      const open = menu.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
     document.addEventListener('click', (e) => {
       if (!navbar.contains(e.target)) {
         toggle.classList.remove('open');
         menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
       }
     });
 
@@ -34,6 +36,7 @@ function initNavbar() {
       link.addEventListener('click', () => {
         toggle.classList.remove('open');
         menu.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
       });
     });
   }
