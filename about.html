@@ -13,92 +13,132 @@
   <link rel="stylesheet" href="/css/pages.css" />
   <link rel="stylesheet" href="/css/about.css" />
   <style>
-    /* ── Impact section (dark, matches Journey Timeline) ── */
-    .impact-wins {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-lg);
+    /* ── Impact section — before/after ledger + stat band ── */
+    .win-ledger {
       margin-top: var(--space-3xl);
+      border-top: 1px solid var(--glass-border);
     }
-    .impact-win {
-      position: relative;
-      background: var(--surface-1);
+    .win-row {
+      display: grid;
+      grid-template-columns: 52px 200px 52px 1fr;
+      align-items: center;
+      gap: var(--space-xl);
+      padding: var(--space-2xl) 0;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .win-badge {
+      font-family: var(--font-mono);
+      font-size: .58rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      color: #EE4038;
+      border: 1px solid rgba(238,64,56,.55);
+      border-radius: 4px;
+      padding: 4px 7px;
+      text-align: center;
+      align-self: flex-start;
+      margin-top: 10px;
+    }
+    .win-before {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .win-before-num {
+      font-family: var(--font-mono);
+      font-size: .95rem;
+      color: rgba(255,255,255,.32);
+      text-decoration: line-through;
+      text-decoration-color: rgba(255,255,255,.18);
+    }
+    .win-before-label {
+      font-family: var(--font-mono);
+      font-size: .62rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.22);
+    }
+    .win-connector {
+      text-align: center;
+      font-size: 1.4rem;
+      color: rgba(238,64,56,.65);
+      font-family: var(--font-mono);
+    }
+    .win-result {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-lg);
+      flex-wrap: wrap;
+    }
+    .win-result-num {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(2rem, 4.5vw, 3rem);
+      line-height: 1;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      flex-shrink: 0;
+    }
+    .win-result-desc {
+      font-size: .9rem;
+      color: var(--text-on-dark-muted);
+      line-height: var(--lh-snug);
+      max-width: 300px;
+    }
+    /* ── Stat band ── */
+    .stat-band {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: var(--space-4xl);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-xl);
-      padding: var(--space-2xl);
       overflow: hidden;
-      transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
     }
-    .impact-win::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: var(--accent-gradient);
+    .stat-cell {
+      padding: var(--space-2xl) var(--space-xl);
+      text-align: center;
+      border-right: 1px solid var(--glass-border);
     }
-    .impact-win:hover { transform: translateY(-4px); box-shadow: var(--shadow-glass); }
-    .impact-win-num {
+    .stat-cell:last-child { border-right: none; }
+    .stat-num {
       font-family: var(--font-display);
       font-weight: 800;
-      font-size: clamp(2rem, 4.5vw, 2.8rem);
+      font-size: clamp(2rem, 4vw, 2.8rem);
       line-height: 1;
       background: var(--accent-gradient);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; color: transparent;
-      margin-bottom: 6px;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+      margin-bottom: var(--space-sm);
     }
-    .impact-win-sub {
-      font-family: var(--font-mono);
-      font-size: .68rem; letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--text-on-dark-subtle);
-      margin-bottom: var(--space-md);
-    }
-    .impact-win h3 {
-      font-family: var(--font-display);
-      font-size: 1rem; font-weight: 600;
-      color: var(--text-on-dark);
-      line-height: var(--lh-snug);
-      margin: 0;
-    }
-    .impact-divider {
-      margin: var(--space-4xl) 0 var(--space-3xl);
-      border: none; border-top: 1px solid var(--glass-border);
-    }
-    .track-record {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: var(--space-xl) var(--space-3xl);
-    }
-    .tr-item {
-      display: flex;
-      gap: var(--space-lg);
-      align-items: flex-start;
-    }
-    .tr-num {
-      flex-shrink: 0;
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-      line-height: 1;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text; background-clip: text;
-      -webkit-text-fill-color: transparent; color: transparent;
-      min-width: 64px;
-    }
-    .tr-item h4 {
-      font-family: var(--font-display);
-      font-size: 1.05rem; font-weight: 600;
-      color: var(--text-on-dark);
-      margin: 0 0 8px;
-    }
-    .tr-item p {
-      font-size: .92rem;
+    .stat-num sup { font-size: .5em; vertical-align: super; }
+    .stat-label {
+      font-size: .82rem;
       color: var(--text-on-dark-muted);
-      line-height: var(--lh-normal);
-      margin: 0;
+      line-height: 1.5;
     }
     @media (max-width: 860px) {
-      .impact-wins { grid-template-columns: 1fr; }
-      .track-record { grid-template-columns: 1fr; }
+      .win-row {
+        grid-template-columns: 52px 1fr;
+        grid-template-rows: auto auto;
+        row-gap: var(--space-sm);
+        column-gap: var(--space-md);
+      }
+      .win-badge { grid-column: 1; grid-row: 1; margin-top: 4px; }
+      .win-before { grid-column: 2; grid-row: 1; flex-direction: row; align-items: baseline; gap: var(--space-xs); }
+      .win-before-label { display: none; }
+      .win-connector { display: none; }
+      .win-result { grid-column: 2; grid-row: 2; flex-direction: column; align-items: flex-start; gap: 4px; }
+      .stat-band { grid-template-columns: repeat(2, 1fr); }
+      .stat-cell:nth-child(2) { border-right: none; }
+      .stat-cell:nth-child(3),
+      .stat-cell:nth-child(4) { border-top: 1px solid var(--glass-border); }
+      .stat-cell:nth-child(3) { border-right: 1px solid var(--glass-border); }
+      .stat-cell:nth-child(4) { border-right: none; }
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -393,63 +433,65 @@
 
       <div class="section-head reveal">
         <span class="eyebrow eyebrow--accent">Our Impact</span>
-        <h2 class="section-title">Beyond coaching &mdash; advocating for every doctor</h2>
-        <p class="section-sub">For the past two years, LIMRA has worked alongside FMGE-qualified doctors to resolve systemic challenges &mdash; petitioning authorities and securing three landmark reforms that directly benefit thousands of graduates across India.</p>
+        <h2 class="section-title">We don&rsquo;t just train doctors.<br><span style="background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;">We fight for them.</span></h2>
+        <p class="section-sub">For two years LIMRA petitioned authorities alongside FMGE-qualified doctors &mdash; and secured three landmark reforms that directly benefit thousands of graduates across India.</p>
       </div>
 
-      <div class="impact-wins">
-        <div class="impact-win reveal">
-          <div class="impact-win-num">&#8377;29,500</div>
-          <div class="impact-win-sub">reduced from &#8377;3,54,000</div>
-          <h3>CRRI application review fee cut by over 90%</h3>
+      <div class="win-ledger">
+        <div class="win-row reveal">
+          <span class="win-badge">WIN</span>
+          <div class="win-before">
+            <span class="win-before-num">&#8377;3,54,000</span>
+            <span class="win-before-label">was charged</span>
+          </div>
+          <span class="win-connector">&rarr;</span>
+          <div class="win-result">
+            <span class="win-result-num">&#8377;29,500</span>
+            <span class="win-result-desc">CRRI application review fee &mdash; a 92% cut secured through direct advocacy</span>
+          </div>
         </div>
-        <div class="impact-win reveal reveal-d1">
-          <div class="impact-win-num">1,881</div>
-          <div class="impact-win-sub">new training positions</div>
-          <h3>CRRI seats secured for FMGE-qualified doctors</h3>
+        <div class="win-row reveal">
+          <span class="win-badge">WIN</span>
+          <div class="win-before">
+            <span class="win-before-num">Zero seats</span>
+            <span class="win-before-label">existed</span>
+          </div>
+          <span class="win-connector">&rarr;</span>
+          <div class="win-result">
+            <span class="win-result-num">1,881</span>
+            <span class="win-result-desc">new CRRI training positions secured for FMGE-qualified doctors</span>
+          </div>
         </div>
-        <div class="impact-win reveal reveal-d2">
-          <div class="impact-win-num">&#8377;25,750</div>
-          <div class="impact-win-sub">per month</div>
-          <h3>Monthly stipend secured for FMGE graduates in training</h3>
+        <div class="win-row reveal">
+          <span class="win-badge">WIN</span>
+          <div class="win-before">
+            <span class="win-before-num">No stipend</span>
+            <span class="win-before-label">was paid</span>
+          </div>
+          <span class="win-connector">&rarr;</span>
+          <div class="win-result">
+            <span class="win-result-num">&#8377;25,750</span>
+            <span class="win-result-desc">monthly stipend now secured for all FMGE graduates in CRRI training</span>
+          </div>
         </div>
       </div>
 
-      <hr class="impact-divider" />
-
-      <div class="section-head reveal">
-        <span class="eyebrow eyebrow--accent">Two Decades of Results</span>
-        <h2 class="section-title">Our track record in medical education</h2>
-      </div>
-
-      <div class="track-record">
-        <div class="tr-item reveal">
-          <div class="tr-num">20</div>
-          <div>
-            <h4>Years of continuous service</h4>
-            <p>A guiding lighthouse for South Indian students seeking overseas medical education &mdash; navigating them safely through one of India&rsquo;s most complex higher-education pathways for two decades.</p>
-          </div>
+      <div class="stat-band reveal">
+        <div class="stat-cell">
+          <div class="stat-num">24</div>
+          <div class="stat-label">Years guiding<br>South Indian students</div>
         </div>
-        <div class="tr-item reveal reveal-d1">
-          <div class="tr-num">1,650<span style="font-size:.6em">+</span></div>
-          <div>
-            <h4>Graduates practising in India</h4>
-            <p>Students guided through six consecutive overseas batches have returned to India as practising doctors, with comprehensive support across every stage of the journey.</p>
-          </div>
+        <div class="stat-cell">
+          <div class="stat-num">1,650<sup>+</sup></div>
+          <div class="stat-label">Graduates<br>now practising in India</div>
         </div>
-        <div class="tr-item reveal">
-          <div class="tr-num">#1</div>
-          <div>
-            <h4>FMGE coaching institute in South India</h4>
-            <p>India&rsquo;s top-ranked FMGE coaching programme for 10+ consecutive years &mdash; bringing nationally acclaimed professors for all 19 subjects, live and in-person, at zero cost to enrolled students.</p>
-          </div>
+        <div class="stat-cell">
+          <div class="stat-num">#1</div>
+          <div class="stat-label">FMGE coaching<br>institute in South India</div>
         </div>
-        <div class="tr-item reveal reveal-d1">
-          <div class="tr-num">PG</div>
-          <div>
-            <h4>NEET PG coaching included</h4>
-            <p>Dedicated NEET PG coaching guides FMGE-cleared doctors towards postgraduate specialisations &mdash; supporting their career growth well beyond the initial licensing exam.</p>
-          </div>
+        <div class="stat-cell">
+          <div class="stat-num">19</div>
+          <div class="stat-label">Subjects covered<br>live &amp; in-person</div>
         </div>
       </div>
 
