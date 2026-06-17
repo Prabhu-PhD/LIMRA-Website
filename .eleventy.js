@@ -31,6 +31,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("testimonials.html");
   eleventyConfig.addPassthroughCopy("contact.html");
   eleventyConfig.addPassthroughCopy("thank-you.html");
+  eleventyConfig.addPassthroughCopy("faq.html");
+  eleventyConfig.addPassthroughCopy("compare.html");
 
   // --- date helpers for the blog ---
   eleventyConfig.addFilter("readableDate", (value) => {

@@ -23,6 +23,12 @@
   <link rel="stylesheet" href="/css/tokens.css" />
   <link rel="stylesheet" href="/css/pages.css" />
   <link rel="stylesheet" href="/css/blog.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Google Analytics 4 — deferred until cookie consent -->
+  <script>window._gaId='G-XXXXXXXXXX';</script>
 
   <script type="application/ld+json">
   {
@@ -48,7 +54,7 @@
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.limraedu.com/" },
-      { "@type": "ListItem", "position": 2, "name": "News & Insights", "item": "https://www.limraedu.com/blog.html" },
+      { "@type": "ListItem", "position": 2, "name": "News & Insights", "item": "https://www.limraedu.com/blog/" },
       { "@type": "ListItem", "position": 3, "name": {{ title | dump | safe }}, "item": "https://www.limraedu.com{{ page.url }}" }
     ]
   }
@@ -62,7 +68,7 @@
     <div class="container">
       <div class="article-wrap">
 
-        <a href="/blog.html" class="article-back"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4L3 8l4 4"/></svg> Back to News &amp; Insights</a>
+        <a href="/blog/" class="article-back"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 8H3M7 4L3 8l4 4"/></svg> Back to News &amp; Insights</a>
 
         <header class="article-head">
           <div class="post-meta">
@@ -103,5 +109,7 @@
   {% include "partials/footer.njk" %}
 
   <script src="/js/main.js"></script>
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/mobile-cta.js" defer></script>
 </body>
 </html>
