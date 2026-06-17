@@ -473,6 +473,9 @@ ul{list-style:none;}
   .enquiry-lead{grid-column:1/-1;}
   .enquiry-strip>.btn{grid-column:1/-1;}
   .fmge-grid{grid-template-columns:1fr;gap:var(--space-xl);}
+  /* 16px minimum stops iOS Safari from auto-zooming (and shifting the layout)
+     when a field gains focus; .92rem (~14.7px) triggered it */
+  .field input,.field select{font-size:16px;}
 }
 @media(max-width:700px){
   .testi-card{flex:0 0 calc(100vw - var(--gutter) * 2);width:calc(100vw - var(--gutter) * 2);}
