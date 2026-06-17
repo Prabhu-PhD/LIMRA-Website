@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -42,14 +42,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
+  <!-- Google Analytics 4 — deferred until cookie consent -->
+  <script>window._gaId='G-XXXXXXXXXX';</script>
 
   <!-- Structured Data (Schema.org) -->
   <script type="application/ld+json">
@@ -113,5 +107,6 @@
     </div>
   </div>
 
+  <script src="/js/cookie-consent.js" defer></script>
 </body>
 </html>
