@@ -63,7 +63,7 @@ ul{list-style:none;}
    ============================================================ */
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background var(--dur),backdrop-filter var(--dur),box-shadow var(--dur),border-color var(--dur);border-bottom:1px solid transparent;}
 .nav.scrolled{background:rgba(14,13,36,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--glass-border);box-shadow:0 8px 30px rgba(0,0,0,.25);}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding-top:18px;padding-bottom:18px;}
 .nav-logo{height:36px;width:auto;}
 .nav-menu{display:flex;align-items:center;gap:30px;}
 .nav-menu>li{position:relative;}
@@ -87,7 +87,7 @@ ul{list-style:none;}
 /* ============================================================
    HERO
    ============================================================ */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--bg-dark);color:var(--text-on-dark);overflow:hidden;padding:120px 0 230px;}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--bg-dark);color:var(--text-on-dark);overflow:hidden;padding:120px 0 120px;}
 .hero::before{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
   background-image:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='250' height='250'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/></filter><rect width='250' height='250' filter='url(%23n)'/></svg>");opacity:.045;}
 .hero::after{content:'';position:absolute;inset:0;z-index:0;pointer-events:none;
@@ -137,7 +137,7 @@ ul{list-style:none;}
    QUICK ENQUIRY STRIP — overlaps faded wordmark
    ============================================================ */
 #enquiry{scroll-margin-top:100px;}
-.enquiry-wrap{background:var(--bg-dark);position:relative;z-index:5;padding:0 0 var(--space-4xl);margin-top:-90px;}
+.enquiry-wrap{background:var(--bg-dark);position:relative;z-index:5;padding:var(--space-2xl) 0 var(--space-4xl);margin-top:-90px;}
 .enquiry-strip{max-width:var(--container);margin:0 auto;background:linear-gradient(180deg,rgba(30,29,71,.96),rgba(22,21,58,.96));
   backdrop-filter:blur(8px);border:1px solid var(--glass-border);border-radius:var(--radius-xl);padding:var(--space-xl);
   box-shadow:var(--shadow-glass);display:grid;grid-template-columns:1fr 1fr 1fr auto auto;gap:var(--space-md);align-items:center;justify-items:start;}
@@ -438,28 +438,36 @@ ul{list-style:none;}
 /* nav collapses to a hamburger earlier than the rest of the layout,
    because there are 8 top-level items */
 @media(max-width:1024px){
-  .nav-menu{position:fixed;inset:0 0 0 auto;width:min(80vw,320px);flex-direction:column;align-items:flex-start;justify-content:center;gap:var(--space-lg);
-    background:rgba(14,13,36,.97);backdrop-filter:blur(16px);padding:0 var(--space-2xl);transform:translateX(100%);transition:transform var(--dur) var(--ease-out);z-index:55;}
+  /* height:100vh fixes a bug where backdrop-filter on .nav.scrolled makes .nav a
+     containing block, collapsing position:fixed children to the nav's height (~72px) */
+  .nav-menu{position:fixed;top:0;right:0;bottom:auto;left:auto;height:100vh;height:100dvh;
+    width:min(80vw,320px);flex-direction:column;align-items:flex-start;justify-content:center;gap:var(--space-lg);
+    background:rgba(14,13,36,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    padding:0 var(--space-2xl);transform:translateX(100%);transition:transform var(--dur) var(--ease-out);z-index:55;}
   .nav-menu.open{transform:translateX(0);}
   .nav-toggle{display:flex;}
   .nav-dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;background:none;border:none;box-shadow:none;padding:8px 0 0 12px;min-width:0;display:none;}
   .nav-dropdown.open .nav-dropdown-menu{display:block;}
 }
 @media(max-width:900px){
-  .hero{min-height:auto;padding:130px 0 200px;}
+  .hero{min-height:auto;padding:100px 0 60px;}
   .hero-grid{grid-template-columns:1fr;gap:10px;text-align:center;}
   .hero h1{margin-left:auto;margin-right:auto;}
   .hero .lead{margin-left:auto;margin-right:auto;}
   .cta-row,.hero-stats{justify-content:center;}
   .hero-visual{order:-1;justify-content:center;margin-bottom:var(--space-lg);}
-  .orbit{width:440px;height:440px;transform:none;}
+  .hero-glow{right:auto;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;}
+  .orbit{width:min(440px,90vw);height:min(440px,90vw);transform:none;}
   .enquiry-strip{grid-template-columns:1fr 1fr;}
   .enquiry-lead{grid-column:1/-1;}
   .enquiry-strip>.btn{grid-column:1/-1;}
   .fmge-grid{grid-template-columns:1fr;gap:var(--space-xl);}
 }
 @media(max-width:700px){
-  .testi-card{flex-basis:100%;}
+  .testi-card{flex:0 0 calc(100vw - var(--gutter) * 2);width:calc(100vw - var(--gutter) * 2);}
+}
+@media(max-width:480px){
+  .orbit{width:260px;height:260px;}
 }
 @media(max-width:640px){
   .section{padding:var(--space-4xl) 0;}
