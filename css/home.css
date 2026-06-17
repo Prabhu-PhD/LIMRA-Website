@@ -390,8 +390,8 @@ ul{list-style:none;}
 .footer-social a:hover{background:var(--accent-gradient);color:#fff;border-color:transparent;transform:translateY(-2px);}
 .footer-social svg{width:18px;height:18px;}
 .footer-col h4{font-family:var(--font-display);font-weight:var(--fw-semibold);color:#fff;font-size:.95rem;margin-bottom:var(--space-md);}
-.footer-col ul{display:flex;flex-direction:column;gap:10px;}
-.footer-col a{font-size:.88rem;color:var(--text-on-dark-muted);transition:color var(--dur-fast),padding-left var(--dur-fast);}
+.footer-col ul{display:flex;flex-direction:column;gap:5px;}
+.footer-col a{font-size:.88rem;color:var(--text-on-dark-muted);transition:color var(--dur-fast),padding-left var(--dur-fast);display:inline-block;padding:8px 0;}
 .footer-col a:hover{color:#fff;padding-left:4px;}
 .footer-contact-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:var(--space-md);font-size:.88rem;line-height:var(--lh-normal);}
 .footer-contact-item svg{width:17px;height:17px;flex:none;margin-top:2px;color:var(--brand-orange);}
@@ -441,9 +441,10 @@ ul{list-style:none;}
   /* height:100vh fixes a bug where backdrop-filter on .nav.scrolled makes .nav a
      containing block, collapsing position:fixed children to the nav's height (~72px) */
   .nav-menu{position:fixed;top:0;right:0;bottom:auto;left:auto;height:100vh;height:100dvh;
-    width:min(80vw,320px);flex-direction:column;align-items:flex-start;justify-content:center;gap:var(--space-lg);
+    width:min(80vw,320px);flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:var(--space-lg);
     background:rgba(14,13,36,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-    padding:0 var(--space-2xl);transform:translateX(100%);transition:transform var(--dur) var(--ease-out);z-index:55;}
+    padding:88px var(--space-2xl) var(--space-2xl);overflow-y:auto;-webkit-overflow-scrolling:touch;
+    transform:translateX(100%);transition:transform var(--dur) var(--ease-out);z-index:55;}
   .nav-menu.open{transform:translateX(0);}
   .nav-toggle{display:flex;}
   .nav-dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;background:none;border:none;box-shadow:none;padding:8px 0 0 12px;min-width:0;display:none;}
@@ -452,12 +453,15 @@ ul{list-style:none;}
 @media(max-width:900px){
   .hero{min-height:auto;padding:100px 0 60px;}
   .hero-grid{grid-template-columns:1fr;gap:10px;text-align:center;}
+  /* min-width:0 stops the nowrap CTA/stat row from forcing the grid track
+     wider than the container (was pushing the whole hero ~23px off-screen) */
+  .hero-copy,.hero-visual{min-width:0;}
   .hero h1{margin-left:auto;margin-right:auto;}
   .hero .lead{margin-left:auto;margin-right:auto;}
   .cta-row,.hero-stats{justify-content:center;}
   .hero-visual{order:-1;justify-content:center;margin-bottom:var(--space-lg);}
   .hero-glow{right:auto;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;}
-  .orbit{width:min(440px,90vw);height:min(440px,90vw);transform:none;}
+  .orbit{width:min(440px,82vw);height:min(440px,82vw);transform:none;}
   .enquiry-strip{grid-template-columns:1fr 1fr;}
   .enquiry-lead{grid-column:1/-1;}
   .enquiry-strip>.btn{grid-column:1/-1;}
@@ -467,7 +471,11 @@ ul{list-style:none;}
   .testi-card{flex:0 0 calc(100vw - var(--gutter) * 2);width:calc(100vw - var(--gutter) * 2);}
 }
 @media(max-width:480px){
-  .orbit{width:260px;height:260px;}
+  /* stack stats so the nowrap row never overflows narrow screens */
+  .hero-stats{flex-wrap:wrap;gap:14px 20px;}
+  .hstat-divider{display:none;}
+  .cta-row .btn{width:100%;}
+  .orbit{width:min(300px,80vw);height:min(300px,80vw);}
 }
 @media(max-width:640px){
   .section{padding:var(--space-4xl) 0;}
