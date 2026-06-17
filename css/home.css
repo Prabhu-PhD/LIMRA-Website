@@ -449,6 +449,13 @@ ul{list-style:none;}
   .nav-toggle{display:flex;}
   .nav-dropdown-menu{position:static;transform:none;opacity:1;visibility:visible;background:none;border:none;box-shadow:none;padding:8px 0 0 12px;min-width:0;display:none;}
   .nav-dropdown.open .nav-dropdown-menu{display:block;}
+  /* The desktop ".nav-dropdown:hover .nav-dropdown-menu" rule lives outside this
+     media query and re-applies translateX(-50%) when :hover sticks on tap (common
+     on touch), dragging the submenu off the drawer's left edge and clipping the
+     college names. The .nav-menu prefix raises specificity to 0,4,0 so this mobile
+     reset always wins. */
+  .nav-menu .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-menu .nav-dropdown.open .nav-dropdown-menu{transform:none;left:auto;}
 }
 @media(max-width:900px){
   .hero{min-height:auto;padding:100px 0 60px;}
