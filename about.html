@@ -13,36 +13,93 @@
   <link rel="stylesheet" href="/css/pages.css" />
   <link rel="stylesheet" href="/css/about.css" />
   <style>
-    /* ── Advocacy & Track Record section ── */
-    .advocacy-grid {
+    /* ── Impact section (dark, matches Journey Timeline) ── */
+    .impact-wins {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--space-lg);
-      margin-bottom: var(--space-3xl);
+      margin-top: var(--space-3xl);
     }
-    .adv-win {
-      background: var(--white);
-      border-radius: 12px;
-      padding: var(--space-xl);
-      border-top: 4px solid var(--brand-red);
-      box-shadow: 0 2px 16px rgba(0,0,0,.08);
-      text-align: center;
+    .impact-win {
+      position: relative;
+      background: var(--surface-1);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-2xl);
+      overflow: hidden;
+      transition: transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
     }
-    .adv-win-figure {
-      font-family: var(--font-head);
-      font-size: clamp(1.75rem, 4vw, 2.5rem);
+    .impact-win::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--accent-gradient);
+    }
+    .impact-win:hover { transform: translateY(-4px); box-shadow: var(--shadow-glass); }
+    .impact-win-num {
+      font-family: var(--font-display);
       font-weight: 800;
-      color: var(--brand-red);
-      line-height: 1.1;
-      margin-bottom: 4px;
+      font-size: clamp(2rem, 4.5vw, 2.8rem);
+      line-height: 1;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      margin-bottom: 6px;
     }
-    .adv-win-from { font-size: var(--text-sm); color: var(--text-muted); margin-bottom: var(--space-sm); }
-    .adv-win-label { font-size: var(--text-base); font-weight: 600; color: var(--text-primary); margin: 0; }
-    .track-record-head { margin: var(--space-3xl) 0 var(--space-xl); padding-top: var(--space-2xl); border-top: 1px solid var(--border); }
-    .track-record-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); }
-    .tr-point { display: flex; gap: var(--space-md); align-items: flex-start; }
-    .tr-badge { flex-shrink: 0; background: var(--brand-navy); color: var(--white); font-family: var(--font-head); font-size: 0.7rem; font-weight: 700; padding: 5px 9px; border-radius: 6px; white-space: nowrap; margin-top: 3px; letter-spacing: .03em; }
-    .tr-point p { margin: 0; color: var(--text-secondary); font-size: var(--text-base); line-height: 1.65; }
+    .impact-win-sub {
+      font-family: var(--font-mono);
+      font-size: .68rem; letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--text-on-dark-subtle);
+      margin-bottom: var(--space-md);
+    }
+    .impact-win h3 {
+      font-family: var(--font-display);
+      font-size: 1rem; font-weight: 600;
+      color: var(--text-on-dark);
+      line-height: var(--lh-snug);
+      margin: 0;
+    }
+    .impact-divider {
+      margin: var(--space-4xl) 0 var(--space-3xl);
+      border: none; border-top: 1px solid var(--glass-border);
+    }
+    .track-record {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl) var(--space-3xl);
+    }
+    .tr-item {
+      display: flex;
+      gap: var(--space-lg);
+      align-items: flex-start;
+    }
+    .tr-num {
+      flex-shrink: 0;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      line-height: 1;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      min-width: 64px;
+    }
+    .tr-item h4 {
+      font-family: var(--font-display);
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--text-on-dark);
+      margin: 0 0 8px;
+    }
+    .tr-item p {
+      font-size: .92rem;
+      color: var(--text-on-dark-muted);
+      line-height: var(--lh-normal);
+      margin: 0;
+    }
+    @media (max-width: 860px) {
+      .impact-wins { grid-template-columns: 1fr; }
+      .track-record { grid-template-columns: 1fr; }
+    }
   </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -331,7 +388,7 @@
   </section>
 
   <!-- ADVOCACY & TRACK RECORD -->
-  <section class="section section--light">
+  <section class="section section--dark" style="background:var(--bg-dark);">
     <div class="container">
 
       <div class="section-head reveal">
@@ -340,47 +397,61 @@
         <p class="section-sub">For the past two years, LIMRA has worked alongside FMGE-qualified doctors to resolve systemic challenges &mdash; petitioning authorities and securing three landmark reforms that directly benefit thousands of graduates across India.</p>
       </div>
 
-      <div class="advocacy-grid">
-        <div class="adv-win reveal">
-          <div class="adv-win-figure">&#8377;29,500</div>
-          <div class="adv-win-from">reduced from &#8377;3,54,000</div>
-          <p class="adv-win-label">CRRI application review fee cut by over 90%</p>
+      <div class="impact-wins">
+        <div class="impact-win reveal">
+          <div class="impact-win-num">&#8377;29,500</div>
+          <div class="impact-win-sub">reduced from &#8377;3,54,000</div>
+          <h3>CRRI application review fee cut by over 90%</h3>
         </div>
-        <div class="adv-win reveal reveal-d1">
-          <div class="adv-win-figure">1,881</div>
-          <div class="adv-win-from">new training positions</div>
-          <p class="adv-win-label">CRRI seats secured for FMGE-qualified doctors</p>
+        <div class="impact-win reveal reveal-d1">
+          <div class="impact-win-num">1,881</div>
+          <div class="impact-win-sub">new training positions</div>
+          <h3>CRRI seats secured for FMGE-qualified doctors</h3>
         </div>
-        <div class="adv-win reveal reveal-d2">
-          <div class="adv-win-figure">&#8377;25,750</div>
-          <div class="adv-win-from">per month</div>
-          <p class="adv-win-label">Monthly stipend secured for FMGE graduates in training</p>
+        <div class="impact-win reveal reveal-d2">
+          <div class="impact-win-num">&#8377;25,750</div>
+          <div class="impact-win-sub">per month</div>
+          <h3>Monthly stipend secured for FMGE graduates in training</h3>
         </div>
       </div>
 
-      <div class="track-record-head reveal">
+      <hr class="impact-divider" />
+
+      <div class="section-head reveal">
         <span class="eyebrow eyebrow--accent">Two Decades of Results</span>
-        <h2 class="section-title" style="margin:var(--space-sm) 0 0;">Our track record in medical education</h2>
+        <h2 class="section-title">Our track record in medical education</h2>
       </div>
 
-      <ul class="track-record-list">
-        <li class="tr-point reveal">
-          <span class="tr-badge">20 yrs</span>
-          <p>A guiding lighthouse for South Indian students seeking overseas medical education &mdash; navigating them safely through one of India's most complex higher-education pathways for two decades.</p>
-        </li>
-        <li class="tr-point reveal reveal-d1">
-          <span class="tr-badge">1,650+</span>
-          <p>Students guided through six consecutive overseas batches have returned to India as practising doctors, with comprehensive support provided across every stage of the journey.</p>
-        </li>
-        <li class="tr-point reveal">
-          <span class="tr-badge">No.&thinsp;1</span>
-          <p>India's top-ranked FMGE coaching programme for 10+ consecutive years &mdash; bringing nationally acclaimed professors for all 19 subjects, live and in-person, at zero cost to enrolled students.</p>
-        </li>
-        <li class="tr-point reveal reveal-d1">
-          <span class="tr-badge">NEET PG</span>
-          <p>Dedicated NEET PG coaching guides FMGE-cleared doctors towards postgraduate specialisations &mdash; supporting their career growth well beyond the initial licensing exam.</p>
-        </li>
-      </ul>
+      <div class="track-record">
+        <div class="tr-item reveal">
+          <div class="tr-num">20</div>
+          <div>
+            <h4>Years of continuous service</h4>
+            <p>A guiding lighthouse for South Indian students seeking overseas medical education &mdash; navigating them safely through one of India&rsquo;s most complex higher-education pathways for two decades.</p>
+          </div>
+        </div>
+        <div class="tr-item reveal reveal-d1">
+          <div class="tr-num">1,650<span style="font-size:.6em">+</span></div>
+          <div>
+            <h4>Graduates practising in India</h4>
+            <p>Students guided through six consecutive overseas batches have returned to India as practising doctors, with comprehensive support across every stage of the journey.</p>
+          </div>
+        </div>
+        <div class="tr-item reveal">
+          <div class="tr-num">#1</div>
+          <div>
+            <h4>FMGE coaching institute in South India</h4>
+            <p>India&rsquo;s top-ranked FMGE coaching programme for 10+ consecutive years &mdash; bringing nationally acclaimed professors for all 19 subjects, live and in-person, at zero cost to enrolled students.</p>
+          </div>
+        </div>
+        <div class="tr-item reveal reveal-d1">
+          <div class="tr-num">PG</div>
+          <div>
+            <h4>NEET PG coaching included</h4>
+            <p>Dedicated NEET PG coaching guides FMGE-cleared doctors towards postgraduate specialisations &mdash; supporting their career growth well beyond the initial licensing exam.</p>
+          </div>
+        </div>
+      </div>
 
     </div>
   </section>
