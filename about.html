@@ -12,6 +12,38 @@
   <link rel="stylesheet" href="/css/tokens.css" />
   <link rel="stylesheet" href="/css/pages.css" />
   <link rel="stylesheet" href="/css/about.css" />
+  <style>
+    /* ── Advocacy & Track Record section ── */
+    .advocacy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-lg);
+      margin-bottom: var(--space-3xl);
+    }
+    .adv-win {
+      background: var(--white);
+      border-radius: 12px;
+      padding: var(--space-xl);
+      border-top: 4px solid var(--brand-red);
+      box-shadow: 0 2px 16px rgba(0,0,0,.08);
+      text-align: center;
+    }
+    .adv-win-figure {
+      font-family: var(--font-head);
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      color: var(--brand-red);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .adv-win-from { font-size: var(--text-sm); color: var(--text-muted); margin-bottom: var(--space-sm); }
+    .adv-win-label { font-size: var(--text-base); font-weight: 600; color: var(--text-primary); margin: 0; }
+    .track-record-head { margin: var(--space-3xl) 0 var(--space-xl); padding-top: var(--space-2xl); border-top: 1px solid var(--border); }
+    .track-record-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); }
+    .tr-point { display: flex; gap: var(--space-md); align-items: flex-start; }
+    .tr-badge { flex-shrink: 0; background: var(--brand-navy); color: var(--white); font-family: var(--font-head); font-size: 0.7rem; font-weight: 700; padding: 5px 9px; border-radius: 6px; white-space: nowrap; margin-top: 3px; letter-spacing: .03em; }
+    .tr-point p { margin: 0; color: var(--text-secondary); font-size: var(--text-base); line-height: 1.65; }
+  </style>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -69,7 +101,7 @@
             <li><a href="/colleges/brokenshire.html">Brokenshire College</a></li>
             <li><a href="/colleges/gcm.html">Gullas College of Medicine</a></li>
             <li><a href="/colleges/lyceum.html">Lyceum Northwestern University</a></li>
-            <li><a href="/colleges/ucts.html">Universidade CatÃ³lica Timorense</a></li>
+            <li><a href="/colleges/ucts.html">Universidade Cat&oacute;lica Timorense</a></li>
             <li><a href="/colleges/university-of-peace.html">University of PEACE</a></li>
           <li><a href="/compare.html">Compare All Universities &#8594;</a></li>
           </ul>
@@ -298,6 +330,61 @@
     </div>
   </section>
 
+  <!-- ADVOCACY & TRACK RECORD -->
+  <section class="section section--light">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="eyebrow eyebrow--accent">Our Impact</span>
+        <h2 class="section-title">Beyond coaching &mdash; advocating for every doctor</h2>
+        <p class="section-sub">For the past two years, LIMRA has worked alongside FMGE-qualified doctors to resolve systemic challenges &mdash; petitioning authorities and securing three landmark reforms that directly benefit thousands of graduates across India.</p>
+      </div>
+
+      <div class="advocacy-grid">
+        <div class="adv-win reveal">
+          <div class="adv-win-figure">&#8377;29,500</div>
+          <div class="adv-win-from">reduced from &#8377;3,54,000</div>
+          <p class="adv-win-label">CRRI application review fee cut by over 90%</p>
+        </div>
+        <div class="adv-win reveal reveal-d1">
+          <div class="adv-win-figure">1,881</div>
+          <div class="adv-win-from">new training positions</div>
+          <p class="adv-win-label">CRRI seats secured for FMGE-qualified doctors</p>
+        </div>
+        <div class="adv-win reveal reveal-d2">
+          <div class="adv-win-figure">&#8377;25,750</div>
+          <div class="adv-win-from">per month</div>
+          <p class="adv-win-label">Monthly stipend secured for FMGE graduates in training</p>
+        </div>
+      </div>
+
+      <div class="track-record-head reveal">
+        <span class="eyebrow eyebrow--accent">Two Decades of Results</span>
+        <h2 class="section-title" style="margin:var(--space-sm) 0 0;">Our track record in medical education</h2>
+      </div>
+
+      <ul class="track-record-list">
+        <li class="tr-point reveal">
+          <span class="tr-badge">20 yrs</span>
+          <p>A guiding lighthouse for South Indian students seeking overseas medical education &mdash; navigating them safely through one of India's most complex higher-education pathways for two decades.</p>
+        </li>
+        <li class="tr-point reveal reveal-d1">
+          <span class="tr-badge">1,650+</span>
+          <p>Students guided through six consecutive overseas batches have returned to India as practising doctors, with comprehensive support provided across every stage of the journey.</p>
+        </li>
+        <li class="tr-point reveal">
+          <span class="tr-badge">No.&thinsp;1</span>
+          <p>India's top-ranked FMGE coaching programme for 10+ consecutive years &mdash; bringing nationally acclaimed professors for all 19 subjects, live and in-person, at zero cost to enrolled students.</p>
+        </li>
+        <li class="tr-point reveal reveal-d1">
+          <span class="tr-badge">NEET PG</span>
+          <p>Dedicated NEET PG coaching guides FMGE-cleared doctors towards postgraduate specialisations &mdash; supporting their career growth well beyond the initial licensing exam.</p>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="section section--tight cta-band">
     <div class="container text-center">
@@ -341,7 +428,7 @@
             <li><a href="/colleges/brokenshire.html">Brokenshire</a></li>
             <li><a href="/colleges/gcm.html">Gullas College of Medicine</a></li>
             <li><a href="/colleges/lyceum.html">Lyceum Northwestern</a></li>
-            <li><a href="/colleges/ucts.html">Universidade CatÃ³lica Timorense</a></li>
+            <li><a href="/colleges/ucts.html">Universidade Cat&oacute;lica Timorense</a></li>
             <li><a href="/colleges/university-of-peace.html">University of PEACE</a></li>
           <li><a href="/compare.html">Compare All Universities &#8594;</a></li>
           </ul>
