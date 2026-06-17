@@ -201,6 +201,12 @@ ul{list-style:none;}
 @keyframes pinpulse{0%{width:16px;height:16px;opacity:.7;}100%{width:60px;height:60px;opacity:0;}}
 .countries-note{text-align:center;margin-top:var(--space-2xl);font-size:.92rem;color:var(--text-on-dark-muted);}
 .countries-note strong{color:#fff;font-weight:var(--fw-semibold);}
+/* SVG arcs */
+.map-arcs{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;}
+.arc-bg{fill:none;stroke:rgba(238,64,56,.1);stroke-width:0.35;}
+.arc{fill:none;stroke:rgba(238,64,56,.65);stroke-width:0.45;stroke-linecap:round;stroke-dasharray:2.5 6;
+  animation:flowArc 2.5s linear infinite;animation-delay:var(--d,0s);}
+@keyframes flowArc{from{stroke-dashoffset:0;}to{stroke-dashoffset:-8.5;}}
 
 /* ============================================================
    SERVICES — BENTO
@@ -311,9 +317,7 @@ ul{list-style:none;}
 /* ============================================================
    GALLERY — interactive + lightbox
    ============================================================ */
-.marquee{display:flex;flex-direction:column;gap:var(--space-md);overflow:hidden;
-  -webkit-mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);
-  mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);}
+.marquee{display:flex;flex-direction:column;gap:var(--space-md);overflow:hidden;}
 .marquee-row{display:flex;gap:var(--space-md);width:max-content;will-change:transform;}
 .marquee-row.rtl{animation:marqL 52s linear infinite;}
 .marquee-row.ltr{animation:marqR 46s linear infinite;}
@@ -522,7 +526,7 @@ ul{list-style:none;}
 @keyframes ntscroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 @media(prefers-reduced-motion:reduce){
-  .constellation,.breathe,.node .face,.map-pin.primary::before,.marquee-row,.news-ticker-track,.news-ticker-label .dot{animation:none!important;}
+  .constellation,.breathe,.node .face,.map-pin.primary::before,.arc,.marquee-row,.news-ticker-track,.news-ticker-label .dot{animation:none!important;}
   .reveal{opacity:1;transform:none;}
   html{scroll-behavior:auto;}
 }
