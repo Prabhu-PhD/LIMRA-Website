@@ -49,7 +49,21 @@ function initNavbar() {
 
     menu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
+        // on mobile, tapping a dropdown parent expands its submenu instead of
+        // navigating — so don't close the drawer (toggle handled below)
+        if (link.parentElement.classList.contains('nav-dropdown') && window.innerWidth <= 1024) return;
         closeMenu();
+      });
+    });
+
+    // mobile: tapping the "Universities" dropdown parent opens the submenu
+    // in place rather than jumping straight to colleges.html
+    menu.querySelectorAll('.nav-dropdown > a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (window.innerWidth <= 1024) {
+          e.preventDefault();
+          link.parentElement.classList.toggle('open');
+        }
       });
     });
   }

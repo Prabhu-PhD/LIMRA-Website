@@ -92,7 +92,10 @@
       lines.appendChild(dot);
       var el = document.createElement("div");
       el.className = "node";
-      el.style.width = n.s + "px"; el.style.height = n.s + "px";
+      // size as a % of the orbit (n.s px on the 680px desktop orbit) so faces
+      // scale down with the orbit on mobile and never overlap the hub
+      var sPct = (n.s / 680) * 100;
+      el.style.width = sPct + "%"; el.style.height = sPct + "%";
       el.style.left = (x / SIZE) * 100 + "%"; el.style.top = (y / SIZE) * 100 + "%";
       el.innerHTML = '<div class="face"><img loading="lazy" width="160" height="160" alt="LIMRA student" src="/assets/default-avatar.svg"></div>';
       orbitField.appendChild(el);
