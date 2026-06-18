@@ -366,45 +366,45 @@
       </div>
       <div class="map-wrap reveal">
         <img class="world-map" src="assets/world-dots.svg" alt="World map showing FMGE students converging on Chennai" width="3607" height="1769" />
-        <!-- Animated arc paths: every country flows toward Chennai. Coordinates from equirectangular projection (lon[-180,180], lat[+88,-88]) calibrated to the dot grid. -->
+        <!-- Animated arc paths: every country flows toward Chennai. Coordinates from MERCATOR projection (lon linear; lat via y=62.78-32.34*ln(tan(pi/4+lat/2))) calibrated to the dot grid, then snapped to rendered land. -->
         <svg class="map-arcs" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-          <path class="arc-bg" d="M 83.6 41.7 Q 77.9 35.7 72.3 42.6"/>
-          <path class="arc-bg" d="M 81.1 54.5 Q 76.7 36.6 72.3 42.6"/>
-          <path class="arc-bg" d="M 62.4 27.2 Q 67.3 21.2 72.3 42.6"/>
-          <path class="arc-bg" d="M 69.2 26.5 Q 70.8 20.5 72.3 42.6"/>
-          <path class="arc-bg" d="M 69.8 20.9 Q 71.0 14.9 72.3 42.6"/>
-          <path class="arc-bg" d="M 60.5 18.3 Q 66.4 12.3 72.3 42.6"/>
-          <path class="arc-bg" d="M 82.3 27.3 Q 77.3 21.3 72.3 42.6"/>
-          <path class="arc-bg" d="M 62.4 26.3 Q 67.3 20.3 72.3 42.6"/>
-          <path class="arc-bg" d="M 61.3 61 Q 66.8 36.6 72.3 42.6"/>
-          <path class="arc-bg" d="M 24.9 41.7 Q 48.6 28.4 72.3 42.6"/>
-          <path class="arc-bg" d="M 70.7 25.6 Q 71.5 19.6 72.3 42.6"/>
-          <path class="arc" d="M 83.6 41.7 Q 77.9 35.7 72.3 42.6" style="--d:0s"/>
-          <path class="arc" d="M 81.1 54.5 Q 76.7 36.6 72.3 42.6" style="--d:0.3s"/>
-          <path class="arc" d="M 62.4 27.2 Q 67.3 21.2 72.3 42.6" style="--d:0.55s"/>
-          <path class="arc" d="M 69.2 26.5 Q 70.8 20.5 72.3 42.6" style="--d:0.8s"/>
-          <path class="arc" d="M 69.8 20.9 Q 71.0 14.9 72.3 42.6" style="--d:1.05s"/>
-          <path class="arc" d="M 60.5 18.3 Q 66.4 12.3 72.3 42.6" style="--d:1.3s"/>
-          <path class="arc" d="M 82.3 27.3 Q 77.3 21.3 72.3 42.6" style="--d:0.4s"/>
-          <path class="arc" d="M 62.4 26.3 Q 67.3 20.3 72.3 42.6" style="--d:0.95s"/>
-          <path class="arc" d="M 61.3 61 Q 66.8 36.6 72.3 42.6" style="--d:0.65s"/>
-          <path class="arc" d="M 24.9 41.7 Q 48.6 28.4 72.3 42.6" style="--d:1.5s"/>
-          <path class="arc" d="M 70.7 25.6 Q 71.5 19.6 72.3 42.6" style="--d:1.15s"/>
+          <path class="arc-bg" d="M 83.6 55.4 Q 76.9 49.7 70.3 54.7"/>
+          <path class="arc-bg" d="M 84.8 67 Q 77.5 49.7 70.3 54.7"/>
+          <path class="arc-bg" d="M 62.1 37.8 Q 66.2 32.8 70.3 54.7"/>
+          <path class="arc-bg" d="M 69.5 37.3 Q 69.9 32.3 70.3 54.7"/>
+          <path class="arc-bg" d="M 69.9 29.3 Q 70.1 24.3 70.3 54.7"/>
+          <path class="arc-bg" d="M 60.6 25 Q 65.5 20.0 70.3 54.7"/>
+          <path class="arc-bg" d="M 82.6 38.3 Q 76.4 33.3 70.3 54.7"/>
+          <path class="arc-bg" d="M 62.2 36.7 Q 66.3 31.7 70.3 54.7"/>
+          <path class="arc-bg" d="M 66 74.4 Q 68.2 49.7 70.3 54.7"/>
+          <path class="arc-bg" d="M 25.5 54.4 Q 47.9 43.2 70.3 54.7"/>
+          <path class="arc-bg" d="M 71 36.1 Q 70.7 31.1 70.3 54.7"/>
+          <path class="arc" d="M 83.6 55.4 Q 76.9 49.7 70.3 54.7" style="--d:0s"/>
+          <path class="arc" d="M 84.8 67 Q 77.5 49.7 70.3 54.7" style="--d:0.3s"/>
+          <path class="arc" d="M 62.1 37.8 Q 66.2 32.8 70.3 54.7" style="--d:0.55s"/>
+          <path class="arc" d="M 69.5 37.3 Q 69.9 32.3 70.3 54.7" style="--d:0.8s"/>
+          <path class="arc" d="M 69.9 29.3 Q 70.1 24.3 70.3 54.7" style="--d:1.05s"/>
+          <path class="arc" d="M 60.6 25 Q 65.5 20.0 70.3 54.7" style="--d:1.3s"/>
+          <path class="arc" d="M 82.6 38.3 Q 76.4 33.3 70.3 54.7" style="--d:0.4s"/>
+          <path class="arc" d="M 62.2 36.7 Q 66.3 31.7 70.3 54.7" style="--d:0.95s"/>
+          <path class="arc" d="M 66 74.4 Q 68.2 49.7 70.3 54.7" style="--d:0.65s"/>
+          <path class="arc" d="M 25.5 54.4 Q 47.9 43.2 70.3 54.7" style="--d:1.5s"/>
+          <path class="arc" d="M 71 36.1 Q 70.7 31.1 70.3 54.7" style="--d:1.15s"/>
         </svg>
         <!-- Source country pins -->
-        <span class="map-pin" style="left:83.6%;top:41.7%"><span class="map-dot"></span><span class="map-name">Philippines</span></span>
-        <span class="map-pin" style="left:81.1%;top:54.5%"><span class="map-dot"></span><span class="map-name">Timor-Leste</span></span>
-        <span class="map-pin" style="left:62.4%;top:27.2%"><span class="map-dot"></span><span class="map-name">Armenia</span></span>
-        <span class="map-pin" style="left:69.2%;top:26.5%"><span class="map-dot"></span><span class="map-name">Uzbekistan</span></span>
-        <span class="map-pin" style="left:69.8%;top:20.9%"><span class="map-dot"></span><span class="map-name">Kazakhstan</span></span>
-        <span class="map-pin" style="left:60.5%;top:18.3%"><span class="map-dot"></span><span class="map-name">Russia</span></span>
-        <span class="map-pin" style="left:82.3%;top:27.3%"><span class="map-dot"></span><span class="map-name">China</span></span>
-        <span class="map-pin" style="left:62.4%;top:26.3%"><span class="map-dot"></span><span class="map-name">Georgia</span></span>
-        <span class="map-pin" style="left:61.3%;top:61%"><span class="map-dot"></span><span class="map-name">Mauritius</span></span>
-        <span class="map-pin" style="left:24.9%;top:41.7%"><span class="map-dot"></span><span class="map-name">Central America</span></span>
-        <span class="map-pin" style="left:70.7%;top:25.6%"><span class="map-dot"></span><span class="map-name">Kyrgyzstan</span></span>
-        <!-- Chennai — the pulsating destination -->
-        <span class="map-pin primary" style="left:72.3%;top:42.6%"><span class="map-dot"></span><span class="map-name">Chennai, India</span></span>
+        <span class="map-pin" style="left:83.6%;top:55.4%"><span class="map-dot"></span><span class="map-name">Philippines</span></span>
+        <span class="map-pin" style="left:84.8%;top:67%"><span class="map-dot"></span><span class="map-name">Timor-Leste</span></span>
+        <span class="map-pin" style="left:62.1%;top:37.8%"><span class="map-dot"></span><span class="map-name">Armenia</span></span>
+        <span class="map-pin" style="left:69.5%;top:37.3%"><span class="map-dot"></span><span class="map-name">Uzbekistan</span></span>
+        <span class="map-pin" style="left:69.9%;top:29.3%"><span class="map-dot"></span><span class="map-name">Kazakhstan</span></span>
+        <span class="map-pin" style="left:60.6%;top:25%"><span class="map-dot"></span><span class="map-name">Russia</span></span>
+        <span class="map-pin" style="left:82.6%;top:38.3%"><span class="map-dot"></span><span class="map-name">China</span></span>
+        <span class="map-pin" style="left:62.2%;top:36.7%"><span class="map-dot"></span><span class="map-name">Georgia</span></span>
+        <span class="map-pin" style="left:66%;top:74.4%"><span class="map-dot"></span><span class="map-name">Mauritius</span></span>
+        <span class="map-pin" style="left:25.5%;top:54.4%"><span class="map-dot"></span><span class="map-name">Central America</span></span>
+        <span class="map-pin" style="left:71%;top:36.1%"><span class="map-dot"></span><span class="map-name">Kyrgyzstan</span></span>
+        <!-- Chennai — the pulsating destination (on the rendered southern-India peninsula) -->
+        <span class="map-pin primary" style="left:70.3%;top:54.7%"><span class="map-dot"></span><span class="map-name">Chennai, India</span></span>
       </div>
       <p class="countries-note reveal">LIMRA FMGE coaching centre &mdash; <strong>Mylapore, Chennai &#127470;&#127475;</strong></p>
     </div>
