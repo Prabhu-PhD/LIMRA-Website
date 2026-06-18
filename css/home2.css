@@ -112,6 +112,9 @@
   .hero2-copy{max-width:none;}
   .scrub-hint{left:50%;right:auto;transform:translateX(-50%);bottom:18px;}
   .hero2 .wordmark{display:none;}
+  /* wordmark is hidden on mobile, so the -90px overlap has nothing to overlap
+     and only risks pulling the strip over the hero stats — stack cleanly */
+  .hero2 + .enquiry-wrap{margin-top:0;}
 }
 @media (max-width:560px){
   .hero2 .hero-stats{gap:16px;}

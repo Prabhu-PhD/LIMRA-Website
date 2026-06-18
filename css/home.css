@@ -466,6 +466,11 @@ ul{list-style:none;}
 @media(max-width:900px){
   .hero{min-height:auto;padding:100px 0 60px;}
   .hero-grid{grid-template-columns:1fr;gap:10px;text-align:center;}
+  /* the -90px overlap is a desktop flourish (enquiry card over the faded
+     wordmark); when the hero stacks to one column it instead pulls the strip
+     up over the hero stats and hid the "92% FMGE pass rate" stat. Same dark
+     bg, so removing the overlap just stacks them cleanly. */
+  .enquiry-wrap{margin-top:0;}
   /* min-width:0 stops the nowrap CTA/stat row from forcing the grid track
      wider than the container (was pushing the whole hero ~23px off-screen) */
   .hero-copy,.hero-visual{min-width:0;}
