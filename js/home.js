@@ -79,7 +79,7 @@
   var lines = document.getElementById("lines");
   var orbitField = document.getElementById("orbitField");
   if (lines && orbitField) {
-    nodes.forEach(function (n) {
+    nodes.forEach(function (n, ni) {
       var a = (n.deg * Math.PI) / 180;
       var x = C + n.r * Math.cos(a), y = C + n.r * Math.sin(a);
       var sx = C + HUB_R * Math.cos(a), sy = C + HUB_R * Math.sin(a); // start on the ring edge
@@ -97,7 +97,8 @@
       var sPct = (n.s / 680) * 100;
       el.style.width = sPct + "%"; el.style.height = sPct + "%";
       el.style.left = (x / SIZE) * 100 + "%"; el.style.top = (y / SIZE) * 100 + "%";
-      el.innerHTML = '<div class="face"><img loading="lazy" width="160" height="160" alt="LIMRA student" src="/assets/default-avatar.svg"></div>';
+      var imgs = ['/assets/LIMRA-Students/1.jpg','/assets/LIMRA-Students/2.jpg','/assets/LIMRA-Students/3.jpg','/assets/LIMRA-Students/4.jpg','/assets/LIMRA-Students/5.jpg','/assets/LIMRA-Students/6.jpg','/assets/LIMRA-Students/7 copy.jpg','/assets/LIMRA-Students/8 copy.jpg','/assets/LIMRA-Students/9 copy.jpg'];
+      el.innerHTML = '<div class="face"><img loading="lazy" width="160" height="160" alt="LIMRA student" src="' + (imgs[ni] || imgs[0]) + '"></div>';
       orbitField.appendChild(el);
     });
   }

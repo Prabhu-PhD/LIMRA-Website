@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talk to a Student Ambassador &mdash; LIMRA Overseas Education</title>
+  <meta name="description" content="Hear directly from LIMRA students studying in the Philippines and Timor-Leste. Book a free call with a student ambassador who has walked the same path." />
+  <link rel="canonical" href="https://www.limraedu.com/student-ambassador.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" />
+  <link rel="stylesheet" href="/css/tokens.css" />
+  <link rel="stylesheet" href="/css/pages.css" />
+  <style>
+    /* Ambassador grid */
+    .amb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--space-xl);}
+    .amb-card{background:var(--surface-1);border:1px solid var(--glass-border);border-radius:var(--radius-xl);padding:var(--space-xl);text-align:center;transition:transform var(--dur-normal),box-shadow var(--dur-normal);}
+    .amb-card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.4);}
+    .amb-avatar{width:96px;height:96px;border-radius:50%;margin:0 auto var(--space-md);overflow:hidden;background:var(--surface-2);border:3px solid var(--glass-border);}
+    .amb-avatar img{width:100%;height:100%;object-fit:cover;}
+    .amb-name{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-lg);color:#fff;margin-bottom:4px;}
+    .amb-uni{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-on-dark-muted);margin-bottom:var(--space-sm);}
+    .amb-year{display:inline-block;font-size:.78rem;background:rgba(255,255,255,.06);border:1px solid var(--glass-border);border-radius:var(--radius-pill);padding:4px 12px;color:var(--text-on-dark-muted);margin-bottom:var(--space-md);}
+    .amb-quote{font-size:.88rem;color:var(--text-on-dark-muted);line-height:var(--lh-relaxed);margin-bottom:var(--space-lg);font-style:italic;}
+    .amb-wa{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-family:var(--font-body);font-weight:var(--fw-semibold);font-size:.85rem;padding:10px 20px;border-radius:var(--radius-pill);transition:transform var(--dur-fast),box-shadow var(--dur-fast);box-shadow:0 6px 20px rgba(37,211,102,.3);}
+    .amb-wa:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(37,211,102,.5);}
+    .amb-wa svg{width:18px;height:18px;flex:none;}
+
+    /* How it works steps */
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-xl);counter-reset:step;}
+    .step{position:relative;padding:var(--space-xl);background:var(--surface-1);border:1px solid var(--glass-border);border-radius:var(--radius-xl);}
+    .step::before{counter-increment:step;content:counter(step);font-family:var(--font-mono);font-size:2.4rem;font-weight:700;color:var(--brand-red);opacity:.35;line-height:1;display:block;margin-bottom:var(--space-sm);}
+    .step h4{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-lg);color:#fff;margin-bottom:var(--space-xs);}
+    .step p{font-size:.9rem;color:var(--text-on-dark-muted);line-height:var(--lh-relaxed);}
+
+    /* Calendly placeholder */
+    .scheduler-wrap{background:var(--surface-1);border:1px solid var(--glass-border);border-radius:var(--radius-xl);padding:var(--space-3xl);text-align:center;}
+    .scheduler-wrap h3{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:var(--fs-h3);color:#fff;margin-bottom:var(--space-sm);}
+    .scheduler-wrap p{color:var(--text-on-dark-muted);margin-bottom:var(--space-xl);}
+    .calendly-placeholder{background:rgba(255,255,255,.03);border:2px dashed var(--glass-border);border-radius:var(--radius-xl);padding:var(--space-4xl) var(--space-2xl);color:var(--text-on-dark-muted);font-family:var(--font-mono);font-size:.78rem;letter-spacing:.08em;}
+
+    @media(max-width:600px){.amb-grid{grid-template-columns:1fr 1fr;}.steps{grid-template-columns:1fr;}}
+    @media(max-width:420px){.amb-grid{grid-template-columns:1fr;}}
+  </style>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="LIMRA Overseas Education" />
+  <meta property="og:title" content="Talk to a Student Ambassador &mdash; LIMRA Overseas Education" />
+  <meta property="og:description" content="Hear directly from LIMRA students studying in the Philippines and Timor-Leste. Book a free call with a student ambassador who has walked the same path." />
+  <meta property="og:url" content="https://www.limraedu.com/student-ambassador.html" />
+  <meta property="og:image" content="https://www.limraedu.com/assets/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Talk to a Student Ambassador &mdash; LIMRA Overseas Education" />
+  <meta name="twitter:description" content="Hear directly from LIMRA students studying in the Philippines and Timor-Leste." />
+  <meta name="twitter:image" content="https://www.limraedu.com/assets/og-image.jpg" />
+
+  <script>window._gaId='G-XXXXXXXXXX';</script>
+</head>
+<body data-page="student-ambassador">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="/" aria-label="LIMRA home"><img class="nav-logo" src="/assets/logo-white.svg" alt="LIMRA Overseas Education" /></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/home2.html">Home 2</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li class="nav-dropdown">
+          <a href="/colleges.html">Universities <span class="nav-caret">&#9662;</span></a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="/colleges/dmsf.html">Davao Medical School Foundation</a></li>
+            <li><a href="/colleges/brokenshire.html">Brokenshire College</a></li>
+            <li><a href="/colleges/gcm.html">Gullas College of Medicine</a></li>
+            <li><a href="/colleges/lyceum.html">Lyceum Northwestern University</a></li>
+            <li><a href="/colleges/ucts.html">Universidade Cat&oacute;lica Timorense</a></li>
+            <li><a href="/colleges/university-of-peace.html">University of PEACE</a></li>
+            <li><a href="/compare.html">Compare All Universities &#8594;</a></li>
+          </ul>
+        </li>
+        <li><a href="/coaching.html">FMGE Coaching</a></li>
+        <li><a href="/medical-tourism.html">Medical Tourism</a></li>
+        <li><a href="/gallery.html">Gallery</a></li>
+        <li><a href="/blog/">News</a></li>
+        <li><a href="/contact.html" class="nav-cta">Enquire Now</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <main id="main">
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>&#8250;</span>
+        <span>Student Ambassador</span>
+      </div>
+      <h1>Hear It From a <span class="grad">Real Student</span></h1>
+      <p class="lead">Have questions that only someone who has lived it can answer? Our student ambassadors are current MBBS students at LIMRA's partner universities &mdash; ready to speak with you honestly about life, academics, and making the leap.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow eyebrow--accent">How it works</span>
+        <h2 class="section-title">Three simple steps</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <h4>Pick a university</h4>
+          <p>Browse the ambassadors below and choose someone studying at the university you're most interested in.</p>
+        </div>
+        <div class="step reveal reveal-d1">
+          <h4>Message on WhatsApp</h4>
+          <p>Hit the WhatsApp button on their card. They'll reply and arrange a convenient time for a call or chat.</p>
+        </div>
+        <div class="step reveal reveal-d2">
+          <h4>Ask anything</h4>
+          <p>Campus life, hostel, clinical postings, FMGE prep, costs &mdash; no question is off limits. Honest answers only.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMBASSADOR CARDS -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow eyebrow--accent">Our ambassadors</span>
+        <h2 class="section-title">Meet your peers</h2>
+        <p class="section-sub">One ambassador per university &mdash; each personally selected by LIMRA for their openness, honesty, and willingness to help the next generation of doctors.</p>
+      </div>
+
+      <div class="amb-grid">
+
+        <!-- DMSF -->
+        <div class="amb-card reveal">
+          <div class="amb-avatar">
+            <img src="/assets/LIMRA-Students/1.jpg" alt="DMSF student ambassador" loading="lazy" />
+          </div>
+          <div class="amb-name">DMSF Ambassador</div>
+          <div class="amb-uni">Davao Medical School Foundation</div>
+          <div class="amb-year">Davao, Philippines &middot; 2nd Year</div>
+          <p class="amb-quote">"DMSF's teaching hospital is right on campus &mdash; clinical exposure begins early and really sets you apart."</p>
+          <a href="https://wa.me/919445783333?text=Hi%2C+I%27d+like+to+speak+with+the+DMSF+student+ambassador" target="_blank" rel="noopener" class="amb-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- BROKENSHIRE -->
+        <div class="amb-card reveal reveal-d1">
+          <div class="amb-avatar">
+            <img src="/assets/LIMRA-Students/2.jpg" alt="Brokenshire student ambassador" loading="lazy" />
+          </div>
+          <div class="amb-name">Brokenshire Ambassador</div>
+          <div class="amb-uni">Brokenshire College of Medicine</div>
+          <div class="amb-year">Davao, Philippines &middot; 3rd Year</div>
+          <p class="amb-quote">"The Anatomage table and simulation labs here are incredible &mdash; I felt truly prepared before entering the wards."</p>
+          <a href="https://wa.me/919445783333?text=Hi%2C+I%27d+like+to+speak+with+the+Brokenshire+student+ambassador" target="_blank" rel="noopener" class="amb-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- GCM -->
+        <div class="amb-card reveal reveal-d2">
+          <div class="amb-avatar">
+            <img src="/assets/LIMRA-Students/3.jpg" alt="GCM student ambassador" loading="lazy" />
+          </div>
+          <div class="amb-name">GCM Ambassador</div>
+          <div class="amb-uni">Gullas College of Medicine</div>
+          <div class="amb-year">Cebu, Philippines &middot; 2nd Year</div>
+          <p class="amb-quote">"Cebu is vibrant, safe, and English-speaking. GCM's affiliation with 8 hospitals gave me exposure I couldn't have imagined."</p>
+          <a href="https://wa.me/919445783333?text=Hi%2C+I%27d+like+to+speak+with+the+GCM+student+ambassador" target="_blank" rel="noopener" class="amb-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- LYCEUM -->
+        <div class="amb-card reveal">
+          <div class="amb-avatar">
+            <img src="/assets/LIMRA-Students/4.jpg" alt="Lyceum student ambassador" loading="lazy" />
+          </div>
+          <div class="amb-name">Lyceum Ambassador</div>
+          <div class="amb-uni">Lyceum Northwestern University</div>
+          <div class="amb-year">Dagupan, Philippines &middot; 1st Year</div>
+          <p class="amb-quote">"Dagupan is peaceful, perfect for studying. The faculty are approachable and the Indian student community here really looks out for each other."</p>
+          <a href="https://wa.me/919445783333?text=Hi%2C+I%27d+like+to+speak+with+the+Lyceum+student+ambassador" target="_blank" rel="noopener" class="amb-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- UCT -->
+        <div class="amb-card reveal reveal-d1">
+          <div class="amb-avatar">
+            <img src="/assets/LIMRA-Students/5.jpg" alt="UCT student ambassador" loading="lazy" />
+          </div>
+          <div class="amb-name">UCT Ambassador</div>
+          <div class="amb-uni">Universidade Cat&oacute;lica Timorense</div>
+          <div class="amb-year">Dili, Timor-Leste &middot; 2nd Year</div>
+          <p class="amb-quote">"Timor-Leste is a unique, affordable experience. Smaller batch sizes mean more individual attention from professors."</p>
+          <a href="https://wa.me/919445783333?text=Hi%2C+I%27d+like+to+speak+with+the+UCT+student+ambassador" target="_blank" rel="noopener" class="amb-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- UNPAZ -->
+        <div class="amb-card reveal reveal-d2">
+          <div class="amb-avatar">
+            <img src="/assets/LIMRA-Students/6.jpg" alt="UNPAZ student ambassador" loading="lazy" />
+          </div>
+          <div class="amb-name">UNPAZ Ambassador</div>
+          <div class="amb-uni">University of PEACE</div>
+          <div class="amb-year">Dili, Timor-Leste &middot; 1st Year</div>
+          <p class="amb-quote">"If you value affordability without compromising the standard of education, UNPAZ is worth a serious look."</p>
+          <a href="https://wa.me/919445783333?text=Hi%2C+I%27d+like+to+speak+with+the+UNPAZ+student+ambassador" target="_blank" rel="noopener" class="amb-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK A CALL -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow eyebrow--accent">Book a call</span>
+        <h2 class="section-title">Schedule a session</h2>
+        <p class="section-sub">Prefer a scheduled video call? Book a 20-minute slot directly &mdash; a LIMRA counsellor or student ambassador will join you at your chosen time.</p>
+      </div>
+      <div class="scheduler-wrap reveal">
+        <h3>Choose a time that suits you</h3>
+        <p>Our counselling team is available Monday&ndash;Saturday, 9 AM&ndash;7 PM IST.</p>
+        <!-- CALENDLY EMBED — replace the div below with your Calendly inline widget snippet -->
+        <div class="calendly-placeholder">
+          Calendly scheduling widget will appear here.<br />
+          To activate: replace this block with your Calendly inline embed code.
+        </div>
+        <!-- END CALENDLY -->
+        <p style="margin-top:var(--space-xl);font-size:.85rem;color:var(--text-on-dark-muted);">Prefer not to book online? Call us directly at <a href="tel:+919444375000" style="color:var(--brand-red);">+91-94443 75000</a> or message on <a href="https://wa.me/919445783333" target="_blank" rel="noopener" style="color:#25D366;">WhatsApp</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img class="footer-logo" src="/assets/logo-white.svg" alt="LIMRA Overseas Education" />
+          <p class="footer-desc">Guiding aspiring doctors to premier medical universities in the Philippines and Timor-Leste for over 24 years. No.1 FMGE coaching institute in South India.</p>
+          <div class="footer-social"><a href="https://wa.me/919445783333" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a><a href="https://www.facebook.com/LIMRAofficial/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a><a href="https://twitter.com/limra_official" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.linkedin.com/company/limra-overseas-education/about/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.02 8h4.96v16H.02V8zm7.5 0h4.75v2.2h.07c.66-1.25 2.27-2.57 4.67-2.57 5 0 5.92 3.29 5.92 7.57V24h-4.96v-7.4c0-1.77-.03-4.04-2.46-4.04-2.46 0-2.84 1.92-2.84 3.91V24H7.52V8z"/></svg></a><a href="https://www.instagram.com/limra_official1/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a><a href="https://www.youtube.com/@LimraEducation" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg></a></div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="/home2.html">Home 2</a></li>
+            <li><a href="/about.html">About LIMRA</a></li>
+            <li><a href="/colleges.html">Universities</a></li>
+            <li><a href="/coaching.html">FMGE coaching</a></li>
+            <li><a href="/medical-tourism.html">Medical tourism</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/testimonials.html">Success stories</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+            <li><a href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Universities</h4>
+          <ul>
+            <li><a href="/colleges/dmsf.html">DMSF &mdash; Davao</a></li>
+            <li><a href="/colleges/brokenshire.html">Brokenshire</a></li>
+            <li><a href="/colleges/gcm.html">Gullas College of Medicine</a></li>
+            <li><a href="/colleges/lyceum.html">Lyceum Northwestern</a></li>
+            <li><a href="/colleges/ucts.html">Universidade Cat&oacute;lica Timorense</a></li>
+            <li><a href="/colleges/university-of-peace.html">University of PEACE</a></li>
+            <li><a href="/compare.html">Compare All Universities &#8594;</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-admissions-wrap"><div class="footer-admissions-badge">Admissions open for 2026&ndash;2027</div><a href="/student-ambassador.html" class="btn btn-primary footer-ambassador-btn">Talk to our Student Ambassador</a></div><h4>Contact</h4>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>New No.177, Royapettah High Road, 1st Floor, SMS Centre, Mylapore, Chennai - 600 004</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div><a href="tel:+919444375000">+91-94443 75000</a><br /><a href="tel:+919445783333">+91-94457 83333</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> LIMRA Overseas Education. All rights reserved. | <a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a></p>
+      </div>
+    </div>
+    <div class="footer-wordmark">LIMRA</div>
+  </footer>
+
+  <!-- WHATSAPP FAB -->
+  <a href="https://wa.me/919445783333" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    var y = document.getElementById('year'); if(y) y.textContent = new Date().getFullYear();
+    var toggle = document.getElementById('navToggle');
+    var menu = document.getElementById('navMenu');
+    if(toggle && menu){
+      toggle.addEventListener('click', function(){
+        var open = menu.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.querySelectorAll('.nav-dropdown > a').forEach(function(a){
+        a.addEventListener('click', function(e){
+          if(window.innerWidth <= 900){ e.preventDefault(); a.parentElement.classList.toggle('open'); }
+        });
+      });
+    }
+    var reveals = document.querySelectorAll('.reveal');
+    if(reveals.length){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+      },{threshold:.12});
+      reveals.forEach(function(el){ io.observe(el); });
+    }
+  </script>
+  <script src="/js/cookie-consent.js" defer></script>
+  <script src="/js/mobile-cta.js" defer></script>
+</body>
+</html>

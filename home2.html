@@ -90,13 +90,17 @@
   <div class="enquiry-wrap" id="enquiry">
     <div class="container">
       <form class="enquiry-strip js-web3form" id="enquiryForm" name="enquiry" method="POST" action="https://api.web3forms.com/submit" data-redirect="/thank-you.html">
-        <input type="hidden" name="subject" value="New website enquiry (home 2 test)" />
+        <input type="hidden" name="subject" value="New website enquiry (home page)" />
+        <input type="hidden" name="from_name" value="LIMRA Overseas Education" />
+        <input type="hidden" name="autoresponse" value="Dear Student,&#10;&#10;Thank you for reaching out to LIMRA Overseas Education!&#10;&#10;We have received your enquiry and our counselling team will contact you within 24 hours.&#10;&#10;In the meantime, feel free to WhatsApp us at +91 94443 75000 for urgent queries.&#10;&#10;Warm regards,&#10;The LIMRA Team&#10;LIMRA Overseas Education, Chennai&#10;Phone: +91 94443 75000 | www.limraedu.com" />
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none !important" />
         <div class="enquiry-lead"><div class="t">Get free counselling</div><div class="s">Our experts call you back.</div></div>
         <div class="field"><label for="eq-name">Full name</label><input id="eq-name" type="text" name="name" placeholder="Your name" required /></div>
-        <div class="field"><label for="eq-phone">Phone</label><input id="eq-phone" type="tel" name="phone" placeholder="Include your country code" required /></div>
+        <div class="field"><label for="eq-phone">Phone</label><input id="eq-phone" type="tel" name="phone" placeholder="Include your country code"   required /></div>
+        <div class="field"><label for="eq-email">Email</label><input id="eq-email" type="email" name="email" placeholder="your@email.com" required /></div>
         <div class="field"><label for="eq-course">Interest</label>
-          <select id="eq-course" name="course">
+          <select id="eq-course" name="course" required>
+            <option value="" disabled selected>Select your interest</option>
             <option value="MBBS Philippines">MBBS &mdash; Philippines</option>
             <option value="MBBS Timor-Leste">MBBS &mdash; Timor-Leste</option>
             <option value="MBBS Abroad (other)">MBBS abroad &mdash; other country</option>
@@ -106,9 +110,22 @@
             <option value="General Enquiry">General enquiry</option>
           </select>
         </div>
+        <div class="field checkbox-field" style="flex-direction:row;align-items:flex-start;gap:8px;margin-bottom:14px;">
+          <input type="checkbox" id="eq-consent" name="consent" required style="width:auto;margin-right:8px;accent-color:var(--brand-red);cursor:pointer;"/>
+          <label for="eq-consent" style="font-family:var(--font-body);letter-spacing:0;font-size:0.8rem;opacity:0.8;text-transform:none;margin-bottom:0;cursor:pointer;">I agree to the <a href="/privacy.html" target="_blank" style="color:var(--brand-red);text-decoration:underline;">Privacy Policy</a></label>
+        </div>
         <button type="submit" class="btn btn-primary">Request call &#8594;</button>
         <div class="enquiry-msg" id="enquiryMsg" role="status"></div>
       </form>
+    </div>
+  </div>
+
+  
+  <!-- ====================== NEWS TICKER ====================== -->
+  <div class="news-ticker" id="newsTicker" aria-label="Latest news" hidden>
+    <div class="news-ticker-label"><span class="dot"></span> Latest</div>
+    <div class="news-ticker-viewport">
+      <div class="news-ticker-track" id="newsTickerTrack"></div>
     </div>
   </div>
 
@@ -121,38 +138,38 @@
         <p class="section-sub">Hand-picked NMC-aligned medical universities in the Philippines and Timor-Leste. Click any college to explore programs, hospitals, and facilities.</p>
       </div>
       <div class="college-logos">
-        <a class="clogo-card reveal" href="/colleges/lyceum.html">
-          <div class="clogo-badge"><img src="assets/logo-lyceum.webp" alt="Lyceum Northwestern University logo" loading="lazy" /></div>
-          <div class="clogo-name">Lyceum Northwestern University</div>
-          <div class="clogo-loc">&#127477;&#127469; Dagupan, Philippines</div>
-          <span class="clogo-link">View university &#8594;</span>
-        </a>
         <a class="clogo-card reveal reveal-d1" href="/colleges/dmsf.html">
-          <div class="clogo-badge"><img src="assets/logo-dmsf.webp" alt="Davao Medical School Foundation logo" loading="lazy" /></div>
+          <div class="clogo-badge"><img src="assets/logo-dmsf.webp" alt="Davao Medical School Foundation logo" loading="lazy" / width="420" height="420"></div>
           <div class="clogo-name">Davao Medical School Foundation</div>
           <div class="clogo-loc">&#127477;&#127469; Davao, Philippines</div>
           <span class="clogo-link">View university &#8594;</span>
         </a>
         <a class="clogo-card reveal reveal-d2" href="/colleges/brokenshire.html">
-          <div class="clogo-badge"><img src="assets/logo-brokenshire.webp" alt="Brokenshire College logo" loading="lazy" /></div>
+          <div class="clogo-badge"><img src="assets/logo-brokenshire.webp" alt="Brokenshire College logo" loading="lazy" / width="420" height="420"></div>
           <div class="clogo-name">Brokenshire College</div>
           <div class="clogo-loc">&#127477;&#127469; Davao, Philippines</div>
           <span class="clogo-link">View university &#8594;</span>
         </a>
         <a class="clogo-card reveal" href="/colleges/gcm.html">
-          <div class="clogo-badge"><img src="assets/logo-gcm.webp" alt="Gullas College of Medicine logo" loading="lazy" /></div>
+          <div class="clogo-badge"><img src="assets/logo-gcm.webp" alt="Gullas College of Medicine logo" loading="lazy" / width="420" height="420"></div>
           <div class="clogo-name">Gullas College of Medicine</div>
           <div class="clogo-loc">&#127477;&#127469; Cebu, Philippines</div>
           <span class="clogo-link">View university &#8594;</span>
         </a>
+        <a class="clogo-card reveal" href="/colleges/lyceum.html">
+          <div class="clogo-badge"><img src="assets/logo-lyceum.webp" alt="Lyceum Northwestern University logo" loading="lazy" / width="420" height="420"></div>
+          <div class="clogo-name">Lyceum Northwestern University</div>
+          <div class="clogo-loc">&#127477;&#127469; Dagupan, Philippines</div>
+          <span class="clogo-link">View university &#8594;</span>
+        </a>
         <a class="clogo-card reveal reveal-d1" href="/colleges/ucts.html">
-          <div class="clogo-badge"><img src="assets/logo-ucts.webp" alt="Universidade Cat&oacute;lica Timorense logo" loading="lazy" /></div>
+          <div class="clogo-badge"><img src="assets/logo-ucts.webp" alt="Universidade Cat&oacute;lica Timorense logo" loading="lazy" / width="420" height="420"></div>
           <div class="clogo-name">Universidade Cat&oacute;lica Timorense</div>
           <div class="clogo-loc">&#127481;&#127473; Dili, Timor-Leste</div>
           <span class="clogo-link">View university &#8594;</span>
         </a>
         <a class="clogo-card reveal reveal-d2" href="/colleges/university-of-peace.html">
-          <div class="clogo-badge"><img src="assets/logo-peace.webp" alt="University of PEACE logo" loading="lazy" /></div>
+          <div class="clogo-badge"><img src="assets/logo-peace.webp" alt="University of PEACE logo" loading="lazy" / width="420" height="420"></div>
           <div class="clogo-name">University of PEACE</div>
           <div class="clogo-loc">&#127481;&#127473; Dili, Timor-Leste</div>
           <span class="clogo-link">View university &#8594;</span>
@@ -161,24 +178,330 @@
     </div>
   </section>
 
-  <!-- ====================== STATS BAND (dark &mdash; blue test) ====================== -->
-  <section class="section section--dark section--tight">
+  <!-- ====================== TRUST BADGES ====================== -->
+  <section class="badges-band">
     <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow eyebrow--sky">By the numbers</span>
-        <h2 class="section-title">Why 2000+ families trust LIMRA</h2>
-        <p class="section-sub">Over two decades of proven results, dedicated support, and a pass rate that speaks for itself.</p>
-      </div>
-      <div class="stats-grid reveal" data-count-section>
-        <div class="stat-cell"><div class="stat-num"><span data-count="2000" data-suffix="+">0</span></div><div class="stat-label">Successful doctors</div></div>
-        <div class="stat-cell"><div class="stat-num"><span data-count="24" data-suffix="+">0</span></div><div class="stat-label">Years of excellence</div></div>
-        <div class="stat-cell"><div class="stat-num"><span data-count="92" data-suffix="%">0</span></div><div class="stat-label">FMGE pass rate</div></div>
-        <div class="stat-cell"><div class="stat-num"><span data-count="50" data-suffix="+">0</span></div><div class="stat-label">Mock tests &amp; discussions</div></div>
-        <div class="stat-cell"><div class="stat-num"><span data-count="800" data-suffix="">0</span></div><div class="stat-label">Hours of FMGE training</div></div>
-        <div class="stat-cell"><div class="stat-num"><span data-count="10" data-suffix="">0</span></div><div class="stat-label">Countries, one destination</div></div>
+      <div class="badges-row reveal">
+        <span class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-3.5 7.5-8.5 9.5C7.5 19.5 4 17 4 12V6l8-3 8 3v6z"/></svg> NMC Aligned</span>
+        <span class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg> English Medium</span>
+        <span class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></svg> WHO Recognized</span>
+        <span class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Affordable Tuition</span>
+        <span class="badge-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Clinical Exposure</span>
       </div>
     </div>
   </section>
+
+  <!-- ====================== HOW IT WORKS &mdash; ROADMAP ====================== -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow eyebrow--accent">How it works</span>
+        <h2 class="section-title">Your journey with LIMRA</h2>
+        <p class="section-sub">One guided pathway from your first enquiry to practising as a doctor &mdash; we're with you at every milestone.</p>
+      </div>
+      <div class="roadmap">
+        <div class="rm-step reveal">
+          <div class="rm-node"><span class="rm-num">1</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <h3>Free counselling</h3><p>We understand your goals and budget, then shortlist the right colleges.</p>
+        </div>
+        <div class="rm-step reveal reveal-d1">
+          <div class="rm-node"><span class="rm-num">2</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg></div>
+          <h3>Admission &amp; visa</h3><p>End-to-end help with applications, documents, and student visas.</p>
+        </div>
+        <div class="rm-step reveal reveal-d2">
+          <div class="rm-node"><span class="rm-num">3</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div>
+          <h3>Travel &amp; settle</h3><p>Flights, accommodation, and on-ground support so students feel at home.</p>
+        </div>
+        <div class="rm-step reveal reveal-d3">
+          <div class="rm-node"><span class="rm-num">4</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <h3>FMGE coaching</h3><p>On return, our No.1 coaching prepares you to clear the FMG Exam.</p>
+        </div>
+        <div class="rm-step reveal reveal-d3">
+          <div class="rm-node"><span class="rm-num">5</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 15 8l6 .5-4.5 4 1.5 6L12 15l-6 3.5 1.5-6L3 8.5 9 8z"/></svg></div>
+          <h3>Practise as a doctor</h3><p>Qualify, register, and begin your career &#8212; joining 2000+ LIMRA doctors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== SERVICES &mdash; BENTO ====================== -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow eyebrow--accent">What we offer</span>
+        <h2 class="section-title">Complete medical career support</h2>
+        <p class="section-sub">From choosing the right college to qualifying the FMGE &mdash; LIMRA supports every step of your journey to becoming a doctor.</p>
+      </div>
+      <div class="services-bento">
+        <a class="svc-feature reveal" href="/colleges.html">
+          <img src="assets/campus-1.webp" alt="Partner university campus" loading="lazy" / width="1968" height="1312">
+          <div class="svc-content">
+            <h3>Medical education abroad</h3>
+            <p>Authorized representative for premier medical colleges in the Philippines and Timor-Leste &mdash; NMC-aligned, English-medium, internationally recognised degrees at an affordable cost.</p>
+            <span class="svc-link">Explore colleges &#8594;</span>
+          </div>
+        </a>
+        <a class="svc-card reveal reveal-d1" href="/coaching.html">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/></svg></div>
+          <h3>FMGE coaching</h3>
+          <p>South India's No.1 FMG Exam coaching &mdash; 92% pass rate over the past decade, 50 mock tests, 19 subjects, training worth &#8377;1,00,000 included for enrolled students.</p>
+          <span class="svc-link">Learn more &#8594;</span>
+        </a>
+        <a class="svc-card reveal reveal-d2" href="/medical-tourism.html">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/><path d="M3.5 12h4l1.5-3 2 5 1.5-2h4"/></svg></div>
+          <h3>Medical tourism</h3>
+          <p>World-class treatments at a fraction of the cost. LIMRA coordinates hospital matching, travel, and stay &mdash; with expert support throughout.</p>
+          <span class="svc-link">Know more &#8594;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== FMGE HIGHLIGHT ====================== -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="fmge-grid">
+        <div class="reveal">
+          <span class="eyebrow eyebrow--accent">FMGE coaching</span>
+          <h2 class="section-title" style="margin:var(--space-md) 0 var(--space-sm)">No.1 FMG Exam coaching centre in South India</h2>
+          <p class="section-sub">Our FMGE programme has produced a 92% success rate over the past decade &mdash; consistently above the national average. <strong style="color:#fff">90% of students clear the FMGE in their first attempt.</strong></p>
+          <div class="fmge-gauge">
+            <div class="gauge">
+              <svg viewBox="0 0 100 100">
+                <defs><linearGradient id="g92" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#C0241D"/><stop offset="55%" stop-color="#EE4038"/><stop offset="100%" stop-color="#FF5A4E"/></linearGradient></defs>
+                <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/>
+                <circle cx="50" cy="50" r="42" fill="none" stroke="url(#g92)" stroke-width="8" stroke-linecap="round" stroke-dasharray="263.9" stroke-dashoffset="21.1"/>
+              </svg>
+              <div class="gauge-val"><span class="num">92%</span><span class="cap">Pass rate</span></div>
+            </div>
+            <div class="fmge-ministats">
+              <div class="fmge-ministat"><div class="n">19</div><div class="l">Medical subjects</div></div>
+              <div class="fmge-ministat"><div class="n">800</div><div class="l">Hours face-to-face</div></div>
+              <div class="fmge-ministat"><div class="n">4</div><div class="l">Months coaching</div></div>
+              <div class="fmge-ministat"><div class="n">50</div><div class="l">Mock tests + discussion</div></div>
+            </div>
+          </div>
+          <p class="fmge-faculty">Experienced faculty from across India &middot; concept-based, in-depth classes built on the exam pattern &middot; every student's performance analysed and supported.</p>
+          <p class="fmge-disclaimer">Past results don't guarantee future outcomes; admission is subject to NEET qualification and NMC regulations.</p>
+          <a class="btn btn-primary btn-lg" href="/coaching.html" style="margin-top:var(--space-md)">Explore coaching programme &#8594;</a>
+        </div>
+        <div class="fmge-panel reveal reveal-d1">
+          <h3>What's included for enrolled students</h3>
+          <ul class="fmge-list">
+            <li><span class="fmge-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> FMG Exam training worth &#8377;1,00,000</li>
+            <li><span class="fmge-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> 50 mock tests with detailed discussions</li>
+            <li><span class="fmge-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> 1 year FMG Exam app subscription</li>
+            <li><span class="fmge-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> 19 medical subjects coverage</li>
+            <li><span class="fmge-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> 800 hours of focused training</li>
+            <li><span class="fmge-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Dedicated FMGE coaching app</li>
+          </ul>
+          <div class="fmge-contact">
+            <p class="cap">For FMGE coaching enquiries:</p>
+            <a href="tel:+919444058111">+91-94440 58111</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== 10 COUNTRIES &mdash; MAP ====================== -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-head reveal">
+        <h2 class="section-title">10 countries. 1 destination.</h2>
+        <p class="section-sub">Medical graduates from universities across 10 countries return to Chennai for LIMRA&#8217;s FMGE coaching &mdash; South India&#8217;s No.&thinsp;1 programme for 10+ consecutive years.</p>
+      </div>
+      <div class="map-wrap reveal">
+        <img class="world-map" src="assets/world-dots.svg" alt="World map showing FMGE students converging on Chennai" width="3607" height="1769" />
+        <!-- Animated arc paths: every country flows toward Chennai. Coordinates from MERCATOR projection (lon linear; lat via y=62.78-32.34*ln(tan(pi/4+lat/2))) calibrated to the dot grid, then snapped to rendered land. -->
+        <svg class="map-arcs" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path class="arc-bg" d="M 83.6 55.4 Q 76.9 49.7 70.3 54.7"/>
+          <path class="arc-bg" d="M 84.8 67 Q 77.5 49.7 70.3 54.7"/>
+          <path class="arc-bg" d="M 62.1 37.8 Q 66.2 32.8 70.3 54.7"/>
+          <path class="arc-bg" d="M 69.5 37.3 Q 69.9 32.3 70.3 54.7"/>
+          <path class="arc-bg" d="M 69.9 29.3 Q 70.1 24.3 70.3 54.7"/>
+          <path class="arc-bg" d="M 60.6 25 Q 65.5 20.0 70.3 54.7"/>
+          <path class="arc-bg" d="M 82.6 38.3 Q 76.4 33.3 70.3 54.7"/>
+          <path class="arc-bg" d="M 62.2 36.7 Q 66.3 31.7 70.3 54.7"/>
+          <path class="arc-bg" d="M 66 74.4 Q 68.2 49.7 70.3 54.7"/>
+          <path class="arc-bg" d="M 25.5 54.4 Q 47.9 43.2 70.3 54.7"/>
+          <path class="arc-bg" d="M 71 36.1 Q 70.7 31.1 70.3 54.7"/>
+          <path class="arc" d="M 83.6 55.4 Q 76.9 49.7 70.3 54.7" style="--d:0s"/>
+          <path class="arc" d="M 84.8 67 Q 77.5 49.7 70.3 54.7" style="--d:0.3s"/>
+          <path class="arc" d="M 62.1 37.8 Q 66.2 32.8 70.3 54.7" style="--d:0.55s"/>
+          <path class="arc" d="M 69.5 37.3 Q 69.9 32.3 70.3 54.7" style="--d:0.8s"/>
+          <path class="arc" d="M 69.9 29.3 Q 70.1 24.3 70.3 54.7" style="--d:1.05s"/>
+          <path class="arc" d="M 60.6 25 Q 65.5 20.0 70.3 54.7" style="--d:1.3s"/>
+          <path class="arc" d="M 82.6 38.3 Q 76.4 33.3 70.3 54.7" style="--d:0.4s"/>
+          <path class="arc" d="M 62.2 36.7 Q 66.3 31.7 70.3 54.7" style="--d:0.95s"/>
+          <path class="arc" d="M 66 74.4 Q 68.2 49.7 70.3 54.7" style="--d:0.65s"/>
+          <path class="arc" d="M 25.5 54.4 Q 47.9 43.2 70.3 54.7" style="--d:1.5s"/>
+          <path class="arc" d="M 71 36.1 Q 70.7 31.1 70.3 54.7" style="--d:1.15s"/>
+        </svg>
+        <!-- Source country pins -->
+        <span class="map-pin" style="left:83.6%;top:55.4%"><span class="map-dot"></span><span class="map-name">Philippines</span></span>
+        <span class="map-pin" style="left:84.8%;top:67%"><span class="map-dot"></span><span class="map-name">Timor-Leste</span></span>
+        <span class="map-pin" style="left:62.1%;top:37.8%"><span class="map-dot"></span><span class="map-name">Armenia</span></span>
+        <span class="map-pin" style="left:69.5%;top:37.3%"><span class="map-dot"></span><span class="map-name">Uzbekistan</span></span>
+        <span class="map-pin" style="left:69.9%;top:29.3%"><span class="map-dot"></span><span class="map-name">Kazakhstan</span></span>
+        <span class="map-pin" style="left:60.6%;top:25%"><span class="map-dot"></span><span class="map-name">Russia</span></span>
+        <span class="map-pin" style="left:82.6%;top:38.3%"><span class="map-dot"></span><span class="map-name">China</span></span>
+        <span class="map-pin" style="left:62.2%;top:36.7%"><span class="map-dot"></span><span class="map-name">Georgia</span></span>
+        <span class="map-pin" style="left:66%;top:74.4%"><span class="map-dot"></span><span class="map-name">Mauritius</span></span>
+        <span class="map-pin" style="left:25.5%;top:54.4%"><span class="map-dot"></span><span class="map-name">Central America</span></span>
+        <span class="map-pin" style="left:71%;top:36.1%"><span class="map-dot"></span><span class="map-name">Kyrgyzstan</span></span>
+        <!-- Chennai — the pulsating destination (on the rendered southern-India peninsula) -->
+        <span class="map-pin primary" style="left:70.3%;top:54.7%"><span class="map-dot"></span><span class="map-name">Chennai, India</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== TESTIMONIALS &mdash; CAROUSEL ====================== -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow eyebrow--accent">Success stories</span>
+        <h2 class="section-title">What our doctors say</h2>
+        <p class="section-sub">Thousands of medical professionals credit LIMRA for guiding them to their dream of becoming doctors.</p>
+      </div>
+      <div class="carousel reveal">
+        <div class="testi-viewport">
+          <div class="testi-track" id="testiTrack">
+            <article class="testi-card">
+              <div class="testi-quote-mark">&ldquo;</div>
+              <p class="testi-quote">LIMRA guided me through every step of my medical journey. From college selection to FMGE coaching, their support was invaluable. I'm now a practising doctor, and I owe it to LIMRA.</p>
+              <div class="testi-foot"><div class="testi-avatar">PR</div><div class="testi-id"><div class="testi-name">Dr. Priya Ramesh</div><div class="testi-meta">Lyceum Northwestern &middot; 2023</div></div><span class="testi-badge">FMGE Qualified</span></div>
+            </article>
+            <article class="testi-card">
+              <div class="testi-quote-mark">&ldquo;</div>
+              <p class="testi-quote">The FMGE coaching at LIMRA is world-class. The mock tests and dedicated app helped me prepare thoroughly. I scored above 200 on my first attempt. Thank you, LIMRA!</p>
+              <div class="testi-foot"><div class="testi-avatar">AM</div><div class="testi-id"><div class="testi-name">Dr. Arjun Mehta</div><div class="testi-meta">Davao Medical School &middot; 2022</div></div><span class="testi-badge">203/300</span></div>
+            </article>
+            <article class="testi-card">
+              <div class="testi-quote-mark">&ldquo;</div>
+              <p class="testi-quote">I was hesitant about studying abroad, but LIMRA reassured me and my family at every step. The admissions process was smooth and the after-care support during my studies was excellent.</p>
+              <div class="testi-foot"><div class="testi-avatar">SK</div><div class="testi-id"><div class="testi-name">Dr. Sneha Krishnan</div><div class="testi-meta">Gullas College of Medicine &middot; 2023</div></div><span class="testi-badge">FMGE Qualified</span></div>
+            </article>
+            <article class="testi-card">
+              <div class="testi-quote-mark">&ldquo;</div>
+              <p class="testi-quote">24 years of experience shows in how LIMRA handles everything. They understand what Indian medical students need and deliver it. The FMG Exam training is truly worth &#8377;1,00,000.</p>
+              <div class="testi-foot"><div class="testi-avatar">VN</div><div class="testi-id"><div class="testi-name">Dr. Vikram Nair</div><div class="testi-meta">Lyceum Northwestern &middot; 2024</div></div><span class="testi-badge">210/300</span></div>
+            </article>
+            <article class="testi-card">
+              <div class="testi-quote-mark">&ldquo;</div>
+              <p class="testi-quote">From day one, LIMRA treated us like family. The dedicated counselors, the study materials, the mock tests &mdash; everything was top-notch. I highly recommend LIMRA to any aspiring doctor.</p>
+              <div class="testi-foot"><div class="testi-avatar">AS</div><div class="testi-id"><div class="testi-name">Dr. Anitha Subramaniam</div><div class="testi-meta">Brokenshire College &middot; 2022</div></div><span class="testi-badge">FMGE Qualified</span></div>
+            </article>
+            <article class="testi-card">
+              <div class="testi-quote-mark">&ldquo;</div>
+              <p class="testi-quote">LIMRA's counseling helped me choose the right college that matched my budget and ambitions. Their end-to-end support &mdash; from visa to accommodation to FMGE &mdash; is unmatched.</p>
+              <div class="testi-foot"><div class="testi-avatar">KV</div><div class="testi-id"><div class="testi-name">Dr. Karthik Venkatesh</div><div class="testi-meta">Davao Medical School &middot; 2023</div></div><span class="testi-badge">FMGE Qualified</span></div>
+            </article>
+          </div>
+        </div>
+        <div class="carousel-ctrls">
+          <button class="carousel-btn" id="testiPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+          <div class="carousel-dots" id="testiDots"></div>
+          <button class="carousel-btn" id="testiNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== GALLERY ====================== -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow eyebrow--accent">Our legacy</span>
+        <h2 class="section-title">Graduation &amp; campus life</h2>
+        <p class="section-sub">Moments from the journeys of thousands of LIMRA students who are now proud doctors.</p>
+      </div>
+    </div>
+    <div class="marquee reveal" id="gallery">
+        <div class="marquee-row rtl">
+          <div class="gallery-item"><span class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span><img src="assets/graduation-1.webp" alt="LIMRA graduation ceremony" loading="lazy" / width="1500" height="1000"><div class="gallery-cap">Graduation ceremony</div></div>
+          <div class="gallery-item"><span class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span><img src="assets/campus-1.webp" alt="Partner university campus" loading="lazy" / width="1968" height="1312"><div class="gallery-cap">Modern campus</div></div>
+          <div class="gallery-item"><span class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span><img src="assets/facility-lab.webp" alt="Medical laboratory training" loading="lazy" / width="1270" height="847"><div class="gallery-cap">Clinical &amp; lab training</div></div>
+          <div class="gallery-item"><span class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span><img src="assets/graduation-2.webp" alt="LIMRA graduates" loading="lazy" / width="1152" height="768"><div class="gallery-cap">New doctors</div></div>
+          <div class="gallery-item"><span class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span><img src="assets/students-library.webp" alt="Students at the campus library" loading="lazy" / width="1842" height="1228"><div class="gallery-cap">Campus life</div></div>
+        </div>
+        <div class="marquee-row ltr">
+          <div class="gallery-item"><span class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span><img src="assets/graduation-wide.webp" alt="Convocation &mdash; LIMRA students" loading="lazy" / width="1500" height="557"><div class="gallery-cap">Convocation</div></div>
+          <div class="gallery-item"><span class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span><img src="assets/campus-2.webp" alt="Partner university campus" loading="lazy" / width="1369" height="913"><div class="gallery-cap">Campus grounds</div></div>
+          <div class="gallery-item"><span class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span><img src="assets/graduation-3.webp" alt="LIMRA proud graduates" loading="lazy" / width="1152" height="768"><div class="gallery-cap">Proud graduates</div></div>
+          <div class="gallery-item"><span class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span><img src="assets/campus-brokenshire.webp" alt="Brokenshire campus" loading="lazy" / width="1872" height="1246"><div class="gallery-cap">Partner campus</div></div>
+          <div class="gallery-item"><span class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></span><img src="assets/campus-dmsf.webp" alt="Davao Medical School campus" loading="lazy" / width="1472" height="981"><div class="gallery-cap">Davao campus</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="text-align:center;margin-top:var(--space-2xl)">
+      <a class="btn btn-outline" href="/gallery.html">View full gallery &#8594;</a>
+    </div>
+  </section>
+  <script>document.querySelectorAll('.marquee-row').forEach(function(r){r.innerHTML+=r.innerHTML;});</script>
+
+  <!-- ====================== FAQ (AEO) ====================== -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow eyebrow--accent">Questions, answered</span>
+        <h2 class="section-title">MBBS abroad &amp; FMGE &mdash; your questions answered</h2>
+        <p class="section-sub">Straight answers to what students and parents ask us most. Still unsure? Our counsellors guide you free of charge.</p>
+      </div>
+      <div class="faq reveal">
+        <details class="faq-item">
+          <summary>Is an MBBS from the Philippines or Timor-Leste valid in India?</summary>
+          <div class="faq-a"><p>Yes. LIMRA's partner universities are aligned with India's National Medical Commission (NMC) norms and award internationally recognised degrees. To practise medicine in India, every foreign medical graduate must clear the Foreign Medical Graduate Examination (FMGE), and LIMRA's No.1 FMGE coaching prepares you for exactly that.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need to qualify NEET to study MBBS abroad?</summary>
+          <div class="faq-a"><p>Yes. Indian students must qualify NEET to pursue an MBBS abroad and to be eligible for medical licensure in India. LIMRA guides you through eligibility, documentation, and admissions from start to finish.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What is the FMGE, and what is LIMRA's pass rate?</summary>
+          <div class="faq-a"><p>The Foreign Medical Graduate Examination (FMGE) is the licensing exam Indian students must clear to practise after an overseas MBBS. LIMRA's FMGE coaching has a <strong>92% pass rate over the past decade</strong> &mdash; consistently above the national average.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Why study MBBS in the Philippines or Timor-Leste?</summary>
+          <div class="faq-a"><p>NMC-aligned curricula, English-medium instruction, internationally recognised degrees, strong clinical exposure, and significantly lower cost than private medical seats in India. LIMRA partners with six universities across the two countries.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>How much does an MBBS abroad cost through LIMRA?</summary>
+          <div class="faq-a"><p>Tuition varies by university and is among the most affordable routes to a medical degree. LIMRA's counsellors share current, detailed fee structures for each partner college &mdash; completely free, with no obligation.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What's included in LIMRA's FMGE coaching?</summary>
+          <div class="faq-a"><p>800 hours of training across 19 subjects, 50 mock tests with detailed discussions, a one-year FMGE app subscription, and FMG Exam training worth &#8377;1,00,000 &mdash; all included for enrolled students.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>What support does LIMRA provide, end to end?</summary>
+          <div class="faq-a"><p>Everything from your first enquiry to your medical career: free counselling and college selection, admissions and student visa, travel and accommodation, on-ground support during studies, and No.1 FMGE coaching on your return.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Which universities does LIMRA partner with?</summary>
+          <div class="faq-a"><p>Six &mdash; Lyceum Northwestern University, Davao Medical School Foundation, Brokenshire College, and Gullas College of Medicine in the Philippines; Universidade Cat&oacute;lica Timorense and University of PEACE in Timor-Leste.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>How experienced is LIMRA, and how do I start?</summary>
+          <div class="faq-a"><p>LIMRA has guided students for 24+ years, and 2000+ have become doctors with our support. To begin, book free counselling &mdash; call +91-94443 75000 or submit the enquiry form, and our advisors will call you back.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is an MBBS from the Philippines or Timor-Leste valid in India?","acceptedAnswer":{"@type":"Answer","text":"Yes. LIMRA's partner universities are aligned with India's National Medical Commission (NMC) norms and award internationally recognised degrees. To practise medicine in India, every foreign medical graduate must clear the Foreign Medical Graduate Examination (FMGE), and LIMRA's No.1 FMGE coaching prepares you for exactly that."}},
+    {"@type":"Question","name":"Do I need to qualify NEET to study MBBS abroad?","acceptedAnswer":{"@type":"Answer","text":"Yes. Indian students must qualify NEET to pursue an MBBS abroad and to be eligible for medical licensure in India. LIMRA guides you through eligibility, documentation, and admissions from start to finish."}},
+    {"@type":"Question","name":"What is the FMGE, and what is LIMRA's pass rate?","acceptedAnswer":{"@type":"Answer","text":"The Foreign Medical Graduate Examination (FMGE) is the licensing exam Indian students must clear to practise after an overseas MBBS. LIMRA's FMGE coaching has a 92% pass rate over the past decade, consistently above the national average."}},
+    {"@type":"Question","name":"Why study MBBS in the Philippines or Timor-Leste?","acceptedAnswer":{"@type":"Answer","text":"NMC-aligned curricula, English-medium instruction, internationally recognised degrees, strong clinical exposure, and significantly lower cost than private medical seats in India. LIMRA partners with six universities across the two countries."}},
+    {"@type":"Question","name":"How much does an MBBS abroad cost through LIMRA?","acceptedAnswer":{"@type":"Answer","text":"Tuition varies by university and is among the most affordable routes to a medical degree. LIMRA's counsellors share current, detailed fee structures for each partner college, completely free and with no obligation."}},
+    {"@type":"Question","name":"What's included in LIMRA's FMGE coaching?","acceptedAnswer":{"@type":"Answer","text":"800 hours of training across 19 subjects, 50 mock tests with detailed discussions, a one-year FMGE app subscription, and FMG Exam training worth Rs 1,00,000 &mdash; free for enrolled students."}},
+    {"@type":"Question","name":"What support does LIMRA provide, end to end?","acceptedAnswer":{"@type":"Answer","text":"Everything from your first enquiry to your medical career: free counselling and college selection, admissions and student visa, travel and accommodation, on-ground support during studies, and No.1 FMGE coaching on your return."}},
+    {"@type":"Question","name":"Which universities does LIMRA partner with?","acceptedAnswer":{"@type":"Answer","text":"Six &mdash; Lyceum Northwestern University, Davao Medical School Foundation, Brokenshire College, and Gullas College of Medicine in the Philippines; Universidade Catolica Timorense and University of PEACE in Timor-Leste."}},
+    {"@type":"Question","name":"How experienced is LIMRA, and how do I start?","acceptedAnswer":{"@type":"Answer","text":"LIMRA has guided students for 24+ years, and 2000+ have become doctors with our support. To begin, book free counselling &mdash; call +91-94443 75000 or submit the enquiry form, and our advisors will call you back."}}
+  ]}
+  </script>
 
   <!-- ====================== CTA BAND ====================== -->
   <section class="cta-band">
@@ -187,7 +510,10 @@
       <p class="reveal reveal-d1">Join 2000+ doctors who started with LIMRA. Get free counselling from our expert advisors today.</p>
       <div class="cta-actions reveal reveal-d2">
         <a class="btn btn-primary btn-lg" href="#enquiry">Get free counselling</a>
-        <a class="btn btn-ghost btn-lg" href="https://wa.me/919445783333" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a class="btn btn-ghost btn-lg" href="https://wa.me/919445783333" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
       </div>
     </div>
   </section>
@@ -198,39 +524,115 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <img class="footer-logo" src="assets/logo-white.svg" alt="LIMRA Overseas Education" />
+          <img class="footer-logo" src="assets/logo-white.svg" alt="LIMRA Overseas Education" width="93" height="33" />
           <p class="footer-desc">Guiding aspiring doctors to premier medical universities in the Philippines and Timor-Leste for over 24 years. No.1 FMGE coaching institute in South India.</p>
+          <div class="footer-social"><a href="https://wa.me/919445783333" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a><a href="https://www.facebook.com/LIMRAofficial/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a><a href="https://twitter.com/limra_official" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.linkedin.com/company/limra-overseas-education/about/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.02 8h4.96v16H.02V8zm7.5 0h4.75v2.2h.07c.66-1.25 2.27-2.57 4.67-2.57 5 0 5.92 3.29 5.92 7.57V24h-4.96v-7.4c0-1.77-.03-4.04-2.46-4.04-2.46 0-2.84 1.92-2.84 3.91V24H7.52V8z"/></svg></a><a href="https://www.instagram.com/limra_official1/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a><a href="https://www.youtube.com/@LimraEducation" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg></a></div>
         </div>
         <div class="footer-col">
           <h4>Quick links</h4>
           <ul>
-            <li><a href="/">Home</a></li>
+            <li><a href="/home2.html">Home 2</a></li>
             <li><a href="/about.html">About LIMRA</a></li>
             <li><a href="/colleges.html">Universities</a></li>
             <li><a href="/coaching.html">FMGE coaching</a></li>
+            <li><a href="/medical-tourism.html">Medical tourism</a></li>
             <li><a href="/gallery.html">Gallery</a></li>
+            <li><a href="/testimonials.html">Success stories</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+            <li><a href="/blog/">Blog</a></li>
           </ul>
         </div>
         <div class="footer-col">
+          <h4>Universities</h4>
+          <ul>
+            <li><a href="/colleges/dmsf.html">DMSF &mdash; Davao</a></li>
+            <li><a href="/colleges/brokenshire.html">Brokenshire</a></li>
+            <li><a href="/colleges/gcm.html">Gullas College of Medicine</a></li>
+            <li><a href="/colleges/lyceum.html">Lyceum Northwestern</a></li>
+            <li><a href="/colleges/ucts.html">Universidade Cat&oacute;lica Timorense</a></li>
+            <li><a href="/colleges/university-of-peace.html">University of PEACE</a></li>
+          <li><a href="/compare.html">Compare All Universities &#8594;</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-admissions-wrap">
+            <div class="footer-admissions-badge">Admissions open for 2026&ndash;2027</div>
+            <a href="/student-ambassador.html" class="btn btn-primary footer-ambassador-btn">Talk to our Student Ambassador</a>
+          </div>
           <h4>Contact</h4>
           <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>New No.177, Royapettah High Road, 1st Floor, SMS Centre, Mylapore, Chennai - 600 004</span>
+          </div>
+          <div class="footer-contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            <div><a href="tel:+919444375000">+91-94443 75000</a></div>
+            <div><a href="tel:+919444375000">+91-94443 75000</a><br /><a href="tel:+919445783333">+91-94457 83333</a></div>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <a href="https://www.limraedu.com" target="_blank" rel="noopener">www.limraedu.com</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span id="year">2026</span> LIMRA Overseas Education. All rights reserved.</p>
-        <p>Director: Mohammed Ghani</p>
+        <p>&copy; <span id="year">2026</span> LIMRA Overseas Education. All rights reserved. | <a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Terms of Service</a></p>
       </div>
     </div>
     <div class="footer-wordmark">LIMRA</div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="js/home.js"></script>
-  <script src="js/home2.js"></script>
-  <script src="/js/forms.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="js/home.js"></script>
+  <script defer src="js/home2.js"></script>
+  <script defer src="/js/forms.js"></script>
+
+  <!-- News ticker: pulls the latest items from the CMS-generated /news.json -->
+  <script>
+    (function () {
+      var ticker = document.getElementById('newsTicker');
+      var track = document.getElementById('newsTickerTrack');
+      if (!ticker || !track) return;
+      fetch('/news.json').then(function (r) { return r.ok ? r.json() : []; }).then(function (items) {
+        if (!items || !items.length) return;
+        function build() {
+          return items.map(function (it) {
+            var a = document.createElement('a');
+            a.className = 'news-ticker-item';
+            a.href = it.url;
+            var cat = document.createElement('span');
+            cat.className = 'nt-cat';
+            cat.textContent = it.category || 'News';
+            a.appendChild(cat);
+            a.appendChild(document.createTextNode(it.title));
+            var sep = document.createElement('span');
+            sep.className = 'news-ticker-sep';
+            sep.textContent = 'â€¢';
+            var frag = document.createDocumentFragment();
+            frag.appendChild(a);
+            frag.appendChild(sep);
+            return frag;
+          });
+        }
+        // duplicate the set so the -50% loop is seamless
+        build().forEach(function (f) { track.appendChild(f); });
+        build().forEach(function (f) { track.appendChild(f); });
+        ticker.hidden = false;
+      }).catch(function () {});
+    })();
+  </script>
+
+  <!-- Netlify Identity: lets invited users accept the invite & set a password,
+       and routes logged-in users to the /admin CMS. -->
+  <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function (user) {
+        if (!user) {
+          window.netlifyIdentity.on('login', function () { document.location.href = '/admin/'; });
+        }
+      });
+    }
+  </script>
   <script src="/js/cookie-consent.js" defer></script>
   <script src="/js/mobile-cta.js" defer></script>
 </body>
