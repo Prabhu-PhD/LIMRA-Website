@@ -34,7 +34,8 @@
   border:1px solid rgba(247,165,60,.5);border-radius:var(--radius-pill);
   padding:8px 16px;font-size:.82rem;font-weight:var(--fw-semibold);color:#fff;}
 .cbadge svg{width:14px;height:14px;color:var(--brand-orange);flex:none;}
-.college-ctas{display:flex;gap:12px;flex-wrap:wrap;}
+.college-ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.cest--meta{margin:0 0 0 auto;text-align:right;opacity:.6;}
 
 /* ============================================================
    WHY THIS COLLEGE — 2-COL
@@ -203,11 +204,31 @@
   .campus-cards{grid-template-columns:repeat(2,1fr);}
   .adv-trio{grid-template-columns:repeat(2,1fr);}
 }
+/* ============================================================
+   ACCREDITATIONS & COLLABORATIONS
+   ============================================================ */
+.college-why,.cwhy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-xl);}
+.cwhy-item{background:var(--surface-light);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:var(--space-xl);}
+.cwhy-icon{width:46px;height:46px;border-radius:var(--radius);flex:none;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(238,64,56,.12),rgba(247,165,60,.14));color:var(--brand-red);margin-bottom:var(--space-md);}
+.cwhy-icon svg{width:24px;height:24px;}
+.cwhy-item h4{font-family:var(--font-display);font-weight:var(--fw-semibold);font-size:1.05rem;color:var(--text-strong);margin-bottom:6px;}
+.cwhy-item p{font-size:.9rem;color:var(--text-muted);line-height:var(--lh-normal);}
+.accred-logos{display:flex;flex-wrap:wrap;gap:var(--space-xl) var(--space-lg);justify-content:center;align-items:flex-start;
+  margin-top:var(--space-2xl);padding-top:var(--space-2xl);border-top:1px solid var(--border-light);}
+.accred-logos figure{display:flex;flex-direction:column;align-items:center;gap:10px;width:112px;text-align:center;margin:0;}
+.accred-logos img{width:78px;height:78px;object-fit:contain;background:#fff;border:1px solid var(--border-light);
+  border-radius:50%;padding:9px;box-shadow:var(--shadow-sm);transition:transform var(--dur-fast),box-shadow var(--dur-fast);}
+.accred-logos figure:hover img{transform:translateY(-3px);box-shadow:var(--shadow-md);}
+.accred-logos figcaption{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);line-height:1.35;}
+
 @media(max-width:900px){
   .college-hero-inner{grid-template-columns:1fr;text-align:center;}
   .college-logo-wrap{margin:0 auto;}
   .college-badges{justify-content:center;}
   .college-ctas{justify-content:center;}
+  .cest--meta{margin:8px auto 0;text-align:center;width:100%;}
+  .college-why,.cwhy-grid{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
   .program-flow{flex-direction:column;}
   .program-phase:not(:last-child)::after{content:'↓';right:50%;top:auto;bottom:-20px;transform:none;}
