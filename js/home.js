@@ -97,7 +97,7 @@
       var sPct = (n.s / 680) * 100;
       el.style.width = sPct + "%"; el.style.height = sPct + "%";
       el.style.left = (x / SIZE) * 100 + "%"; el.style.top = (y / SIZE) * 100 + "%";
-      var imgs = ['/assets/LIMRA-Students/1.jpg','/assets/LIMRA-Students/2.jpg','/assets/LIMRA-Students/3.jpg','/assets/LIMRA-Students/4.jpg','/assets/LIMRA-Students/5.jpg','/assets/LIMRA-Students/6.jpg','/assets/LIMRA-Students/7 copy.jpg','/assets/LIMRA-Students/8 copy.jpg','/assets/LIMRA-Students/9 copy.jpg'];
+      var imgs = ['/assets/LIMRA-Students/avatar-1.webp','/assets/LIMRA-Students/avatar-2.webp','/assets/LIMRA-Students/avatar-3.webp','/assets/LIMRA-Students/avatar-4.webp','/assets/LIMRA-Students/avatar-5.webp','/assets/LIMRA-Students/avatar-6.webp','/assets/LIMRA-Students/avatar-7.webp','/assets/LIMRA-Students/avatar-8.webp','/assets/LIMRA-Students/avatar-9.webp'];
       el.innerHTML = '<div class="face"><img loading="lazy" width="160" height="160" alt="LIMRA student" src="' + (imgs[ni] || imgs[0]) + '"></div>';
       orbitField.appendChild(el);
     });
