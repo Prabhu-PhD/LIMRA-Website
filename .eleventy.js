@@ -33,6 +33,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("thank-you.html");
   eleventyConfig.addPassthroughCopy("faq.html");
   eleventyConfig.addPassthroughCopy("compare.html");
+  eleventyConfig.addPassthroughCopy("student-ambassador.html");
 
   // --- date helpers for the blog ---
   eleventyConfig.addFilter("readableDate", (value) => {
