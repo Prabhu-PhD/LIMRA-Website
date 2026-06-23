@@ -1,49 +1,43 @@
 /* ============================================================
-   home2.js — cursor-reactive hero frame sequence (Home 2 test).
+   home2.js — scroll-driven hero frame sequence (Home 2).
 
-   The hero video was exported to still frames in /assets/hero-seq/
-   (frame-0001.jpg …). As the cursor moves horizontally across the
-   hero, we swap which preloaded frame is shown, so the scene scrubs
-   back and forth. When the mouse is idle it gently auto-drifts.
+   The hero is wrapped in a tall .hero2-pin spacer (400vh).
+   The hero itself is position:sticky so it stays in the viewport
+   while the user scrolls through the pin. Scroll progress through
+   the pin (0→1) is mapped directly to frame index (0→70), turning
+   the page scroll into a video-scrub effect.
 
-   PERFORMANCE: the single first frame (in the HTML) shows instantly.
-   The full 71-frame preload is opt-in and only happens when it's
-   actually useful + cheap:
-     • desktop only (fine pointer / hover) — phones keep the static frame
-     • deferred to idle time after the page has finished loading
-     • skipped when the browser's Data Saver is on
-   So mobile users download ZERO extra frames, and desktop frames load
-   in the background without competing with the real page content.
+   Once the user scrolls past the pin the hero un-sticks and the
+   rest of the page scrolls normally — no scroll lock, no preventDefault.
 
-   To re-export with a different frame count, change FRAME_COUNT
-   (and re-run the ffmpeg extraction with the same naming).
+   PERFORMANCE: first frame shows instantly from the HTML src.
+   The other 70 frames are deferred to idle time after page load,
+   and skipped on data-saver / 2G connections.
    ============================================================ */
 (function () {
-  var FRAME_COUNT = 71;                 // number of frames in /assets/hero-seq/
+  var FRAME_COUNT = 71;
   var DIR = "/assets/hero-seq/";
   var PREFIX = "frame-", EXT = ".webp", PAD = 4;
 
-  var img  = document.getElementById("heroSeqImg");
-  var hero = document.querySelector(".hero2");
-  if (!img || !hero || FRAME_COUNT < 2) return;
+  var img = document.getElementById("heroSeqImg");
+  var pin = document.getElementById("hero2Pin");
+  if (!img || !pin || FRAME_COUNT < 2) return;
 
-  // ---- decide whether the scrub is worth loading ----
-  var hasHover  = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-  var conn      = navigator.connection || navigator.webkitConnection || navigator.mozConnection;
-  var saveData  = conn && conn.saveData;
-  var slowNet   = conn && /(^|-)2g$/.test(conn.effectiveType || "");   // 2g / slow-2g
-  if (!hasHover || saveData || slowNet) return;   // mobile / data-saver / very slow → keep static frame
+  var conn     = navigator.connection || navigator.webkitConnection || navigator.mozConnection;
+  var saveData = conn && conn.saveData;
+  var slowNet  = conn && /(^|-)2g$/.test(conn.effectiveType || "");
+  if (saveData || slowNet) return; // data-saver / 2G → keep static first frame
 
-  function pad(n){ var s = "" + n; while (s.length < PAD) s = "0" + s; return s; }
-  function url(i){ return DIR + PREFIX + pad(i + 1) + EXT; }
+  function pad(n) { var s = "" + n; while (s.length < PAD) s = "0" + s; return s; }
+  function url(i) { return DIR + PREFIX + pad(i + 1) + EXT; }
 
-  var frames = [], current = -1, targetX = 0.5, easeX = 0.5, started = false;
+  var frames = [], current = -1;
+  var targetIdx = 0, dirty = false;
 
-  // ---- preload every frame so swapping src is instant (no flicker) ----
   function preload() {
     for (var i = 0; i < FRAME_COUNT; i++) {
       var im = new Image();
-      try { im.fetchPriority = "low"; } catch (e) {}   // don't fight critical assets
+      try { im.fetchPriority = "low"; } catch (e) {}
       im.decoding = "async";
       im.src = url(i);
       frames[i] = im;
@@ -55,36 +49,40 @@
     idx = Math.max(0, Math.min(FRAME_COUNT - 1, idx | 0));
     if (idx === current) return;
     var f = frames[idx];
-    if (!f || !f.complete) return;      // skip until that frame is ready
+    if (!f || !f.complete) return; // frame not ready yet — wait
     current = idx;
     img.src = f.src;
   }
 
-  function fromClientX(x) {
-    var r = hero.getBoundingClientRect();
-    targetX = Math.max(0, Math.min(1, (x - r.left) / r.width));
+  function fromScroll() {
+    var rect   = pin.getBoundingClientRect();
+    var pinH   = pin.offsetHeight;
+    var vh     = window.innerHeight;
+    var travel = pinH - vh;
+    if (travel <= 0) return;
+    var scrolled = -rect.top; // how far we've scrolled into the pin
+    var progress = Math.max(0, Math.min(1, scrolled / travel));
+    targetIdx = Math.round(progress * (FRAME_COUNT - 1));
+    dirty = true;
   }
 
   function startInteraction() {
-    if (started) return;
-    started = true;
-    hero.classList.add("is-sequence");
-    hero.addEventListener("mousemove", function (e) { fromClientX(e.clientX); });
-    hero.addEventListener("mouseleave", function () { targetX = 0.5; });
+    var hero = document.querySelector(".hero2");
+    if (hero) hero.classList.add("is-scroll");
 
-    var t = 0;
+    window.addEventListener("scroll", fromScroll, { passive: true });
+    fromScroll(); // set correct frame for current scroll position on load
+
     function loop() {
-      t += 0.01;
-      var drift = 0.5 + Math.sin(t) * 0.05;          // gentle breathing when idle
-      var goal = targetX * 0.86 + drift * 0.14;
-      easeX += (goal - easeX) * 0.12;                // easing toward the goal
-      show(Math.round(easeX * (FRAME_COUNT - 1)));
+      if (dirty) {
+        show(targetIdx);
+        dirty = false;
+      }
       requestAnimationFrame(loop);
     }
     requestAnimationFrame(loop);
   }
 
-  // ---- kick off preloading only once the page is done + the browser is idle ----
   function whenIdle(fn) {
     if ("requestIdleCallback" in window) requestIdleCallback(fn, { timeout: 3000 });
     else setTimeout(fn, 800);

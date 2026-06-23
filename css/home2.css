@@ -7,9 +7,17 @@
    overlaid on the empty blue space at the left.
    ============================================================ */
 
+/* scroll-jacking pin — gives scroll travel to drive the frame sequence */
+.hero2-pin{
+  position:relative;
+  height:400vh; /* 4× viewport = ~3 screens of scroll to play all 71 frames */
+}
+
 .hero2{
-  position:relative;min-height:100vh;display:flex;align-items:center;
-  overflow:hidden;color:#fff;padding:120px 0 160px;background:#060a2b;
+  position:sticky;top:0;
+  height:100vh;min-height:0;
+  display:flex;align-items:center;
+  overflow:hidden;color:#fff;padding:100px 0 80px;background:#060a2b;
 }
 
 /* ---- full-bleed frame sequence ---- */
@@ -53,10 +61,9 @@
 .hero2 .hstat .l{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:7px;}
 .hero2 .hstat-divider{width:1px;height:42px;background:rgba(255,255,255,.18);}
 
-/* ---- interaction hint ---- */
-.hero2.is-sequence{cursor:ew-resize;}
+/* ---- scroll hint ---- */
 .scrub-hint{
-  position:absolute;z-index:3;right:32px;bottom:120px;
+  position:absolute;z-index:3;left:50%;bottom:32px;transform:translateX(-50%);
   display:none;align-items:center;gap:9px;white-space:nowrap;
   font-family:var(--font-mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;
   color:rgba(255,255,255,.7);background:rgba(8,12,42,.55);
@@ -64,7 +71,7 @@
   padding:9px 16px;backdrop-filter:blur(6px);
   animation:hintpulse 2.6s ease-in-out infinite;
 }
-.hero2.is-sequence .scrub-hint{display:flex;}
+.hero2.is-scroll .scrub-hint{display:flex;}
 .scrub-hint svg{width:15px;height:15px;}
 @keyframes hintpulse{0%,100%{opacity:.55;}50%{opacity:1;}}
 
@@ -75,7 +82,7 @@
   -webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent);mask-image:linear-gradient(to bottom,#000 55%,transparent);
   pointer-events:none;user-select:none;}
 
-.hero2 + .enquiry-wrap{margin-top:-90px;}
+.hero2-pin + .enquiry-wrap{margin-top:0;}
 
 /* ============================================================
    MEDIUM-ELECTRIC BLUE — dark sections (Home 2 test only)
@@ -104,19 +111,61 @@
 }
 
 /* ---------- RESPONSIVE ---------- */
+
+/* Tablet — keep the overlay layout but tighten padding */
 @media (max-width:900px){
-  .hero2{padding:120px 0 90px;min-height:92vh;align-items:flex-end;}
+  .hero2-pin{height:300vh;}
+  .hero2{padding:80px 0 60px;}
   .hero2-frame{object-position:68% center;}
   .hero2-scrim.left{background:linear-gradient(0deg,
     rgba(6,10,43,.95) 0%, rgba(6,10,43,.7) 38%, rgba(6,10,43,.15) 70%);}
   .hero2-copy{max-width:none;}
-  .scrub-hint{left:50%;right:auto;transform:translateX(-50%);bottom:18px;}
+  .scrub-hint{bottom:22px;}
   .hero2 .wordmark{display:none;}
-  /* wordmark is hidden on mobile, so the -90px overlap has nothing to overlap
-     and only risks pulling the strip over the hero stats — stack cleanly */
   .hero2 + .enquiry-wrap{margin-top:0;}
 }
-@media (max-width:560px){
-  .hero2 .hero-stats{gap:16px;}
-  .hero2 .hstat .n{font-size:1.5rem;}
+
+/* Mobile — stack image on top, text below */
+@media (max-width:640px){
+  .hero2-pin{height:350vh;}
+  .hero2{
+    flex-direction:column;
+    align-items:stretch;
+    padding:0;
+    height:100vh;
+    min-height:0;
+  }
+  /* image occupies the top ~55% of the viewport */
+  .hero2-media{
+    position:relative;
+    inset:auto;
+    flex:0 0 55vh;
+    overflow:hidden;
+  }
+  .hero2-frame{
+    width:100%;height:100%;
+    object-fit:cover;
+    object-position:center 18%; /* show characters from chest up */
+  }
+  /* hide gradient scrims — not needed in stacked layout */
+  .hero2-scrim{display:none;}
+  /* text area sits below the image on a dark background */
+  .hero2-inner{
+    position:relative;
+    flex:1;
+    width:100%;
+    background:linear-gradient(180deg,#0a0f30 0%,#060a2b 100%);
+    padding:22px 20px 16px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+  }
+  .hero2-copy{max-width:none;}
+  .hero2 h1{font-size:clamp(1.6rem,6.5vw,2.2rem);margin-bottom:12px;}
+  .hero2 .lead{font-size:.9rem;margin-bottom:16px;max-width:none;}
+  .hero2 .cta-row{gap:10px;margin-bottom:20px;}
+  .hero2 .hero-stats{gap:12px;}
+  .hero2 .hstat .n{font-size:1.3rem;}
+  .hero2 .wordmark{display:none;}
+  .scrub-hint{bottom:14px;font-size:.55rem;}
 }
