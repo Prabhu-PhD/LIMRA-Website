@@ -405,8 +405,8 @@ ul{list-style:none;}
 .footer-col ul{display:flex;flex-direction:column;gap:5px;}
 .footer-col a{font-size:.88rem;color:var(--text-on-dark-muted);transition:color var(--dur-fast),padding-left var(--dur-fast);display:inline-block;padding:8px 0;}
 .footer-col a:hover{color:#fff;padding-left:4px;}
-.footer-contact-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:var(--space-md);font-size:.88rem;line-height:var(--lh-normal);}
-.footer-contact-item svg{width:17px;height:17px;flex:none;margin-top:4px;color:#EE4038;}
+.footer-contact-item{display:flex;gap:10px;align-items:center;margin-bottom:var(--space-md);font-size:.88rem;line-height:var(--lh-normal);}
+.footer-contact-item svg{width:17px;height:17px;flex:none;color:#EE4038;}
 .footer-contact-item a{color:var(--text-on-dark-muted);}
 .footer-contact-item a:hover{color:#fff;}
 .footer-admissions-wrap{background:var(--surface-1);border:1px solid var(--glass-border);border-radius:var(--radius-xl);padding:22px 22px 24px;margin-bottom:var(--space-2xl);}
