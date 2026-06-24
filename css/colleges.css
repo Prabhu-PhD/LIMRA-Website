@@ -153,12 +153,37 @@
 /* ---------- "what they share" grid ---------- */
 .cwhy-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-md);
   margin-top: var(--space-2xl);
 }
-.cwhy-item { display: flex; flex-direction: column; gap: var(--space-sm); }
-.cwhy-icon { width: 40px; height: 40px; color: var(--brand-orange); }
+.cwhy-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl) var(--space-lg);
+  transition: border-color .22s ease, transform .22s ease;
+}
+.cwhy-item:hover {
+  border-color: rgba(248,150,30,.35);
+  transform: translateY(-3px);
+}
+.cwhy-icon {
+  width: 52px;
+  height: 52px;
+  color: var(--brand-orange);
+  background: rgba(248,150,30,.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+}
+.cwhy-icon svg { width: 26px; height: 26px; }
 .cwhy-item h4 {
   font-family: var(--font-display);
   font-weight: var(--fw-bold);
@@ -178,12 +203,15 @@
 /* ---------- responsive ---------- */
 @media (max-width: 1024px) {
   .coll-grid { grid-template-columns: repeat(2, 1fr); }
-  .cwhy-grid { grid-template-columns: repeat(2, 1fr); }
+  .cwhy-grid { grid-template-columns: repeat(3, 1fr); }
   .cstat-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .coll-grid,
   .coll-grid--2 { grid-template-columns: 1fr; }
-  .cwhy-grid { grid-template-columns: 1fr; }
+  .cwhy-grid { grid-template-columns: repeat(2, 1fr); }
   .coll-card-img { height: 180px; }
+}
+@media (max-width: 400px) {
+  .cwhy-grid { grid-template-columns: 1fr; }
 }
