@@ -101,9 +101,9 @@ ul{list-style:none;}
 .hero h1 .h1-intro{display:block;font-size:clamp(1.9rem,3.2vw,2.8rem);opacity:.82;margin-bottom:4px;letter-spacing:0;white-space:nowrap;}
 .hero h1 .h1-main{display:block;font-size:clamp(2.2rem,3.8vw,3.4rem);line-height:1;}
 .hero h1 .grad{background:var(--accent-gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;}
-.hub-tagline{font-family:var(--font-display);font-weight:var(--fw-extra);font-size:clamp(.78rem,1.35vw,1.35rem);text-align:center;line-height:1.2;letter-spacing:var(--ls-tight);color:#fff;padding:0 16%;text-shadow:0 2px 10px rgba(0,0,0,.5);}
+.hub-tagline{font-family:var(--font-display);font-weight:var(--fw-extra);font-size:clamp(.6rem,1.1vw,1.05rem);text-align:center;line-height:1.2;letter-spacing:var(--ls-tight);color:#fff;padding:0 16%;text-shadow:0 2px 10px rgba(0,0,0,.5);}
 .hero .lead{font-size:var(--fs-lg);color:var(--text-on-dark-muted);max-width:48ch;line-height:var(--lh-relaxed);margin-bottom:30px;}
-.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:42px;}
+.cta-row{display:flex;gap:14px;flex-wrap:nowrap;margin-bottom:42px;}
 .hero-stats{display:flex;gap:30px;align-items:center;}
 .hstat .n{font-family:var(--font-display);font-weight:var(--fw-bold);font-size:1.9rem;color:#fff;line-height:1;}
 .hstat .l{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-on-dark-subtle);margin-top:7px;}
@@ -158,6 +158,7 @@ ul{list-style:none;}
 .field select option{background:var(--surface-2);color:#fff;}
 .enquiry-msg{grid-column:1/-1;font-size:.88rem;color:var(--brand-sky);}
 .enquiry-msg.show{margin-top:var(--space-xs);}
+.eq-consent-row{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:var(--space-md);}
 
 /* ============================================================
    PARTNER COLLEGES — 6 logo cards (right after form)
@@ -194,9 +195,11 @@ ul{list-style:none;}
   filter:brightness(0) invert(1);opacity:.5;}
 .map-pin{position:absolute;transform:translate(-50%,-50%);z-index:2;}
 .map-dot{width:10px;height:10px;border-radius:50%;background:var(--brand-sky);box-shadow:0 0 0 4px rgba(41,194,245,.18);cursor:default;}
-.map-pin .map-name{position:absolute;left:50%;top:calc(100% + 5px);transform:translateX(-50%);white-space:nowrap;font-family:var(--font-mono);
-  font-size:.6rem;letter-spacing:.04em;text-transform:uppercase;color:var(--text-on-dark-muted);opacity:.55;transition:opacity var(--dur-fast);pointer-events:none;}
-.map-pin:hover .map-name{opacity:1;}
+.map-pin .map-name{position:absolute;left:50%;top:calc(100% + 6px);transform:translateX(-50%);white-space:nowrap;font-family:var(--font-mono);
+  font-size:.52rem;letter-spacing:.04em;text-transform:uppercase;color:#fff;
+  background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.18);padding:2px 7px;border-radius:20px;
+  opacity:1;pointer-events:none;}
+.map-pin.map-pin--above .map-name{top:auto;bottom:calc(100% + 6px);}
 .map-pin.primary{z-index:3;}
 .map-pin.primary .map-dot{width:16px;height:16px;background:transparent;background-image:var(--accent-gradient);
   box-shadow:0 0 0 5px rgba(247,165,60,.2),0 0 22px rgba(238,64,56,.6);}
@@ -403,7 +406,7 @@ ul{list-style:none;}
 .footer-col a{font-size:.88rem;color:var(--text-on-dark-muted);transition:color var(--dur-fast),padding-left var(--dur-fast);display:inline-block;padding:8px 0;}
 .footer-col a:hover{color:#fff;padding-left:4px;}
 .footer-contact-item{display:flex;gap:10px;align-items:flex-start;margin-bottom:var(--space-md);font-size:.88rem;line-height:var(--lh-normal);}
-.footer-contact-item svg{width:17px;height:17px;flex:none;margin-top:2px;color:#EE4038;}
+.footer-contact-item svg{width:17px;height:17px;flex:none;margin-top:4px;color:#EE4038;}
 .footer-contact-item a{color:var(--text-on-dark-muted);}
 .footer-contact-item a:hover{color:#fff;}
 .footer-admissions-wrap{background:var(--surface-1);border:1px solid var(--glass-border);border-radius:var(--radius-xl);padding:22px 22px 24px;margin-bottom:var(--space-2xl);}
@@ -411,11 +414,10 @@ ul{list-style:none;}
 .footer-ambassador-btn{display:block;width:100%;box-sizing:border-box;text-align:center;}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-top:var(--space-3xl);
   padding:var(--space-lg) 0;border-top:1px solid var(--glass-border);font-size:.82rem;color:var(--text-on-dark-subtle);position:relative;z-index:2;}
-.footer-wordmark{text-align:center;font-family:var(--font-display);font-weight:var(--fw-extra);letter-spacing:var(--ls-tight);
-  font-size:clamp(5rem,20vw,18rem);line-height:.78;margin-top:var(--space-2xl);background:var(--accent-gradient);
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;opacity:.1;
-  -webkit-mask-image:linear-gradient(to bottom,#000,transparent);mask-image:linear-gradient(to bottom,#000,transparent);
+.footer-wordmark{text-align:center;margin-top:var(--space-2xl);overflow:hidden;max-height:72px;opacity:.14;
+  -webkit-mask-image:linear-gradient(to bottom,#000 20%,transparent);mask-image:linear-gradient(to bottom,#000 20%,transparent);
   pointer-events:none;user-select:none;margin-bottom:-2vw;}
+.footer-wordmark img{max-width:320px;width:50%;display:block;margin:0 auto;}
 
 /* ============================================================
    WHATSAPP FAB
@@ -424,6 +426,7 @@ ul{list-style:none;}
   display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(37,211,102,.45);transition:transform var(--dur-fast);}
 .whatsapp-fab:hover{transform:scale(1.08);}
 .whatsapp-fab svg{width:30px;height:30px;fill:#fff;}
+@media(max-width:768px){.whatsapp-fab{display:none!important;}}
 
 /* ============================================================
    SCROLL REVEAL
@@ -488,7 +491,6 @@ ul{list-style:none;}
   .orbit{width:min(440px,82vw);height:min(440px,82vw);transform:none;}
   .enquiry-strip{grid-template-columns:1fr 1fr;}
   .enquiry-lead{grid-column:1/-1;}
-  .enquiry-strip>.btn{grid-column:1/-1;}
   .fmge-grid{grid-template-columns:1fr;gap:var(--space-xl);}
   /* 16px minimum stops iOS Safari from auto-zooming (and shifting the layout)
      when a field gains focus; .92rem (~14.7px) triggered it */
@@ -501,8 +503,9 @@ ul{list-style:none;}
   /* stack stats so the nowrap row never overflows narrow screens */
   .hero-stats{flex-wrap:wrap;gap:14px 20px;}
   .hstat-divider{display:none;}
-  .cta-row .btn{width:100%;}
-  .orbit{width:min(300px,80vw);height:min(300px,80vw);}
+  .cta-row .btn{flex:1;min-width:0;text-align:center;}
+  .orbit{width:min(340px,88vw);height:min(340px,88vw);}
+  .node{min-width:44px;min-height:44px;}
 }
 @media(max-width:640px){
   .section{padding:var(--space-4xl) 0;}
