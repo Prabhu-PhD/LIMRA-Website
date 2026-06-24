@@ -158,7 +158,7 @@ ul{list-style:none;}
 .field select option{background:var(--surface-2);color:#fff;}
 .enquiry-msg{grid-column:1/-1;font-size:.88rem;color:var(--brand-sky);}
 .enquiry-msg.show{margin-top:var(--space-xs);}
-.eq-consent-row{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:var(--space-md);}
+.eq-consent-row{grid-column:1/-1;width:100%;display:flex;justify-content:space-between;align-items:center;gap:var(--space-md);}
 
 /* ============================================================
    PARTNER COLLEGES — 6 logo cards (right after form)
